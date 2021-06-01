@@ -71,26 +71,26 @@ char cVOLT_BATT[4] = "V";
 
 int GPS_TIME = 113020;
 char cGPS_TIME[8] = "TM";
-char cLAT[10] = "LA" ;
-char cLON[10] = "LO" ;
+char cLAT[12] = "20.6593477" ;
+char cLON[12] = "-100.38697" ;
 char cALT[7] = "HG" ;
-char cNSATS[3] = "NS" ;
+char cNSATS[3] = "3" ;
 
                     /* PAYLOADS */
 
-char SP1_MISSION_TIME[9] = "X";
+char SP1_MISSION_TIME[10] = "X";
 char SP1_PACKET_COUNT[4] = "X";
 char SP1_PACKET_TYPE[3] = "X";
 char SP1_ALTITUDE[8] = "X";
-char SP1_TEMPERATURE[5] = "X";
-char SP1_ROTATION_RATE[5] = "X";
+char SP1_TEMPERATURE[6] = "X";
+char SP1_ROTATION_RATE[6] = "X";
 
-char SP2_MISSION_TIME[9] = "X";
+char SP2_MISSION_TIME[10] = "X";
 char SP2_PACKET_COUNT[4] = "X";
 char SP2_PACKET_TYPE[3] = "X";
 char SP2_ALTITUDE[8] = "X";
-char SP2_TEMPERATURE[5] = "X";
-char SP2_ROTATION_RATE[5] = "X";
+char SP2_TEMPERATURE[6] = "X";
+char SP2_ROTATION_RATE[6] = "X";
 
 /*---------------- COMMAND VARIABLES ----------------*/
 bool telemetry_ON = false;
@@ -110,7 +110,8 @@ bool toggle_sim = 0;
 bool ejectCom = false;
 char ECHO[5] = "ECHO";
 /* ------------ TELEMETRY FORMAT -------------------*/
-static const char* FORMAT = "1714,%s:%s:%s,%s,C,%c,%c,%c,%s,%s,4.7,%s,%s,%s,%s,%s,%s,%s,%s,%s;1714,%s,%s,S1,%s,%s,%s;1714,%s,%s,S2,%s,%s,%s;";
+static const char* FORMAT = "/*1714,%s,%s,%s,%s,C,%c,%c,%c,%s,%s,4.7,%s,%s,%s,%s,%s,%s,%s,%s,%s,1714,%s,%s,S1,%s,%s,%s,1714,%s,%s,S2,%s,%s,%s*/";
+//static const char* FORMAT = "1714,%s:%s:%s,%s,C,%c,%c,%c,%s,%s,4.7,%s,%s,%s,%s,%s,%s,%s,%s,%s;1714,%s,%s,S1,%s,%s,%s;1714,%s,%s,S2,%s,%s,%s;";
 //                            1    2  3  4  5 6  7  8  9 10 11  12 13 14 15 16 17 18 19 20 21  22  23 24 25 26 27 28  29  30 31 32 33 34 35
 
 /* ------------------ FUNCTIONS --------------------*/
@@ -150,6 +151,8 @@ void createTelemetryPacket()
 
     ftoa(ALTITUDE_BAR, cALTITUDE_BAR, 1);
     ftoa(TEMPERATURE, cTEMPERATURE, 1);
+
+    ftoa(GPS_TIME, cGPS_TIME, 0);
 
     buff_size = sprintf(command,
                         FORMAT,                     /* <TELEMETRY_FORMAT> */

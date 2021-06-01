@@ -128,26 +128,26 @@ extern float VOLT_BATT;
 extern char cVOLT_BATT[4];
 extern int GPS_TIME;
 extern char cGPS_TIME[8];
-extern char cLAT[10];
-extern char cLON[10];
+extern char cLAT[12];
+extern char cLON[12];
 extern char cALT[7];
 extern char cNSATS[3];
 
                         /* PAYLOADS */
 
-extern char SP1_MISSION_TIME[9];
+extern char SP1_MISSION_TIME[10];
 extern char SP1_PACKET_COUNT[4];
 extern char SP1_PACKET_TYPE[3];
 extern char SP1_ALTITUDE[8];
-extern char SP1_TEMPERATURE[5];
-extern char SP1_ROTATION_RATE[5];
+extern char SP1_TEMPERATURE[6];
+extern char SP1_ROTATION_RATE[6];
 
-extern char SP2_MISSION_TIME[9];
+extern char SP2_MISSION_TIME[10];
 extern char SP2_PACKET_COUNT[4];
 extern char SP2_PACKET_TYPE[3];
 extern char SP2_ALTITUDE[8];
-extern char SP2_TEMPERATURE[5];
-extern char SP2_ROTATION_RATE[5];
+extern char SP2_TEMPERATURE[6];
+extern char SP2_ROTATION_RATE[6];
 /*---------------- COMMAND VARIABLES ----------------*/
 extern bool telemetry_ON;
 extern bool SP_ON;

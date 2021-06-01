@@ -43,7 +43,7 @@ void getSPTelemetry(char *telemetry)
 {
     int i;
     int selectSP = -1;
-    char *values[] = {"A","B","C","D","E","F"};
+    char *values[] = {"A","B","C","D","E"};
 
     if(telemetry[0] == '+')
         selectSP = 0;
@@ -52,7 +52,7 @@ void getSPTelemetry(char *telemetry)
 
     char *token = strtok(telemetry,",+*");
 
-    for(i=0; i<6; i++)
+    for(i=0; i<5; i++)
     {
         values[i] = token;
         token = strtok(NULL, ",");
@@ -63,19 +63,17 @@ void getSPTelemetry(char *telemetry)
         case 0:
             strcpy(SP1_MISSION_TIME, values[0]);
             strcpy(SP1_PACKET_COUNT, values[1]);
-            strcpy(SP1_PACKET_TYPE, values[2]);
-            strcpy(SP1_ALTITUDE, values[3]);
-            strcpy(SP1_TEMPERATURE, values[4]);
-            strcpy(SP1_ROTATION_RATE, values[5]);
+            strcpy(SP1_ALTITUDE, values[2]);
+            strcpy(SP1_TEMPERATURE, values[3]);
+            strcpy(SP1_ROTATION_RATE, values[4]);
             SP1_PC++;
             break;
         case 1:
             strcpy(SP2_MISSION_TIME, values[0]);
             strcpy(SP2_PACKET_COUNT, values[1]);
-            strcpy(SP2_PACKET_TYPE, values[2]);
-            strcpy(SP2_ALTITUDE, values[3]);
-            strcpy(SP2_TEMPERATURE, values[4]);
-            strcpy(SP2_ROTATION_RATE, values[5]);
+            strcpy(SP2_ALTITUDE, values[2]);
+            strcpy(SP2_TEMPERATURE, values[3]);
+            strcpy(SP2_ROTATION_RATE, values[4]);
             SP2_PC++;
             break;
     }

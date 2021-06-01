@@ -49,6 +49,7 @@
 #include "sys_core.h"
 #include "gio.h"
 #include "sci.h"
+#include "het.h"
 /*------------- KA'AN SAT Libraries -----------------*/
 #include "KaanSat_Lib/Utilities.h"
 #include "KaanSat_Lib/Commands.h"
@@ -100,7 +101,7 @@ int main(void)
     /* ------------------- SD READER -------------------*/
 
     /* ------------------- TASKS -------------------*/
-    xTaskCreate(vTelemetry,"T. Container",512, NULL, 1, &xTelemetryHandle);
+    xTaskCreate(vTelemetry,"T. Container",1000, NULL, 1, &xTelemetryHandle);
     xTaskCreate(vSensors,"Sensors",configMINIMAL_STACK_SIZE, NULL, 1, NULL);
     xTaskCreate(vMissionOperations,"Sat Ops",configMINIMAL_STACK_SIZE, NULL, 1, NULL);
 
@@ -126,12 +127,14 @@ void vTelemetry(void *pvParameters)
         {
             createTelemetryPacket();
             sciSendData(buff_size, command, 0);
+            getTime();
             PACKET_COUNT++;
         }
         if(!telemetry_ON)
         {
             sciSendData(sprintf(command,"WAITING\n"),command, 0);
         }
+        GPS_TIME++;
         vTaskDelayUntil(&xTelemetryTime, T_TELEMETRY);
     }
 }
@@ -174,7 +177,12 @@ void vMissionOperations(void *pvParameters)
     portTickType xOpsTime;
     xOpsTime = xTaskGetTickCount();
 
-    float ALTITUDE_STATES[5] = {45, 700, 500, 300, 50};
+    pwmStart(hetRAM1, PWM_PAYLOAD);
+    SERVO_PAYLOAD.period = 20000;
+    pwmSetDuty(hetRAM1, PWM_PAYLOAD, 7U);
+//    SERVO_PAYLOAD.duty = SPOS_ZERO;
+
+    float ALTITUDE_STATES[5] = {45, 700, 500, 400, 50};
 
     while(1)
     {
@@ -194,10 +202,23 @@ void vMissionOperations(void *pvParameters)
 
                 STATE = STATE_INDEX;
     //            updateState(STATE);
+
+                if(STATE == SP1_RELEASE)
+                {
+//                    SERVO_PAYLOAD.duty = SPOS_SP1;
+                    pwmSetDuty(hetRAM1, PWM_PAYLOAD, 9U);
+                }
+                if(STATE == SP2_RELEASE)
+                {
+//                    SERVO_PAYLOAD.duty = SPOS_SP2;
+                    pwmSetDuty(hetRAM1, PWM_PAYLOAD, 12U);
+                }
+//                pwmSetSignal10e3(hetRAM1, PWM_PAYLOAD, SERVO_PAYLOAD);
             }
+
         }
 
-        pwmSetSignal10e3(hetRAM1, PWM_PAYLOAD, SERVO_PAYLOAD);
+//        pwmSetSignal10e3(hetRAM1, PWM_PAYLOAD, SERVO_PAYLOAD);
         vTaskDelayUntil(&xOpsTime, T_OPERATIONS);
     }
 }

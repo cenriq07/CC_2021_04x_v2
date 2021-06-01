@@ -28,12 +28,12 @@ source/sys_main.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/gio.h
 source/sys_main.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_gio.h
 source/sys_main.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/sci.h
 source/sys_main.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_sci.h
-source/sys_main.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/KaanSat_Lib/Utilities.h
-source/sys_main.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/spi.h
-source/sys_main.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_spi.h
 source/sys_main.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/het.h
 source/sys_main.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_het.h
 source/sys_main.obj: C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/string.h
+source/sys_main.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/KaanSat_Lib/Utilities.h
+source/sys_main.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/spi.h
+source/sys_main.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_spi.h
 source/sys_main.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/adc.h
 source/sys_main.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_adc.h
 source/sys_main.obj: C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/stdio.h
@@ -79,12 +79,12 @@ C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/gio.h:
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_gio.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/sci.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_sci.h: 
-C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/KaanSat_Lib/Utilities.h: 
-C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/spi.h: 
-C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_spi.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/het.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_het.h: 
 C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/string.h: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/KaanSat_Lib/Utilities.h: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/spi.h: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_spi.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/adc.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_adc.h: 
 C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/stdio.h: 
