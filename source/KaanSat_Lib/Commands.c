@@ -156,7 +156,9 @@ void commST(char *value[])
         time[i] = token;
         token = strtok(NULL, ":;");
     }
-    // TODO: Time updated to %s:%s:%s"
+    H = atof(time[0]);
+    M = atof(time[1]);
+    S = atof(time[2]);
 }
 void commSIM(char *value[])
 {

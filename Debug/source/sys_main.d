@@ -26,6 +26,8 @@ source/sys_main.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/hal_stdt
 source/sys_main.obj: C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/stdbool.h
 source/sys_main.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/gio.h
 source/sys_main.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_gio.h
+source/sys_main.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/adc.h
+source/sys_main.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_adc.h
 source/sys_main.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/sci.h
 source/sys_main.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_sci.h
 source/sys_main.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/het.h
@@ -34,8 +36,6 @@ source/sys_main.obj: C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/incl
 source/sys_main.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/KaanSat_Lib/Utilities.h
 source/sys_main.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/spi.h
 source/sys_main.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_spi.h
-source/sys_main.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/adc.h
-source/sys_main.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_adc.h
 source/sys_main.obj: C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/stdio.h
 source/sys_main.obj: C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/stdarg.h
 source/sys_main.obj: C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/stdlib.h
@@ -48,6 +48,7 @@ source/sys_main.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/KaanSat_
 source/sys_main.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/esm.h
 source/sys_main.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_esm.h
 source/sys_main.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/KaanSat_Lib/BMP280.h
+source/sys_main.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/KaanSat_Lib/allADC.h
 source/sys_main.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/lin.h
 source/sys_main.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_lin.h
 
@@ -77,6 +78,8 @@ C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/hal_stdtypes.h:
 C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/stdbool.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/gio.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_gio.h: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/adc.h: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_adc.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/sci.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_sci.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/het.h: 
@@ -85,8 +88,6 @@ C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/string.h:
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/KaanSat_Lib/Utilities.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/spi.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_spi.h: 
-C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/adc.h: 
-C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_adc.h: 
 C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/stdio.h: 
 C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/stdarg.h: 
 C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/stdlib.h: 
@@ -99,5 +100,6 @@ C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/KaanSat_Lib/PWM.h:
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/esm.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_esm.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/KaanSat_Lib/BMP280.h: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/KaanSat_Lib/allADC.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/lin.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_lin.h: 

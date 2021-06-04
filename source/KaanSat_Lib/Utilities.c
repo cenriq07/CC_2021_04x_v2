@@ -110,9 +110,9 @@ bool toggle_sim = 0;
 bool ejectCom = false;
 char ECHO[5] = "ECHO";
 /* ------------ TELEMETRY FORMAT -------------------*/
-static const char* FORMAT = "/*1714,%s,%s,%s,%s,C,%c,%c,%c,%s,%s,4.7,%s,%s,%s,%s,%s,%s,%s,%s,%s,1714,%s,%s,S1,%s,%s,%s,1714,%s,%s,S2,%s,%s,%s*/";
-//static const char* FORMAT = "1714,%s:%s:%s,%s,C,%c,%c,%c,%s,%s,4.7,%s,%s,%s,%s,%s,%s,%s,%s,%s;1714,%s,%s,S1,%s,%s,%s;1714,%s,%s,S2,%s,%s,%s;";
-//                            1    2  3  4  5 6  7  8  9 10 11  12 13 14 15 16 17 18 19 20 21  22  23 24 25 26 27 28  29  30 31 32 33 34 35
+static const char* FORMAT = "/*1714,%s,%s,%s,%s,C,%c,%c,%c,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,1714,%s,%s,S1,%s,%s,%s,1714,%s,%s,S2,%s,%s,%s*/";
+//static const char* FORMAT = "1714,%s:%s:%s,%s,C,%c,%c,%c,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s;1714,%s,%s,S1,%s,%s,%s;1714,%s,%s,S2,%s,%s,%s;";
+//                              1    2  3  4  5 6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21  22  23 24 25 26 27 28  29  30 31 32 33 34 35
 
 /* ------------------ FUNCTIONS --------------------*/
 void createTelemetryPacket()
@@ -146,6 +146,8 @@ void createTelemetryPacket()
         strcpy(cS,zeroS);
     }
 
+    ftoa(VOLT_BATT, cVOLT_BATT, 1);
+
     ftoa(SP1_PC, cSP1_PC, 0);
     ftoa(SP2_PC, cSP2_PC, 0);
 
@@ -164,7 +166,7 @@ void createTelemetryPacket()
                         SP2_RELEASED,               /* 9<SP2_RELEASED> */
                         cALTITUDE_BAR,              /* 10<ALTITUD> */
                         cTEMPERATURE,               /* 11<TEMP> */
-                                                    //* 12<VOLTAGE> */
+                        cVOLT_BATT,                 /* 12<VOLTAGE> */
                         cGPS_TIME,                  /* 13<GPS_TME> */
                         cLAT,                       /* 14<GPS_LATITUDE> */
                         cLON,                       /* 15<GPS_LONGITUDE> */

@@ -48,6 +48,7 @@
 #include "os_task.h"
 #include "sys_core.h"
 #include "gio.h"
+#include "adc.h"
 #include "sci.h"
 #include "het.h"
 /*------------- KA'AN SAT Libraries -----------------*/
@@ -55,6 +56,7 @@
 #include "KaanSat_Lib/Commands.h"
 #include "KaanSat_Lib/PWM.h"
 #include "KaanSat_Lib/BMP280.h"
+#include "KaanSat_Lib/allADC.h"
 #include "lin.h"
 /* USER CODE END */
 
@@ -148,6 +150,10 @@ void vSensors(void *pvParameters)
 
     while(1)
     {
+        /* ----------------| Battery |------------------ */
+        readAllAdc(MyChannel);
+        valorAdc_0 = MyChannel[0].ADC_conv;
+        VOLT_BATT = getAdcVoltage(valorAdc_0);
         /* ----------------| BMP280 |------------------- */
 
         ComandoSPI[0]=((0x7F & 0xF4)<<8)|0x00AB;
