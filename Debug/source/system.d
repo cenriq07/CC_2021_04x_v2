@@ -1,6 +1,9 @@
 # FIXED
 
 source/system.obj: ../source/system.c
+source/system.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ff.h
+source/system.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/integer.h
+source/system.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ffconf.h
 source/system.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/system.h
 source/system.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_system.h
 source/system.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/sys_common.h
@@ -45,6 +48,9 @@ source/system.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/pinmux.h
 source/system.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_pinmux.h
 
 ../source/system.c: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ff.h: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/integer.h: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ffconf.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/system.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_system.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/sys_common.h: 

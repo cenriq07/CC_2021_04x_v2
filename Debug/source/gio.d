@@ -1,6 +1,9 @@
 # FIXED
 
 source/gio.obj: ../source/gio.c
+source/gio.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ff.h
+source/gio.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/integer.h
+source/gio.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ffconf.h
 source/gio.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/gio.h
 source/gio.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_gio.h
 source/gio.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/sys_common.h
@@ -18,6 +21,9 @@ source/gio.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/sys_vim.h
 source/gio.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_vim.h
 
 ../source/gio.c: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ff.h: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/integer.h: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ffconf.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/gio.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_gio.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/sys_common.h: 

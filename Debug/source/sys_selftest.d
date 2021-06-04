@@ -1,6 +1,9 @@
 # FIXED
 
 source/sys_selftest.obj: ../source/sys_selftest.c
+source/sys_selftest.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ff.h
+source/sys_selftest.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/integer.h
+source/sys_selftest.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ffconf.h
 source/sys_selftest.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/sys_selftest.h
 source/sys_selftest.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_pbist.h
 source/sys_selftest.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/sys_common.h
@@ -42,6 +45,9 @@ source/sys_selftest.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_
 source/sys_selftest.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/sys_pmu.h
 
 ../source/sys_selftest.c: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ff.h: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/integer.h: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ffconf.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/sys_selftest.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_pbist.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/sys_common.h: 

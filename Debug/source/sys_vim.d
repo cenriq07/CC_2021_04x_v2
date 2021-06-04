@@ -1,6 +1,9 @@
 # FIXED
 
 source/sys_vim.obj: ../source/sys_vim.c
+source/sys_vim.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ff.h
+source/sys_vim.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/integer.h
+source/sys_vim.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ffconf.h
 source/sys_vim.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/sys_vim.h
 source/sys_vim.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_vim.h
 source/sys_vim.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/sys_common.h
@@ -23,6 +26,9 @@ source/sys_vim.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/esm.h
 source/sys_vim.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_esm.h
 
 ../source/sys_vim.c: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ff.h: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/integer.h: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ffconf.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/sys_vim.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_vim.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/sys_common.h: 

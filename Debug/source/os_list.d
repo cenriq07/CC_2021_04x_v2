@@ -1,6 +1,9 @@
 # FIXED
 
 source/os_list.obj: ../source/os_list.c
+source/os_list.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ff.h
+source/os_list.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/integer.h
+source/os_list.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ffconf.h
 source/os_list.obj: C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/stdlib.h
 source/os_list.obj: C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/_ti_config.h
 source/os_list.obj: C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/linkage.h
@@ -22,6 +25,9 @@ source/os_list.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/os_mpu_wr
 source/os_list.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/os_list.h
 
 ../source/os_list.c: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ff.h: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/integer.h: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ffconf.h: 
 C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/stdlib.h: 
 C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/_ti_config.h: 
 C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/linkage.h: 

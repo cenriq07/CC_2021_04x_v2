@@ -1,6 +1,9 @@
 # FIXED
 
 source/sys_startup.obj: ../source/sys_startup.c
+source/sys_startup.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ff.h
+source/sys_startup.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/integer.h
+source/sys_startup.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ffconf.h
 source/sys_startup.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/sys_common.h
 source/sys_startup.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/hal_stdtypes.h
 source/sys_startup.obj: C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/stdint.h
@@ -42,6 +45,9 @@ source/sys_startup.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_e
 source/sys_startup.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/errata_SSWF021_45.h
 
 ../source/sys_startup.c: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ff.h: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/integer.h: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ffconf.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/sys_common.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/hal_stdtypes.h: 
 C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/stdint.h: 

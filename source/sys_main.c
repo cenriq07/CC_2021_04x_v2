@@ -57,6 +57,7 @@
 #include "KaanSat_Lib/PWM.h"
 #include "KaanSat_Lib/BMP280.h"
 #include "KaanSat_Lib/allADC.h"
+#include "KaanSat_Lib/microSD.h"
 #include "lin.h"
 /* USER CODE END */
 
@@ -68,7 +69,7 @@
 
 static char receivedData[2];
 int i = 0;
-//#define MICROSD     TRUE
+#define MICROSD     TRUE
 /* USER CODE END */
 
 /** @fn void main(void)
@@ -101,11 +102,45 @@ int main(void)
      sciReceive(scilinREG, 1, ( unsigned char *)receivedData);
 
     /* ------------------- SD READER -------------------*/
+#ifdef MICROSD
+    gioToggleBit(gioPORTA, 0U);
+    mmcSelectSpi(spiPORT_SD , spiREG_SD);
+    SD_Test();
+
+    sdReadFile(STATE_FILENAME);
+#else
+    FSW_STATE_TEMP = '0';
+#endif
+
+    __delay_cycles(106);
+    __delay_cycles(106);
 
     /* --------------------- TASKS ---------------------*/
     xTaskCreate(vTelemetry,"T. Container",1000, NULL, 1, &xTelemetryHandle);
     xTaskCreate(vSensors,"Sensors",configMINIMAL_STACK_SIZE, NULL, 1, NULL);
     xTaskCreate(vMissionOperations,"Sat Ops",configMINIMAL_STACK_SIZE, NULL, 1, NULL);
+
+    switch(FSW_STATE_TEMP)
+    {
+        case '0':
+            STATE = PRELAUNCH;
+            break;
+        case '1':
+            STATE = LAUNCH;
+            break;
+        case '2':
+            STATE = DEPLOYMENT;
+            break;
+        case '3':
+            STATE = SP1_RELEASE;
+            break;
+        case '4':
+            STATE = SP2_RELEASE;
+            break;
+        case '5':
+            STATE = LANDING;
+            break;
+    }
 
     vTaskStartScheduler();
     while(1);
@@ -135,6 +170,9 @@ void vTelemetry(void *pvParameters)
         if(!telemetry_ON)
         {
             sciSendData(sprintf(command,"WAITING\n"),command, 0);
+#ifdef MICROSD
+            sdWriteMemory(DATA_FILENAME, command);
+#endif
         }
         GPS_TIME++;
         vTaskDelayUntil(&xTelemetryTime, T_TELEMETRY);

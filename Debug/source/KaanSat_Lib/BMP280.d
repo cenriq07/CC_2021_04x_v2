@@ -1,6 +1,9 @@
 # FIXED
 
 source/KaanSat_Lib/BMP280.obj: ../source/KaanSat_Lib/BMP280.c
+source/KaanSat_Lib/BMP280.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ff.h
+source/KaanSat_Lib/BMP280.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/integer.h
+source/KaanSat_Lib/BMP280.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ffconf.h
 source/KaanSat_Lib/BMP280.obj: C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/math.h
 source/KaanSat_Lib/BMP280.obj: C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/_ti_config.h
 source/KaanSat_Lib/BMP280.obj: C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/linkage.h
@@ -23,6 +26,9 @@ source/KaanSat_Lib/BMP280.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/includ
 source/KaanSat_Lib/BMP280.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/KaanSat_Lib/BMP280.h
 
 ../source/KaanSat_Lib/BMP280.c: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ff.h: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/integer.h: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ffconf.h: 
 C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/math.h: 
 C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/_ti_config.h: 
 C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/linkage.h: 

@@ -48,8 +48,8 @@
 #define TEAM_NUMBER     "1714"
 
 #define spiREG_BMP      spiREG1
-#define spiREG_SD       spiREG4
-#define spiPORT_SD      spiPORT4
+#define spiREG_SD       spiREG2
+#define spiPORT_SD      spiPORT2
 
 #define P0              101325      //   Pa
 #define Rair            8.31432     //   N.m/(mol.K)

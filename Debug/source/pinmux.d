@@ -1,6 +1,9 @@
 # FIXED
 
 source/pinmux.obj: ../source/pinmux.c
+source/pinmux.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ff.h
+source/pinmux.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/integer.h
+source/pinmux.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ffconf.h
 source/pinmux.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/pinmux.h
 source/pinmux.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_pinmux.h
 source/pinmux.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/sys_common.h
@@ -16,6 +19,9 @@ source/pinmux.obj: C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/includ
 source/pinmux.obj: C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/stdbool.h
 
 ../source/pinmux.c: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ff.h: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/integer.h: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ffconf.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/pinmux.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_pinmux.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/sys_common.h: 

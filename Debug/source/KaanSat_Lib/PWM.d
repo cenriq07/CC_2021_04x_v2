@@ -1,6 +1,9 @@
 # FIXED
 
 source/KaanSat_Lib/PWM.obj: ../source/KaanSat_Lib/PWM.c
+source/KaanSat_Lib/PWM.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ff.h
+source/KaanSat_Lib/PWM.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/integer.h
+source/KaanSat_Lib/PWM.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ffconf.h
 source/KaanSat_Lib/PWM.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/KaanSat_Lib/PWM.h
 source/KaanSat_Lib/PWM.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/esm.h
 source/KaanSat_Lib/PWM.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_esm.h
@@ -23,6 +26,9 @@ source/KaanSat_Lib/PWM.obj: C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.L
 source/KaanSat_Lib/PWM.obj: C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/linkage.h
 
 ../source/KaanSat_Lib/PWM.c: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ff.h: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/integer.h: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ffconf.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/KaanSat_Lib/PWM.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/esm.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_esm.h: 

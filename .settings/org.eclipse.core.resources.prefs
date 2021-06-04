@@ -1,4 +1,16 @@
 eclipse.preferences.version=1
+encoding//Debug/SDCard/subdir_rules.mk=UTF-8
+encoding//Debug/SDCard/subdir_vars.mk=UTF-8
+encoding//Debug/fatfs/doc/res/subdir_rules.mk=UTF-8
+encoding//Debug/fatfs/doc/res/subdir_vars.mk=UTF-8
+encoding//Debug/fatfs/port/option/subdir_rules.mk=UTF-8
+encoding//Debug/fatfs/port/option/subdir_vars.mk=UTF-8
+encoding//Debug/fatfs/port/subdir_rules.mk=UTF-8
+encoding//Debug/fatfs/port/subdir_vars.mk=UTF-8
+encoding//Debug/fatfs/src/option/subdir_rules.mk=UTF-8
+encoding//Debug/fatfs/src/option/subdir_vars.mk=UTF-8
+encoding//Debug/fatfs/src/subdir_rules.mk=UTF-8
+encoding//Debug/fatfs/src/subdir_vars.mk=UTF-8
 encoding//Debug/makefile=UTF-8
 encoding//Debug/objects.mk=UTF-8
 encoding//Debug/source/KaanSat_Lib/subdir_rules.mk=UTF-8

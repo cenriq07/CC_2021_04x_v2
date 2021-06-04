@@ -10,11 +10,18 @@ GEN_OPTS__FLAG :=
 GEN_CMDS__FLAG := 
 
 ORDERED_OBJS += \
+"./SDCard/Load_bmp.obj" \
+"./SDCard/cmdline.obj" \
+"./SDCard/sd_card.obj" \
+"./SDCard/uartstdio.obj" \
+"./fatfs/port/mmc-hercules.obj" \
+"./fatfs/src/ff.obj" \
 "./source/KaanSat_Lib/BMP280.obj" \
 "./source/KaanSat_Lib/Commands.obj" \
 "./source/KaanSat_Lib/PWM.obj" \
 "./source/KaanSat_Lib/Utilities.obj" \
 "./source/KaanSat_Lib/allADC.obj" \
+"./source/KaanSat_Lib/microSD.obj" \
 "./source/adc.obj" \
 "./source/dabort.obj" \
 "./source/errata_SSWF021_45.obj" \
@@ -57,8 +64,14 @@ RMDIR := RMDIR /S/Q
 
 # All of the sources participating in the build are defined here
 -include sources.mk
+-include SDCard/subdir_vars.mk
+-include fatfs/port/subdir_vars.mk
+-include fatfs/src/subdir_vars.mk
 -include source/KaanSat_Lib/subdir_vars.mk
 -include source/subdir_vars.mk
+-include SDCard/subdir_rules.mk
+-include fatfs/port/subdir_rules.mk
+-include fatfs/src/subdir_rules.mk
 -include source/KaanSat_Lib/subdir_rules.mk
 -include source/subdir_rules.mk
 -include objects.mk
@@ -177,7 +190,7 @@ all: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 CC_2021_04x_v2.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: ARM Linker'
-	"C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/bin/armcl" -mv7R4 --code_state=32 -g --diag_warning=225 --diag_wrap=off --display_error_number --enum_type=packed --abi=eabi -z -m"CC_2021_04x_v2.map" --heap_size=0x800 --stack_size=0x800 -i"C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/lib" -i"C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="CC_2021_04x_v2_linkInfo.xml" --rom_model --be32 -o "CC_2021_04x_v2.out" $(ORDERED_OBJS)
+	"C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/bin/armcl" -mv7R4 --code_state=32 --preinclude="C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ff.h" -g --diag_warning=225 --diag_wrap=off --display_error_number --enum_type=packed --abi=eabi -z -m"CC_2021_04x_v2.map" --heap_size=0x800 --stack_size=0x800 -i"C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/lib" -i"C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="CC_2021_04x_v2_linkInfo.xml" --rom_model --be32 -o "CC_2021_04x_v2.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 
@@ -191,8 +204,8 @@ CC_2021_04x_v2.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "source\KaanSat_Lib\BMP280.obj" "source\KaanSat_Lib\Commands.obj" "source\KaanSat_Lib\PWM.obj" "source\KaanSat_Lib\Utilities.obj" "source\KaanSat_Lib\allADC.obj" "source\adc.obj" "source\dabort.obj" "source\errata_SSWF021_45.obj" "source\esm.obj" "source\gio.obj" "source\het.obj" "source\notification.obj" "source\os_croutine.obj" "source\os_event_groups.obj" "source\os_heap.obj" "source\os_list.obj" "source\os_mpu_wrappers.obj" "source\os_port.obj" "source\os_portasm.obj" "source\os_queue.obj" "source\os_tasks.obj" "source\os_timer.obj" "source\pinmux.obj" "source\sci.obj" "source\spi.obj" "source\sys_core.obj" "source\sys_intvecs.obj" "source\sys_main.obj" "source\sys_mpu.obj" "source\sys_pcr.obj" "source\sys_phantom.obj" "source\sys_pmu.obj" "source\sys_selftest.obj" "source\sys_startup.obj" "source\sys_vim.obj" "source\system.obj" 
-	-$(RM) "source\KaanSat_Lib\BMP280.d" "source\KaanSat_Lib\Commands.d" "source\KaanSat_Lib\PWM.d" "source\KaanSat_Lib\Utilities.d" "source\KaanSat_Lib\allADC.d" "source\adc.d" "source\errata_SSWF021_45.d" "source\esm.d" "source\gio.d" "source\het.d" "source\notification.d" "source\os_croutine.d" "source\os_event_groups.d" "source\os_heap.d" "source\os_list.d" "source\os_mpu_wrappers.d" "source\os_port.d" "source\os_queue.d" "source\os_tasks.d" "source\os_timer.d" "source\pinmux.d" "source\sci.d" "source\spi.d" "source\sys_main.d" "source\sys_pcr.d" "source\sys_phantom.d" "source\sys_selftest.d" "source\sys_startup.d" "source\sys_vim.d" "source\system.d" 
+	-$(RM) "SDCard\Load_bmp.obj" "SDCard\cmdline.obj" "SDCard\sd_card.obj" "SDCard\uartstdio.obj" "fatfs\port\mmc-hercules.obj" "fatfs\src\ff.obj" "source\KaanSat_Lib\BMP280.obj" "source\KaanSat_Lib\Commands.obj" "source\KaanSat_Lib\PWM.obj" "source\KaanSat_Lib\Utilities.obj" "source\KaanSat_Lib\allADC.obj" "source\KaanSat_Lib\microSD.obj" "source\adc.obj" "source\dabort.obj" "source\errata_SSWF021_45.obj" "source\esm.obj" "source\gio.obj" "source\het.obj" "source\notification.obj" "source\os_croutine.obj" "source\os_event_groups.obj" "source\os_heap.obj" "source\os_list.obj" "source\os_mpu_wrappers.obj" "source\os_port.obj" "source\os_portasm.obj" "source\os_queue.obj" "source\os_tasks.obj" "source\os_timer.obj" "source\pinmux.obj" "source\sci.obj" "source\spi.obj" "source\sys_core.obj" "source\sys_intvecs.obj" "source\sys_main.obj" "source\sys_mpu.obj" "source\sys_pcr.obj" "source\sys_phantom.obj" "source\sys_pmu.obj" "source\sys_selftest.obj" "source\sys_startup.obj" "source\sys_vim.obj" "source\system.obj" 
+	-$(RM) "SDCard\Load_bmp.d" "SDCard\cmdline.d" "SDCard\sd_card.d" "SDCard\uartstdio.d" "fatfs\port\mmc-hercules.d" "fatfs\src\ff.d" "source\KaanSat_Lib\BMP280.d" "source\KaanSat_Lib\Commands.d" "source\KaanSat_Lib\PWM.d" "source\KaanSat_Lib\Utilities.d" "source\KaanSat_Lib\allADC.d" "source\KaanSat_Lib\microSD.d" "source\adc.d" "source\errata_SSWF021_45.d" "source\esm.d" "source\gio.d" "source\het.d" "source\notification.d" "source\os_croutine.d" "source\os_event_groups.d" "source\os_heap.d" "source\os_list.d" "source\os_mpu_wrappers.d" "source\os_port.d" "source\os_queue.d" "source\os_tasks.d" "source\os_timer.d" "source\pinmux.d" "source\sci.d" "source\spi.d" "source\sys_main.d" "source\sys_pcr.d" "source\sys_phantom.d" "source\sys_selftest.d" "source\sys_startup.d" "source\sys_vim.d" "source\system.d" 
 	-$(RM) "source\dabort.d" "source\os_portasm.d" "source\sys_core.d" "source\sys_intvecs.d" "source\sys_mpu.d" "source\sys_pmu.d" 
 	-@echo 'Finished clean'
 	-@echo ' '

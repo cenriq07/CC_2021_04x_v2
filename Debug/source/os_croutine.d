@@ -1,6 +1,9 @@
 # FIXED
 
 source/os_croutine.obj: ../source/os_croutine.c
+source/os_croutine.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ff.h
+source/os_croutine.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/integer.h
+source/os_croutine.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ffconf.h
 source/os_croutine.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/FreeRTOS.h
 source/os_croutine.obj: C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/stddef.h
 source/os_croutine.obj: C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/_ti_config.h
@@ -24,6 +27,9 @@ source/os_croutine.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/os_cr
 source/os_croutine.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/os_list.h
 
 ../source/os_croutine.c: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ff.h: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/integer.h: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ffconf.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/FreeRTOS.h: 
 C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/stddef.h: 
 C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/_ti_config.h: 

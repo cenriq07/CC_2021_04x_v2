@@ -1,6 +1,9 @@
 # FIXED
 
 source/sci.obj: ../source/sci.c
+source/sci.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ff.h
+source/sci.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/integer.h
+source/sci.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ffconf.h
 source/sci.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/sci.h
 source/sci.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_sci.h
 source/sci.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/sys_common.h
@@ -24,6 +27,9 @@ source/sci.obj: C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/_
 source/sci.obj: C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/machine/_limits.h
 
 ../source/sci.c: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ff.h: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/integer.h: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ffconf.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/sci.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_sci.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/sys_common.h: 

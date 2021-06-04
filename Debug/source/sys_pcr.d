@@ -1,6 +1,9 @@
 # FIXED
 
 source/sys_pcr.obj: ../source/sys_pcr.c
+source/sys_pcr.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ff.h
+source/sys_pcr.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/integer.h
+source/sys_pcr.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ffconf.h
 source/sys_pcr.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/sys_pcr.h
 source/sys_pcr.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_pcr.h
 source/sys_pcr.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/sys_common.h
@@ -16,6 +19,9 @@ source/sys_pcr.obj: C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/inclu
 source/sys_pcr.obj: C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/stdbool.h
 
 ../source/sys_pcr.c: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ff.h: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/integer.h: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ffconf.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/sys_pcr.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_pcr.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/sys_common.h: 

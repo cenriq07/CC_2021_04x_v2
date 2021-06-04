@@ -1,6 +1,9 @@
 # FIXED
 
 source/spi.obj: ../source/spi.c
+source/spi.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ff.h
+source/spi.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/integer.h
+source/spi.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ffconf.h
 source/spi.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/spi.h
 source/spi.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_spi.h
 source/spi.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/sys_common.h
@@ -19,6 +22,9 @@ source/spi.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/sys_vim.h
 source/spi.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_vim.h
 
 ../source/spi.c: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ff.h: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/integer.h: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ffconf.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/spi.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_spi.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/sys_common.h: 

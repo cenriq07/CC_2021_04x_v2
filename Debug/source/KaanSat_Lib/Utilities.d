@@ -1,6 +1,9 @@
 # FIXED
 
 source/KaanSat_Lib/Utilities.obj: ../source/KaanSat_Lib/Utilities.c
+source/KaanSat_Lib/Utilities.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ff.h
+source/KaanSat_Lib/Utilities.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/integer.h
+source/KaanSat_Lib/Utilities.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ffconf.h
 source/KaanSat_Lib/Utilities.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/KaanSat_Lib/Utilities.h
 source/KaanSat_Lib/Utilities.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/FreeRTOS.h
 source/KaanSat_Lib/Utilities.obj: C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/stddef.h
@@ -44,6 +47,9 @@ source/KaanSat_Lib/Utilities.obj: C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.
 source/KaanSat_Lib/Utilities.obj: C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/strings.h
 
 ../source/KaanSat_Lib/Utilities.c: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ff.h: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/integer.h: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ffconf.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/KaanSat_Lib/Utilities.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/FreeRTOS.h: 
 C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/stddef.h: 

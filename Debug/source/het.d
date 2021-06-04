@@ -1,6 +1,9 @@
 # FIXED
 
 source/het.obj: ../source/het.c
+source/het.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ff.h
+source/het.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/integer.h
+source/het.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ffconf.h
 source/het.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/het.h
 source/het.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_het.h
 source/het.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/sys_common.h
@@ -22,6 +25,9 @@ source/het.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/sys_vim.h
 source/het.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_vim.h
 
 ../source/het.c: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ff.h: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/integer.h: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ffconf.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/het.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_het.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/sys_common.h: 

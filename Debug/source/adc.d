@@ -1,6 +1,9 @@
 # FIXED
 
 source/adc.obj: ../source/adc.c
+source/adc.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ff.h
+source/adc.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/integer.h
+source/adc.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ffconf.h
 source/adc.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/adc.h
 source/adc.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_adc.h
 source/adc.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/sys_common.h
@@ -18,6 +21,9 @@ source/adc.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/sys_vim.h
 source/adc.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_vim.h
 
 ../source/adc.c: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ff.h: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/integer.h: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ffconf.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/adc.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_adc.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/sys_common.h: 

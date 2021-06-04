@@ -1,6 +1,9 @@
 # FIXED
 
 source/sys_main.obj: ../source/sys_main.c
+source/sys_main.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ff.h
+source/sys_main.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/integer.h
+source/sys_main.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ffconf.h
 source/sys_main.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/FreeRTOS.h
 source/sys_main.obj: C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/stddef.h
 source/sys_main.obj: C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/_ti_config.h
@@ -49,10 +52,15 @@ source/sys_main.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/esm.h
 source/sys_main.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_esm.h
 source/sys_main.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/KaanSat_Lib/BMP280.h
 source/sys_main.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/KaanSat_Lib/allADC.h
+source/sys_main.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/KaanSat_Lib/microSD.h
+source/sys_main.obj: C:/Users/ADMIN/workspace_v9/microSD_04x/SDCard/uartstdio.h
 source/sys_main.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/lin.h
 source/sys_main.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_lin.h
 
 ../source/sys_main.c: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ff.h: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/integer.h: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ffconf.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/FreeRTOS.h: 
 C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/stddef.h: 
 C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/_ti_config.h: 
@@ -101,5 +109,7 @@ C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/esm.h:
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_esm.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/KaanSat_Lib/BMP280.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/KaanSat_Lib/allADC.h: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/KaanSat_Lib/microSD.h: 
+C:/Users/ADMIN/workspace_v9/microSD_04x/SDCard/uartstdio.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/lin.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_lin.h: 

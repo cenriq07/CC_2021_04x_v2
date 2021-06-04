@@ -1,6 +1,9 @@
 # FIXED
 
 source/KaanSat_Lib/Commands.obj: ../source/KaanSat_Lib/Commands.c
+source/KaanSat_Lib/Commands.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ff.h
+source/KaanSat_Lib/Commands.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/integer.h
+source/KaanSat_Lib/Commands.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ffconf.h
 source/KaanSat_Lib/Commands.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/KaanSat_Lib/Commands.h
 source/KaanSat_Lib/Commands.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/KaanSat_Lib/Utilities.h
 source/KaanSat_Lib/Commands.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/FreeRTOS.h
@@ -34,8 +37,8 @@ source/KaanSat_Lib/Commands.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/incl
 source/KaanSat_Lib/Commands.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/het.h
 source/KaanSat_Lib/Commands.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_het.h
 source/KaanSat_Lib/Commands.obj: C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/string.h
-source/KaanSat_Lib/Commands.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/KaanSat_Lib/adc.h
-source/KaanSat_Lib/Commands.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/KaanSat_Lib/adc.h
+source/KaanSat_Lib/Commands.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/adc.h
+source/KaanSat_Lib/Commands.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_adc.h
 source/KaanSat_Lib/Commands.obj: C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/stdio.h
 source/KaanSat_Lib/Commands.obj: C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/stdarg.h
 source/KaanSat_Lib/Commands.obj: C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/stdlib.h
@@ -45,6 +48,9 @@ source/KaanSat_Lib/Commands.obj: C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.1
 source/KaanSat_Lib/Commands.obj: C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/strings.h
 
 ../source/KaanSat_Lib/Commands.c: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ff.h: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/integer.h: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/fatfs/src/ffconf.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/KaanSat_Lib/Commands.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/KaanSat_Lib/Utilities.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/FreeRTOS.h: 
@@ -78,8 +84,8 @@ C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_spi.h:
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/het.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_het.h: 
 C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/string.h: 
-C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/KaanSat_Lib/adc.h: 
-C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/KaanSat_Lib/adc.h: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/adc.h: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_adc.h: 
 C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/stdio.h: 
 C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/stdarg.h: 
 C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/stdlib.h: 
