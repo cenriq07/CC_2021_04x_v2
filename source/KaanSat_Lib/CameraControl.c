@@ -18,10 +18,11 @@ static int16_t DATOS_MAGNETOMETRO[3] = {0,0,0};
 
 void CameraControl_Init() {
     if (INIT == 0) {
+        INIT = 1;
+
         MPUInit();
         EncoderInit();
         MOTOR.period = 20000;
-        INIT = 1;
     }
 }
 

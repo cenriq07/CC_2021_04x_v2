@@ -42,7 +42,7 @@
 #define COMM_SIZE       200
 #define T_TELEMETRY     1000/portTICK_RATE_MS
 #define T_SENSORS       500/portTICK_RATE_MS
-#define T_OPERATIONS    2000/portTICK_RATE_MS
+#define T_OPERATIONS    50/portTICK_RATE_MS
 #define LONG_CMD_KEY    100
 #define LONG_SP_PARAM   4
 #define TEAM_NUMBER     "1714"

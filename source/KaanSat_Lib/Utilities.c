@@ -404,5 +404,4 @@ void hacernada(uint32 id)
     {
         id--;
     }
-//  return(void);
 }

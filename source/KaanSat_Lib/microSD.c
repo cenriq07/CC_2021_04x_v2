@@ -39,5 +39,6 @@ int sdWriteMemory(const char* path, char* data)
     }
 
     gioToggleBit(gioPORTA, 0U);
+    return 0;
 }
 

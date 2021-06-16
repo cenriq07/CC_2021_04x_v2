@@ -164,9 +164,17 @@ spiDAT1_t   SPI1_data_configCh2;        /*SPI data register configuration BMP*/
 
 static int INIT = 0;
 
+static void hacernada(uint32 id)
+{
+    while(id)
+        id--;
+}
+
 void BMP280_Init(void)
 {
     if (INIT == 0) {
+        INIT = 1;
+
         /* Configurar el SPI3 */
         SPI1_data_configCh2.CS_HOLD=FALSE;
         SPI1_data_configCh2.WDEL=TRUE;
@@ -182,8 +190,6 @@ void BMP280_Init(void)
         hacernada(100000);
 
         CAlibracion_BMP280(spiREG_BMP, SPI1_data_configCh2);
-
-        INIT = 1;
     }
 }
 

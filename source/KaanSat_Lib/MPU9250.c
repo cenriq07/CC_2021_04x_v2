@@ -28,6 +28,7 @@ static int INIT = 0;
 void MPUInit()
 {
     if (INIT == 0) {
+        INIT = 1;
         SPI1_data_configCh0.CS_HOLD=FALSE;
         SPI1_data_configCh0.WDEL=TRUE;
         SPI1_data_configCh0.DFSEL=SPI_FMT_0;
@@ -46,8 +47,6 @@ void MPUInit()
 
         read_AK8963(spiREG1, &SPI1_data_configCh0, MPU_AK8963_WIA, AK8963ReadOut);
         sciEnviarDatos(sprintf(command,"MAG ID=  %X ",AK8963ReadOut[0] ),command, 1);
-
-        INIT = 1;
     }
 }
 
@@ -258,6 +257,8 @@ boolean mpuGetGyroAccel(spiBASE_t *spiREGISTRO, spiDAT1_t *SPIconfig, int *Gyro,
     DatoSPI01_MPU[0]=(DatoSPI01_MPU[0] & 0x00FF);
     SPI_Dat_respH_L = (SPI_Dat_respH_L | DatoSPI01_MPU[0]);
     Accel[Z]=(int32_t)((int16_t)(SPI_Dat_respH_L));
+
+    return true;
 }
 
 /*-----------------------------------------------------------------------------------*/
@@ -403,6 +404,8 @@ boolean read_MPU_ACEL_TMP_VF(spiBASE_t *spiREGISTRO, spiDAT1_t *SPIconfig, int *
     {
         sciEnviarDatos(sprintf(command,"%s,",cGz), command, 0);         /* MODIFIED */
     }
+
+    return 0;
 }
 
 

@@ -1,10 +1,10 @@
 ******************************************************************************
-                  TI ARM Linker PC v18.12.4                    
+                  TI ARM Linker PC v20.2.4                     
 ******************************************************************************
->> Linked Wed Jun 16 01:33:48 2021
+>> Linked Wed Jun 16 09:15:14 2021
 
 OUTPUT FILE NAME:   <CC_2021_04x_v2.out>
-ENTRY POINT SYMBOL: "_c_int00"  address: 00022364
+ENTRY POINT SYMBOL: "_c_int00"  address: 000223d0
 
 
 MEMORY CONFIGURATION
@@ -12,33 +12,33 @@ MEMORY CONFIGURATION
          name            origin    length      used     unused   attr    fill
 ----------------------  --------  ---------  --------  --------  ----  --------
   VECTORS               00000000   00000020  00000020  00000000     X
-  KERNEL                00000020   00008000  00005ae0  00002520  R  X
-  FLASH0                00008020   00057fe0  0001f674  0003896c  R  X
+  KERNEL                00000020   00008000  00005aac  00002554  R  X
+  FLASH0                00008020   00057fe0  0001f6b0  00038930  R  X
   STACKS                08000000   00000800  00000000  00000800  RW  
   KRAM                  08000800   00000800  00000104  000006fc  RW  
-  RAM                   08001000   00007000  00003093  00003f6d  RW  
+  RAM                   08001000   00007000  0000309f  00003f61  RW  
 
 
 SEGMENT ALLOCATION MAP
 
 run origin  load origin   length   init length attrs members
 ----------  ----------- ---------- ----------- ----- -------
-00000000    00000000    000050e0   000050e0    r-x
+00000000    00000000    000050ac   000050ac    r-x
   00000000    00000000    00000020   00000020    r-x .intvecs
-  00000020    00000020    000050c0   000050c0    r-x .kernelTEXT
-000050e0    000050e0    00000800   00000000    rw-
-  000050e0    000050e0    00000800   00000000    rw- .sysmem
-000058e0    000058e0    00000220   00000220    r--
-  000058e0    000058e0    00000220   00000220    r-- .cinit
-00008020    00008020    0001f674   0001f674    r-x
-  00008020    00008020    0001e9d8   0001e9d8    r-x .text
-  000269f8    000269f8    00000c9c   00000c9c    r-- .const
+  00000020    00000020    0000508c   0000508c    r-x .kernelTEXT
+000050b0    000050b0    00000800   00000000    rw-
+  000050b0    000050b0    00000800   00000000    rw- .sysmem
+000058b0    000058b0    00000220   00000220    r--
+  000058b0    000058b0    00000220   00000220    r-- .cinit
+00008020    00008020    0001f6b4   0001f6b4    r-x
+  00008020    00008020    0001ea14   0001ea14    r-x .text
+  00026a38    00026a38    00000c9c   00000c9c    r-- .const
 08000800    08000800    00000104   00000000    rw-
   08000800    08000800    00000104   00000000    rw- .kernelBSS
-08001000    08001000    00003095   00000000    rw-
+08001000    08001000    000030a1   00000000    rw-
   08001000    08001000    00002000   00000000    rw- .kernelHEAP
   08003000    08003000    00000b3a   00000000    rw- .bss
-  08003b3c    08003b3c    00000559   00000000    rw- .data
+  08003b3c    08003b3c    00000565   00000000    rw- .data
 
 
 SECTION ALLOCATION MAP
@@ -50,207 +50,206 @@ section   page    origin      length       input sections
                   00000000    00000020     sys_intvecs.obj (.intvecs)
 
 .kernelTEXT 
-*          0    00000020    000050c0     
-                  00000020    00002bdc     os_tasks.obj (.kernelTEXT)
-                  00002bfc    000011dc     os_queue.obj (.kernelTEXT)
-                  00003dd8    0000081c     os_event_groups.obj (.kernelTEXT)
-                  000045f4    000003bc     os_port.obj (.kernelTEXT)
-                  000049b0    000003b0     os_portasm.obj (.kernelTEXT)
-                  00004d60    00000380     os_heap.obj (.kernelTEXT)
+*          0    00000020    0000508c     
+                  00000020    00002bb8     os_tasks.obj (.kernelTEXT)
+                  00002bd8    000011d4     os_queue.obj (.kernelTEXT)
+                  00003dac    00000818     os_event_groups.obj (.kernelTEXT)
+                  000045c4    000003bc     os_port.obj (.kernelTEXT)
+                  00004980    000003b0     os_portasm.obj (.kernelTEXT)
+                  00004d30    0000037c     os_heap.obj (.kernelTEXT)
 
-.cinit     0    000058e0    00000220     
-                  000058e0    000001d5     (.cinit..data.load) [load image, compression = lzss]
-                  00005ab5    00000003     --HOLE-- [fill = 0]
-                  00005ab8    0000000c     (__TI_handler_table)
-                  00005ac4    00000009     (.cinit..kernelBSS.load) [load image, compression = lzss]
-                  00005acd    00000003     --HOLE-- [fill = 0]
-                  00005ad0    00000008     (.cinit..bss.load) [load image, compression = zero_init]
-                  00005ad8    00000008     (.cinit..kernelHEAP.load) [load image, compression = zero_init]
-                  00005ae0    00000020     (__TI_cinit_table)
+.cinit     0    000058b0    00000220     
+                  000058b0    000001d4     (.cinit..data.load) [load image, compression = lzss]
+                  00005a84    0000000c     (__TI_handler_table)
+                  00005a90    00000009     (.cinit..kernelBSS.load) [load image, compression = lzss]
+                  00005a99    00000007     --HOLE-- [fill = 0]
+                  00005aa0    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  00005aa8    00000008     (.cinit..kernelHEAP.load) [load image, compression = zero_init]
+                  00005ab0    00000020     (__TI_cinit_table)
 
-.text      0    00008020    0001e9d8     
+.text      0    00008020    0001ea14     
                   00008020    00004d48     ff.obj (.text)
                   0000cd68    000024f0     sys_selftest.obj (.text)
-                  0000f258    000016ec     MPU9250.obj (.text)
-                  00010944    00001570     BMP280.obj (.text)
-                  00011eb4    000010f4     spi.obj (.text)
-                  00012fa8    00000ff0     rtsv7R4_A_be_eabi.lib : _printfi.c.obj (.text:__TI_printfi)
-                  00013f98    00000e98     mmc-hercules.obj (.text)
-                  00014e30    00000e8c     rtsv7R4_A_be_eabi.lib : e_pow.c.obj (.text:pow)
-                  00015cbc    00000d40     Utilities.obj (.text)
-                  000169fc    00000cf8     sd_card.obj (.text)
-                  000176f4    00000aa0     system.obj (.text)
-                  00018194    00000a78     adc.obj (.text)
-                  00018c0c    000009fc     rtsv7R4_A_be_eabi.lib : k_rem_pio2.c.obj (.text:__kernel_rem_pio2)
-                  00019608    000009a0     os_mpu_wrappers.obj (.text)
-                  00019fa8    000008fc     het.obj (.text)
-                  0001a8a4    000008b0     rtsv7R4_A_be_eabi.lib : s_cos.c.obj (.text:cos)
-                  0001b154    0000089c     sys_vim.obj (.text)
-                  0001b9f0    00000894     rtsv7R4_A_be_eabi.lib : s_sin.c.obj (.text:sin)
-                  0001c284    0000074c     spi.obj (.text:retain)
-                  0001c9d0    00000734     Commands.obj (.text)
-                  0001d104    00000728     uartstdio.obj (.text)
-                  0001d82c    000006e4     sci.obj (.text)
-                  0001df10    00000688     sys_main.obj (.text)
-                  0001e598    00000664     errata_SSWF021_45.obj (.text)
-                  0001ebfc    00000664     rtsv7R4_A_be_eabi.lib : strtod.c.obj (.text:strtod)
-                  0001f260    000005bc     esm.obj (.text)
-                  0001f81c    0000058c     rtsv7R4_A_be_eabi.lib : e_log.c.obj (.text:log)
-                  0001fda8    0000044c                           : s_atan.c.obj (.text:atan)
-                  000201f4    00000384     sci.obj (.text:retain)
-                  00020578    0000036c     gio.obj (.text)
-                  000208e4    00000364     rtsv7R4_A_be_eabi.lib : _printfi.c.obj (.text:_pconv_a)
-                  00020c48    0000030c     CameraControl.obj (.text)
-                  00020f54    000002d0     sys_core.obj (.text)
-                  00021224    000002c0     rtsv7R4_A_be_eabi.lib : _printfi.c.obj (.text:_pconv_g)
-                  000214e4    000002b8                           : ull_div32.asm.obj (.text)
-                  0002179c    0000028c                           : e_atan2.c.obj (.text:atan2)
-                  00021a28    00000278     os_heap.obj (.text)
-                  00021ca0    00000268     sys_vim.obj (.text:retain)
-                  00021f08    00000238     os_list.obj (.text)
-                  00022140    00000224     rtsv7R4_A_be_eabi.lib : k_sin.c.obj (.text:__kernel_sin)
-                  00022364    0000021c     sys_startup.obj (.text:retain)
-                  00022580    00000214     rtsv7R4_A_be_eabi.lib : fd_add32.asm.obj (.text)
-                  00022794    00000210                           : k_cos.c.obj (.text:__kernel_cos)
-                  000229a4    000001ec                           : e_sqrt.c.obj (.text:sqrt)
-                  00022b90    000001b4     os_port.obj (.text)
-                  00022d44    000001b0     rtsv7R4_A_be_eabi.lib : _printfi.c.obj (.text:_pconv_e)
-                  00022ef4    000001ac                           : memory.c.obj (.text:aligned_alloc)
-                  000230a0    000001ac                           : _printfi.c.obj (.text:fcvt)
-                  0002324c    000001a4                           : fputs.c.obj (.text:fputs)
-                  000233f0    00000198     PWM.obj (.text)
-                  00023588    00000190     rtsv7R4_A_be_eabi.lib : fd_div32.asm.obj (.text)
-                  00023718    00000180                           : memcpy32.asm.obj (.text)
-                  00023898    00000174                           : memory.c.obj (.text:free)
-                  00023a0c    00000164     os_tasks.obj (.text)
-                  00023b70    00000158     rtsv7R4_A_be_eabi.lib : s_floor.c.obj (.text:floor)
-                  00023cc8    00000158                           : setvbuf.c.obj (.text:setvbuf)
-                  00023e20    00000154     pinmux.obj (.text)
-                  00023f74    00000144     allADC.obj (.text)
-                  000240b8    00000134     rtsv7R4_A_be_eabi.lib : fs_add32.asm.obj (.text)
-                  000241ec    00000130     cmdline.obj (.text)
-                  0002431c    00000128     rtsv7R4_A_be_eabi.lib : fd_mul32.asm.obj (.text)
-                  00024444    00000120                           : s_scalbn.c.obj (.text:scalbn)
-                  00024564    00000115                           : _printfi.c.obj (.text:_ltostr)
-                  00024679    00000003     --HOLE-- [fill = 0]
-                  0002467c    00000114     Encoder.obj (.text)
-                  00024790    000000f8     notification.obj (.text)
-                  00024888    000000ec     esm.obj (.text:retain)
-                  00024974    000000e8     dabort.obj (.text)
-                  00024a5c    000000e0     rtsv7R4_A_be_eabi.lib : fd_cmp32.asm.obj (.text:__aeabi_cdcmple)
-                  00024b3c    000000e0                           : fd_cmp32.asm.obj (.text:__aeabi_cdrcmple)
-                  00024c1c    000000e0     sys_pmu.obj (.text)
-                  00024cfc    000000d4     rtsv7R4_A_be_eabi.lib : fs_div32.asm.obj (.text)
-                  00024dd0    000000c8                           : _printfi.c.obj (.text:_mcpy)
-                  00024e98    000000b8                           : fclose.c.obj (.text:__TI_closefile)
-                  00024f50    000000b0                           : memset32.asm.obj (.text)
-                  00025000    000000ac                           : hostlseek.c.obj (.text:HOSTlseek)
-                  000250ac    000000ac                           : fflush.c.obj (.text:fflush)
-                  00025158    000000ac                           : memory.c.obj (.text:split)
-                  00025204    000000a8                           : fseek.c.obj (.text:fseek)
-                  000252ac    000000a8                           : fs_mul32.asm.obj (.text)
-                  00025354    000000a4                           : hostrename.c.obj (.text:HOSTrename)
-                  000253f8    000000a0                           : _io_perm.c.obj (.text:__TI_wrt_ok)
-                  00025498    000000a0     microSD.obj (.text)
-                  00025538    0000009c     rtsv7R4_A_be_eabi.lib : fd_tos32.asm.obj (.text)
-                  000255d4    00000098                           : hostopen.c.obj (.text:HOSTopen)
-                  0002566c    00000098                           : _printfi.c.obj (.text:_ecpy)
-                  00025704    00000098                           : close.c.obj (.text:close)
-                  0002579c    00000098                           : ll_div32.asm.obj (.text)
-                  00025834    00000090                           : hostread.c.obj (.text:HOSTread)
-                  000258c4    00000090                           : hostwrite.c.obj (.text:HOSTwrite)
-                  00025954    00000090                           : copy_decompress_lzss.c.obj (.text:decompress:lzss:__TI_decompress_lzss)
-                  000259e4    00000088                           : fs_cmp32.asm.obj (.text:__aeabi_cfcmple)
-                  00025a6c    00000088                           : fs_cmp32.asm.obj (.text:__aeabi_cfrcmple)
-                  00025af4    00000084                           : fflush.c.obj (.text:__TI_doflush)
-                  00025b78    00000084                           : _printfi.c.obj (.text:_pconv_f)
-                  00025bfc    00000084                           : atoi.c.obj (.text:atoi)
-                  00025c80    00000080                           : ltoa.c.obj (.text:ltoa)
-                  00025d00    0000007c                           : exit.c.obj (.text:exit)
-                  00025d7c    0000007c                           : s_frexp.c.obj (.text:frexp)
-                  00025df8    00000074                           : hostclose.c.obj (.text:HOSTclose)
-                  00025e6c    00000070                           : hostunlink.c.obj (.text:HOSTunlink)
-                  00025edc    0000006c                           : getdevice.c.obj (.text:getdevice)
-                  00025f48    00000068                           : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit:__TI_auto_init_nobinit_nopinit)
-                  00025fb0    00000068                           : strtok.c.obj (.text:strtok)
-                  00026018    00000064                           : _printfi.c.obj (.text:_fcpy)
-                  0002607c    00000064                           : sprintf.c.obj (.text:sprintf)
-                  000260e0    00000060                           : ll_tofs32.asm.obj (.text)
-                  00026140    0000005c                           : fd_toi32.asm.obj (.text)
-                  0002619c    0000005c                           : fs_tod32.asm.obj (.text)
-                  000261f8    00000058                           : fd_tou32.asm.obj (.text)
-                  00026250    00000054                           : fopen.c.obj (.text:__TI_cleanup)
-                  000262a4    00000054                           : trgmsg.c.obj (.text:__TI_readmsg)
-                  000262f8    00000054                           : trgmsg.c.obj (.text:__TI_writemsg)
-                  0002634c    00000054                           : getdevice.c.obj (.text:finddevice)
-                  000263a0    00000054                           : i_div32.asm.obj (.text)
-                  000263f4    00000050                           : u_div32.asm.obj (.text)
-                  00026444    0000004c                           : rand.c.obj (.text:rand)
-                  00026490    0000004c                           : fs_toi32.asm.obj (.text)
-                  000264dc    0000004c                           : fs_tou32.asm.obj (.text)
-                  00026528    0000004c                           : i_tofs32.asm.obj (.text)
-                  00026574    0000004c                           : strspn.c.obj (.text:strspn)
-                  000265c0    00000048                           : strncpy.c.obj (.text:strncpy)
-                  00026608    00000048                           : unlink.c.obj (.text:unlink)
-                  00026650    00000044                           : lseek.c.obj (.text:lseek)
-                  00026694    00000044                           : strcspn.c.obj (.text:strcspn)
-                  000266d8    00000044                           : write.c.obj (.text:write)
-                  0002671c    00000040                           : memory.c.obj (.text:free_list_insert)
-                  0002675c    0000003c                           : i_tofd32.asm.obj (.text)
-                  00026798    00000034                           : u_tofd32.asm.obj (.text)
-                  000267cc    00000030                           : sprintf.c.obj (.text:_outs)
-                  000267fc    00000030                           : memory.c.obj (.text:free_list_remove)
-                  0002682c    0000002c                           : memccpy.c.obj (.text:memccpy)
-                  00026858    0000002c                           : memchr.c.obj (.text:memchr)
-                  00026884    00000028                           : strcat.c.obj (.text:strcat)
-                  000268ac    00000028                           : strchr.c.obj (.text:strchr)
-                  000268d4    00000028                           : strcmp.c.obj (.text:strcmp)
-                  000268fc    00000024                           : assert.c.obj (.text:_abort_msg)
-                  00026920    00000024                           : wcslen.c.obj (.text:wcslen)
-                  00026944    00000020                           : strlen.c.obj (.text:strlen)
-                  00026964    00000018                           : strcpy.c.obj (.text:strcpy)
-                  0002697c    00000014                           : sprintf.c.obj (.text:_outc)
-                  00026990    00000014                           : copy_decompress_none.c.obj (.text:decompress:none:__TI_decompress_none)
-                  000269a4    00000010                           : copy_zero_init.c.obj (.text:decompress:ZI:__TI_zero_init)
-                  000269b4    0000000c                           : errno.c.obj (.text:__aeabi_errno_addr)
-                  000269c0    0000000c                           : s_copysign.c.obj (.text:copysign)
-                  000269cc    0000000c                           : memory.c.obj (.text:malloc)
-                  000269d8    00000008                           : exit.c.obj (.text:abort:abort)
-                  000269e0    00000008                           : atof.c.obj (.text:atof)
-                  000269e8    00000004                           : _lock.c.obj (.text:_nop)
-                  000269ec    00000004     sys_phantom.obj (.text:retain)
-                  000269f0    00000004     rtsv7R4_A_be_eabi.lib : div0.asm.obj (.text)
-                  000269f4    00000004     sys_startup.obj (.text)
+                  0000f258    00001714     MPU9250.obj (.text)
+                  0001096c    000015c4     BMP280.obj (.text)
+                  00011f30    000010f4     spi.obj (.text)
+                  00013024    00000ff0     rtsv7R4_A_be_eabi.lib : _printfi.c.obj (.text:__TI_printfi)
+                  00014014    00000e98     mmc-hercules.obj (.text)
+                  00014eac    00000e8c     rtsv7R4_A_be_eabi.lib : e_pow.c.obj (.text:pow)
+                  00015d38    00000d3c     Utilities.obj (.text)
+                  00016a74    00000cf8     sd_card.obj (.text)
+                  0001776c    00000aa0     system.obj (.text)
+                  0001820c    00000a78     adc.obj (.text)
+                  00018c84    000009fc     rtsv7R4_A_be_eabi.lib : k_rem_pio2.c.obj (.text:__kernel_rem_pio2)
+                  00019680    000009a0     os_mpu_wrappers.obj (.text)
+                  0001a020    000008fc     het.obj (.text)
+                  0001a91c    000008b0     rtsv7R4_A_be_eabi.lib : s_cos.c.obj (.text:cos)
+                  0001b1cc    0000089c     sys_vim.obj (.text)
+                  0001ba68    00000894     rtsv7R4_A_be_eabi.lib : s_sin.c.obj (.text:sin)
+                  0001c2fc    0000074c     spi.obj (.text:retain)
+                  0001ca48    00000738     Commands.obj (.text)
+                  0001d180    00000728     uartstdio.obj (.text)
+                  0001d8a8    000006e4     sci.obj (.text)
+                  0001df8c    00000678     sys_main.obj (.text)
+                  0001e604    00000664     errata_SSWF021_45.obj (.text)
+                  0001ec68    00000664     rtsv7R4_A_be_eabi.lib : strtod.c.obj (.text:strtod)
+                  0001f2cc    000005bc     esm.obj (.text)
+                  0001f888    0000058c     rtsv7R4_A_be_eabi.lib : e_log.c.obj (.text:log)
+                  0001fe14    0000044c                           : s_atan.c.obj (.text:atan)
+                  00020260    00000384     sci.obj (.text:retain)
+                  000205e4    0000036c     gio.obj (.text)
+                  00020950    00000364     rtsv7R4_A_be_eabi.lib : _printfi.c.obj (.text:_pconv_a)
+                  00020cb4    0000030c     CameraControl.obj (.text)
+                  00020fc0    000002d0     sys_core.obj (.text)
+                  00021290    000002c0     rtsv7R4_A_be_eabi.lib : _printfi.c.obj (.text:_pconv_g)
+                  00021550    000002b8                           : ull_div32.asm.obj (.text)
+                  00021808    0000028c                           : e_atan2.c.obj (.text:atan2)
+                  00021a94    00000278     os_heap.obj (.text)
+                  00021d0c    00000268     sys_vim.obj (.text:retain)
+                  00021f74    00000238     os_list.obj (.text)
+                  000221ac    00000224     rtsv7R4_A_be_eabi.lib : k_sin.c.obj (.text:__kernel_sin)
+                  000223d0    00000214     sys_startup.obj (.text:retain)
+                  000225e4    00000214     rtsv7R4_A_be_eabi.lib : fd_add32.asm.obj (.text)
+                  000227f8    00000210                           : k_cos.c.obj (.text:__kernel_cos)
+                  00022a08    000001ec                           : e_sqrt.c.obj (.text:sqrt)
+                  00022bf4    000001b0                           : _printfi.c.obj (.text:_pconv_e)
+                  00022da4    000001b0     os_port.obj (.text)
+                  00022f54    000001ac     rtsv7R4_A_be_eabi.lib : _printfi.c.obj (.text:fcvt)
+                  00023100    000001a4                           : fputs.c.obj (.text:fputs)
+                  000232a4    00000198     PWM.obj (.text)
+                  0002343c    00000198     rtsv7R4_A_be_eabi.lib : memory.c.obj (.text:aligned_alloc)
+                  000235d4    00000190                           : fd_div32.asm.obj (.text)
+                  00023764    00000180                           : memcpy32.asm.obj (.text)
+                  000238e4    00000174                           : memory.c.obj (.text:free)
+                  00023a58    00000158                           : s_floor.c.obj (.text:floor)
+                  00023bb0    00000158     os_tasks.obj (.text)
+                  00023d08    00000158     rtsv7R4_A_be_eabi.lib : setvbuf.c.obj (.text:setvbuf)
+                  00023e60    00000154     pinmux.obj (.text)
+                  00023fb4    00000144     allADC.obj (.text)
+                  000240f8    00000134     rtsv7R4_A_be_eabi.lib : fs_add32.asm.obj (.text)
+                  0002422c    00000130     cmdline.obj (.text)
+                  0002435c    00000128     rtsv7R4_A_be_eabi.lib : fd_mul32.asm.obj (.text)
+                  00024484    00000120                           : s_scalbn.c.obj (.text:scalbn)
+                  000245a4    00000115                           : _printfi.c.obj (.text:_ltostr)
+                  000246b9    00000003     --HOLE-- [fill = 0]
+                  000246bc    00000114     Encoder.obj (.text)
+                  000247d0    000000f8     notification.obj (.text)
+                  000248c8    000000ec     esm.obj (.text:retain)
+                  000249b4    000000e8     dabort.obj (.text)
+                  00024a9c    000000e0     rtsv7R4_A_be_eabi.lib : fd_cmp32.asm.obj (.text:__aeabi_cdcmple)
+                  00024b7c    000000e0                           : fd_cmp32.asm.obj (.text:__aeabi_cdrcmple)
+                  00024c5c    000000e0     sys_pmu.obj (.text)
+                  00024d3c    000000d4     rtsv7R4_A_be_eabi.lib : fs_div32.asm.obj (.text)
+                  00024e10    000000c8                           : _printfi.c.obj (.text:_mcpy)
+                  00024ed8    000000b8                           : fclose.c.obj (.text:__TI_closefile)
+                  00024f90    000000b0                           : memset32.asm.obj (.text)
+                  00025040    000000b0                           : memory.c.obj (.text:split)
+                  000250f0    000000ac                           : hostlseek.c.obj (.text:HOSTlseek)
+                  0002519c    000000ac                           : fflush.c.obj (.text:fflush)
+                  00025248    000000a8                           : fseek.c.obj (.text:fseek)
+                  000252f0    000000a8                           : fs_mul32.asm.obj (.text)
+                  00025398    000000a4                           : hostrename.c.obj (.text:HOSTrename)
+                  0002543c    000000a0                           : _io_perm.c.obj (.text:__TI_wrt_ok)
+                  000254dc    0000009c                           : fd_tos32.asm.obj (.text)
+                  00025578    00000098                           : hostopen.c.obj (.text:HOSTopen)
+                  00025610    00000098                           : _printfi.c.obj (.text:_ecpy)
+                  000256a8    00000098                           : close.c.obj (.text:close)
+                  00025740    00000098                           : ll_div32.asm.obj (.text)
+                  000257d8    00000094     microSD.obj (.text)
+                  0002586c    00000090     rtsv7R4_A_be_eabi.lib : hostread.c.obj (.text:HOSTread)
+                  000258fc    00000090                           : hostwrite.c.obj (.text:HOSTwrite)
+                  0002598c    00000090                           : copy_decompress_lzss.c.obj (.text:decompress:lzss:__TI_decompress_lzss)
+                  00025a1c    00000088                           : fs_cmp32.asm.obj (.text:__aeabi_cfcmple)
+                  00025aa4    00000088                           : fs_cmp32.asm.obj (.text:__aeabi_cfrcmple)
+                  00025b2c    00000084                           : fflush.c.obj (.text:__TI_doflush)
+                  00025bb0    00000084                           : _printfi.c.obj (.text:_pconv_f)
+                  00025c34    00000084                           : atoi.c.obj (.text:atoi)
+                  00025cb8    00000080                           : _ltoa.c.obj (.text:__TI_ltoa)
+                  00025d38    0000007c                           : exit.c.obj (.text:exit)
+                  00025db4    0000007c                           : s_frexp.c.obj (.text:frexp)
+                  00025e30    00000074                           : hostclose.c.obj (.text:HOSTclose)
+                  00025ea4    00000070                           : hostunlink.c.obj (.text:HOSTunlink)
+                  00025f14    0000006c                           : getdevice.c.obj (.text:getdevice)
+                  00025f80    00000068                           : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit:__TI_auto_init_nobinit_nopinit)
+                  00025fe8    00000068                           : strtok.c.obj (.text:strtok)
+                  00026050    00000064                           : _printfi.c.obj (.text:_fcpy)
+                  000260b4    00000064                           : sprintf.c.obj (.text:sprintf)
+                  00026118    00000060                           : ll_tofs32.asm.obj (.text)
+                  00026178    0000005c                           : fd_toi32.asm.obj (.text)
+                  000261d4    0000005c                           : fs_tod32.asm.obj (.text)
+                  00026230    00000058                           : fd_tou32.asm.obj (.text)
+                  00026288    00000054                           : fopen.c.obj (.text:__TI_cleanup)
+                  000262dc    00000054                           : trgmsg.c.obj (.text:__TI_readmsg)
+                  00026330    00000054                           : trgmsg.c.obj (.text:__TI_writemsg)
+                  00026384    00000054                           : getdevice.c.obj (.text:finddevice)
+                  000263d8    00000054                           : i_div32.asm.obj (.text)
+                  0002642c    00000050                           : u_div32.asm.obj (.text)
+                  0002647c    0000004c                           : rand.c.obj (.text:rand)
+                  000264c8    0000004c                           : fs_toi32.asm.obj (.text)
+                  00026514    0000004c                           : fs_tou32.asm.obj (.text)
+                  00026560    0000004c                           : i_tofs32.asm.obj (.text)
+                  000265ac    0000004c                           : strspn.c.obj (.text:strspn)
+                  000265f8    00000048                           : strncpy.c.obj (.text:strncpy)
+                  00026640    00000048                           : unlink.c.obj (.text:unlink)
+                  00026688    00000044                           : lseek.c.obj (.text:lseek)
+                  000266cc    00000044                           : strcspn.c.obj (.text:strcspn)
+                  00026710    00000044                           : write.c.obj (.text:write)
+                  00026754    00000040                           : memory.c.obj (.text:free_list_insert)
+                  00026794    0000003c                           : i_tofd32.asm.obj (.text)
+                  000267d0    00000034                           : u_tofd32.asm.obj (.text)
+                  00026804    00000030                           : sprintf.c.obj (.text:_outs)
+                  00026834    00000030                           : memory.c.obj (.text:free_list_remove)
+                  00026864    00000030                           : memccpy.c.obj (.text:memccpy)
+                  00026894    0000002c                           : memchr.c.obj (.text:memchr)
+                  000268c0    00000028                           : strcat.c.obj (.text:strcat)
+                  000268e8    00000028                           : strchr.c.obj (.text:strchr)
+                  00026910    00000028                           : strcmp.c.obj (.text:strcmp)
+                  00026938    00000024                           : assert.c.obj (.text:_abort_msg)
+                  0002695c    00000024                           : wcslen.c.obj (.text:wcslen)
+                  00026980    00000020                           : strlen.c.obj (.text:strlen)
+                  000269a0    00000018                           : strcpy.c.obj (.text:strcpy)
+                  000269b8    00000014                           : sprintf.c.obj (.text:_outc)
+                  000269cc    00000014                           : copy_decompress_none.c.obj (.text:decompress:none:__TI_decompress_none)
+                  000269e0    00000010                           : copy_zero_init.c.obj (.text:decompress:ZI:__TI_zero_init)
+                  000269f0    0000000c                           : errno.c.obj (.text:__aeabi_errno_addr)
+                  000269fc    0000000c                           : s_copysign.c.obj (.text:copysign)
+                  00026a08    0000000c                           : memory.c.obj (.text:malloc)
+                  00026a14    00000008                           : exit.c.obj (.text:abort:abort)
+                  00026a1c    00000008                           : atof.c.obj (.text:atof)
+                  00026a24    00000004                           : _lock.c.obj (.text:_nop)
+                  00026a28    00000004     sys_phantom.obj (.text:retain)
+                  00026a2c    00000004     rtsv7R4_A_be_eabi.lib : div0.asm.obj (.text)
+                  00026a30    00000004     sys_startup.obj (.text)
 
-.const     0    000269f8    00000c9c     
-                  000269f8    000003a0     het.obj (.const:het1PROGRAM)
-                  00026d98    00000230     sd_card.obj (.const:.string)
-                  00026fc8    00000180     sys_vim.obj (.const:s_vim_init)
-                  00027148    00000108     rtsv7R4_A_be_eabi.lib : k_rem_pio2.c.obj (.const:ipio2)
-                  00027250    00000101                           : ctype.c.obj (.const:.string:_ctypes_)
-                  00027351    00000002     Utilities.obj (.const:.string:$P$T0$1)
-                  00027353    00000001     --HOLE-- [fill = 0]
-                  00027354    000000b4     Utilities.obj (.const:.string)
-                  00027408    00000080     rtsv7R4_A_be_eabi.lib : strtod.c.obj (.const:digits)
-                  00027488    00000058                           : s_atan.c.obj (.const:aT)
-                  000274e0    00000048                           : strtod.c.obj (.const:powerof10)
-                  00027528    00000040                           : k_rem_pio2.c.obj (.const:PIo2)
-                  00027568    00000024     Commands.obj (.const:.string)
-                  0002758c    00000004     uartstdio.obj (.const)
-                  00027590    00000020     rtsv7R4_A_be_eabi.lib : s_atan.c.obj (.const:atanhi)
-                  000275b0    00000020                           : s_atan.c.obj (.const:atanlo)
-                  000275d0    00000020     PWM.obj (.const:s_het1pwmPolarity)
-                  000275f0    00000020     het.obj (.const:s_het1pwmPolarity)
-                  00027610    00000014     sys_main.obj (.const:$P$T0$1)
-                  00027624    00000014     uartstdio.obj (.const:.string)
-                  00027638    00000010     rtsv7R4_A_be_eabi.lib : e_pow.c.obj (.const:bp)
-                  00027648    00000010                           : e_pow.c.obj (.const:dp_h)
-                  00027658    00000010                           : e_pow.c.obj (.const:dp_l)
-                  00027668    00000010                           : k_rem_pio2.c.obj (.const:init_jk)
-                  00027678    0000000c     adc.obj (.const:s_adcFiFoSize)
-                  00027684    0000000c     adc.obj (.const:s_adcSelect)
-                  00027690    00000002     Utilities.obj (.const:.string:$P$T1$2)
-                  00027692    00000002     Utilities.obj (.const:.string:$P$T2$3)
+.const     0    00026a38    00000c9c     
+                  00026a38    000003a0     het.obj (.const:het1PROGRAM)
+                  00026dd8    00000230     sd_card.obj (.const:.string)
+                  00027008    00000180     sys_vim.obj (.const:s_vim_init)
+                  00027188    00000108     rtsv7R4_A_be_eabi.lib : k_rem_pio2.c.obj (.const:ipio2)
+                  00027290    00000101                           : ctype.c.obj (.const:.string:_ctypes_)
+                  00027391    00000002     Utilities.obj (.const:.string:$P$T0$1)
+                  00027393    00000001     --HOLE-- [fill = 0]
+                  00027394    000000b4     Utilities.obj (.const:.string)
+                  00027448    00000080     rtsv7R4_A_be_eabi.lib : strtod.c.obj (.const:digits)
+                  000274c8    00000058                           : s_atan.c.obj (.const:aT)
+                  00027520    00000048                           : strtod.c.obj (.const:powerof10)
+                  00027568    00000040                           : k_rem_pio2.c.obj (.const:PIo2)
+                  000275a8    00000024     Commands.obj (.const:.string)
+                  000275cc    00000004     uartstdio.obj (.const)
+                  000275d0    00000020     rtsv7R4_A_be_eabi.lib : s_atan.c.obj (.const:atanhi)
+                  000275f0    00000020                           : s_atan.c.obj (.const:atanlo)
+                  00027610    00000020     PWM.obj (.const:s_het1pwmPolarity)
+                  00027630    00000020     het.obj (.const:s_het1pwmPolarity)
+                  00027650    00000014     sys_main.obj (.const:$P$T0$1)
+                  00027664    00000014     uartstdio.obj (.const:.string)
+                  00027678    00000010     rtsv7R4_A_be_eabi.lib : e_pow.c.obj (.const:bp)
+                  00027688    00000010                           : e_pow.c.obj (.const:dp_h)
+                  00027698    00000010                           : e_pow.c.obj (.const:dp_l)
+                  000276a8    00000010                           : k_rem_pio2.c.obj (.const:init_jk)
+                  000276b8    0000000c     adc.obj (.const:s_adcFiFoSize)
+                  000276c4    0000000c     adc.obj (.const:s_adcSelect)
+                  000276d0    00000002     Utilities.obj (.const:.string:$P$T1$2)
+                  000276d2    00000002     Utilities.obj (.const:.string:$P$T2$3)
 
 .kernelBSS 
 *          0    08000800    00000104     UNINITIALIZED
@@ -294,7 +293,7 @@ section   page    origin      length       input sections
                   08003b37    00000001     (.common:iFResult)
                   08003b38    00000002     ff.obj (.bss)
 
-.data      0    08003b3c    00000559     UNINITIALIZED
+.data      0    08003b3c    00000565     UNINITIALIZED
                   08003b3c    000000f0     rtsv7R4_A_be_eabi.lib : defs.c.obj (.data:_ftable)
                   08003c2c    000000a0     sd_card.obj (.data:g_psFResultStrings)
                   08003ccc    00000078     rtsv7R4_A_be_eabi.lib : host_device.c.obj (.data:_device)
@@ -307,7 +306,8 @@ section   page    origin      length       input sections
                   08003eec    00000010     os_heap.obj (.data)
                   08003efc    00000010     rtsv7R4_A_be_eabi.lib : defs.c.obj (.data)
                   08003f0c    0000000e     MPU9250.obj (.data:AK8963ReadOut)
-                  08003f1a    00000002     BMP280.obj (.data)
+                  08003f1a    00000001     uartstdio.obj (.data)
+                  08003f1b    00000001     --HOLE--
                   08003f1c    0000000c     rtsv7R4_A_be_eabi.lib : exit.c.obj (.data:$O1$$)
                   08003f28    0000000c     Commands.obj (.data)
                   08003f34    0000000c     Utilities.obj (.data:cLAT)
@@ -315,59 +315,63 @@ section   page    origin      length       input sections
                   08003f4c    0000000a     Utilities.obj (.data:SP1_MISSION_TIME)
                   08003f56    0000000a     Utilities.obj (.data:SP2_MISSION_TIME)
                   08003f60    0000000a     mmc-hercules.obj (.data)
-                  08003f6a    00000001     uartstdio.obj (.data)
-                  08003f6b    00000001     --HOLE--
+                  08003f6a    00000002     --HOLE--
                   08003f6c    00000008     rtsv7R4_A_be_eabi.lib : _lock.c.obj (.data:$O1$$)
                   08003f74    00000008                           : memory.c.obj (.data:$O1$$)
                   08003f7c    00000008     BMP280.obj (.data:ALTITUD)
                   08003f84    00000008     BMP280.obj (.data:Alt_bmp280)
-                  08003f8c    00000008     Encoder.obj (.data:CmmdSPI03)
-                  08003f94    00000008     BMP280.obj (.data:ComandoSPI)
-                  08003f9c    00000008     MPU9250.obj (.data:ComandoSPI_MPU)
-                  08003fa4    00000008     BMP280.obj (.data:DatoSPI01)
-                  08003fac    00000008     MPU9250.obj (.data:DatoSPI01_MPU)
-                  08003fb4    00000008     BMP280.obj (.data:DatoSPI02)
-                  08003fbc    00000008     BMP280.obj (.data:DatoSPI03)
-                  08003fc4    00000008     Encoder.obj (.data:DatoSPI03)
-                  08003fcc    00000008     BMP280.obj (.data:DatoSPI04)
-                  08003fd4    00000008     BMP280.obj (.data:PRESION)
-                  08003fdc    00000008     BMP280.obj (.data:Pres_bmp280)
-                  08003fe4    00000008     Utilities.obj (.data:SP1_ALTITUDE)
-                  08003fec    00000008     Utilities.obj (.data:SP2_ALTITUDE)
-                  08003ff4    00000008     BMP280.obj (.data:TEMPERATURA)
-                  08003ffc    00000008     BMP280.obj (.data:Temp_bmp280)
-                  08004004    00000008     Utilities.obj (.data:cALTITUDE_BAR)
-                  0800400c    00000008     Utilities.obj (.data:cGPS_TIME)
-                  08004014    00000008     Utilities.obj (.data:cPRESS_BAR)
-                  0800401c    00000008     Utilities.obj (.data:cTEMPERATURE)
-                  08004024    00000008     os_port.obj (.data)
-                  0800402c    00000007     Utilities.obj (.data:cALT)
-                  08004033    00000001     --HOLE--
-                  08004034    00000006     CameraControl.obj (.data:DATOS_MAGNETOMETRO)
-                  0800403a    00000006     Utilities.obj (.data:SP1_ROTATION_RATE)
-                  08004040    00000006     Utilities.obj (.data:SP1_TEMPERATURE)
-                  08004046    00000006     Utilities.obj (.data:SP2_ROTATION_RATE)
-                  0800404c    00000006     Utilities.obj (.data:SP2_TEMPERATURE)
-                  08004052    00000006     Utilities.obj (.data:cPACKET_COUNT)
-                  08004058    00000006     Utilities.obj (.data:cSP1_PC)
-                  0800405e    00000006     Utilities.obj (.data:cSP2_PC)
-                  08004064    00000005     Utilities.obj (.data:ECHO)
-                  08004069    00000003     Utilities.obj (.data:cH)
-                  0800406c    00000004     CameraControl.obj (.data)
-                  08004070    00000004     Encoder.obj (.data)
-                  08004074    00000004     Utilities.obj (.data:SP1_PACKET_COUNT)
-                  08004078    00000004     Utilities.obj (.data:SP2_PACKET_COUNT)
-                  0800407c    00000004     Utilities.obj (.data:cVOLT_BATT)
-                  08004080    00000004     rtsv7R4_A_be_eabi.lib : errno.c.obj (.data)
-                  08004084    00000004                           : rand.c.obj (.data)
-                  08004088    00000004                           : strtok.c.obj (.data)
-                  0800408c    00000003     Utilities.obj (.data:cM)
-                  0800408f    00000003     Utilities.obj (.data:cNSATS)
-                  08004092    00000003     Utilities.obj (.data:cS)
+                  08003f8c    00000008     BMP280.obj (.data)
+                  08003f94    00000008     Encoder.obj (.data:CmmdSPI03)
+                  08003f9c    00000008     BMP280.obj (.data:ComandoSPI)
+                  08003fa4    00000008     MPU9250.obj (.data:ComandoSPI_MPU)
+                  08003fac    00000008     BMP280.obj (.data:DatoSPI01)
+                  08003fb4    00000008     MPU9250.obj (.data:DatoSPI01_MPU)
+                  08003fbc    00000008     BMP280.obj (.data:DatoSPI02)
+                  08003fc4    00000008     BMP280.obj (.data:DatoSPI03)
+                  08003fcc    00000008     Encoder.obj (.data:DatoSPI03)
+                  08003fd4    00000008     BMP280.obj (.data:DatoSPI04)
+                  08003fdc    00000008     BMP280.obj (.data:PRESION)
+                  08003fe4    00000008     BMP280.obj (.data:Pres_bmp280)
+                  08003fec    00000008     Utilities.obj (.data:SP1_ALTITUDE)
+                  08003ff4    00000008     Utilities.obj (.data:SP2_ALTITUDE)
+                  08003ffc    00000008     BMP280.obj (.data:TEMPERATURA)
+                  08004004    00000008     BMP280.obj (.data:Temp_bmp280)
+                  0800400c    00000008     Utilities.obj (.data:cALTITUDE_BAR)
+                  08004014    00000008     Utilities.obj (.data:cGPS_TIME)
+                  0800401c    00000008     Utilities.obj (.data:cPRESS_BAR)
+                  08004024    00000008     Utilities.obj (.data:cTEMPERATURE)
+                  0800402c    00000008     os_port.obj (.data)
+                  08004034    00000007     Utilities.obj (.data:cALT)
+                  0800403b    00000001     --HOLE--
+                  0800403c    00000006     CameraControl.obj (.data:DATOS_MAGNETOMETRO)
+                  08004042    00000006     Utilities.obj (.data:SP1_ROTATION_RATE)
+                  08004048    00000006     Utilities.obj (.data:SP1_TEMPERATURE)
+                  0800404e    00000006     Utilities.obj (.data:SP2_ROTATION_RATE)
+                  08004054    00000006     Utilities.obj (.data:SP2_TEMPERATURE)
+                  0800405a    00000006     Utilities.obj (.data:cPACKET_COUNT)
+                  08004060    00000006     Utilities.obj (.data:cSP1_PC)
+                  08004066    00000006     Utilities.obj (.data:cSP2_PC)
+                  0800406c    00000005     Utilities.obj (.data:ECHO)
+                  08004071    00000003     Utilities.obj (.data:cH)
+                  08004074    00000004     CameraControl.obj (.data)
+                  08004078    00000004     Encoder.obj (.data)
+                  0800407c    00000004     MPU9250.obj (.data)
+                  08004080    00000004     Utilities.obj (.data:SP1_PACKET_COUNT)
+                  08004084    00000004     Utilities.obj (.data:SP2_PACKET_COUNT)
+                  08004088    00000004     Utilities.obj (.data:cVOLT_BATT)
+                  0800408c    00000004     rtsv7R4_A_be_eabi.lib : errno.c.obj (.data)
+                  08004090    00000004                           : rand.c.obj (.data)
+                  08004094    00000004                           : strtok.c.obj (.data)
+                  08004098    00000003     Utilities.obj (.data:cM)
+                  0800409b    00000003     Utilities.obj (.data:cNSATS)
+                  0800409e    00000003     Utilities.obj (.data:cS)
 
-.sysmem    0    000050e0    00000800     UNINITIALIZED
-                  000050e0    00000010     rtsv7R4_A_be_eabi.lib : memory.c.obj (.sysmem)
-                  000050f0    000007f0     --HOLE--
+__llvm_prf_cnts 
+*          0    08001000    00000000     UNINITIALIZED
+
+.sysmem    0    000050b0    00000800     UNINITIALIZED
+                  000050b0    00000010     rtsv7R4_A_be_eabi.lib : memory.c.obj (.sysmem)
+                  000050c0    000007f0     --HOLE--
 
 MODULE SUMMARY
 
@@ -391,27 +395,27 @@ MODULE SUMMARY
        Total:                       19784    0         6      
                                                               
     .\source\
-       os_tasks.obj                 11584    0         260    
-       os_heap.obj                  1528     0         8216   
+       os_tasks.obj                 11536    0         260    
+       os_heap.obj                  1524     0         8216   
        sys_selftest.obj             9456     0         0      
        spi.obj                      6208     0         72     
-       os_queue.obj                 4572     0         0      
+       os_queue.obj                 4564     0         0      
        het.obj                      2300     960       0      
        sys_vim.obj                  2820     384       0      
        system.obj                   2720     0         0      
        adc.obj                      2680     24        0      
        sci.obj                      2664     0         20     
        os_mpu_wrappers.obj          2464     0         0      
-       os_event_groups.obj          2076     0         0      
+       os_event_groups.obj          2072     0         0      
        esm.obj                      1704     0         0      
-       sys_main.obj                 1672     20        4      
+       sys_main.obj                 1656     20        4      
        errata_SSWF021_45.obj        1636     0         0      
-       os_port.obj                  1392     0         8      
+       os_port.obj                  1388     0         8      
        os_portasm.obj               944      0         0      
        gio.obj                      876      0         0      
        sys_core.obj                 720      0         0      
        os_list.obj                  568      0         0      
-       sys_startup.obj              544      0         0      
+       sys_startup.obj              536      0         0      
        pinmux.obj                   340      0         0      
        notification.obj             248      0         0      
        dabort.obj                   232      0         0      
@@ -419,22 +423,22 @@ MODULE SUMMARY
        sys_intvecs.obj              32       0         0      
        sys_phantom.obj              4        0         0      
     +--+----------------------------+--------+---------+---------+
-       Total:                       62208    1388      8580   
+       Total:                       62116    1388      8580   
                                                               
     .\source\KaanSat_Lib\
-       MPU9250.obj                  5868     0         30     
-       BMP280.obj                   5488     0         122    
-       Utilities.obj                3392     186       590    
-       Commands.obj                 1844     36        36     
+       MPU9250.obj                  5908     0         34     
+       BMP280.obj                   5572     0         128    
+       Utilities.obj                3388     186       590    
+       Commands.obj                 1848     36        36     
        CameraControl.obj            780      0         30     
-       microSD.obj                  160      0         557    
+       microSD.obj                  148      0         557    
        PWM.obj                      408      32        0      
        allADC.obj                   324      0         12     
        Encoder.obj                  276      0         24     
     +--+----------------------------+--------+---------+---------+
-       Total:                       18540    254       1401   
+       Total:                       18652    254       1411   
                                                               
-    C:\ti\ccs930\ccs\tools\compiler\ti-cgt-arm_18.12.4.LTS\lib\rtsv7R4_A_be_eabi.lib
+    C:\ti\ccs1031\ccs\tools\compiler\ti-cgt-arm_20.2.4.LTS\lib\rtsv7R4_A_be_eabi.lib
        _printfi.c.obj               7373     0         0      
        e_pow.c.obj                  3724     48        0      
        k_rem_pio2.c.obj             2556     344       0      
@@ -443,7 +447,7 @@ MODULE SUMMARY
        strtod.c.obj                 1636     200       0      
        e_log.c.obj                  1420     0         0      
        s_atan.c.obj                 1100     152       0      
-       memory.c.obj                 1096     0         8      
+       memory.c.obj                 1080     0         8      
        ull_div32.asm.obj            696      0         0      
        e_atan2.c.obj                652      0         0      
        k_sin.c.obj                  548      0         0      
@@ -484,7 +488,7 @@ MODULE SUMMARY
        hostread.c.obj               144      0         0      
        hostwrite.c.obj              144      0         0      
        atoi.c.obj                   132      0         0      
-       ltoa.c.obj                   128      0         0      
+       _ltoa.c.obj                  128      0         0      
        s_frexp.c.obj                124      0         0      
        hostclose.c.obj              116      0         0      
        hostunlink.c.obj             112      0         0      
@@ -509,7 +513,7 @@ MODULE SUMMARY
        write.c.obj                  68       0         0      
        i_tofd32.asm.obj             60       0         0      
        u_tofd32.asm.obj             52       0         0      
-       memccpy.c.obj                44       0         0      
+       memccpy.c.obj                48       0         0      
        memchr.c.obj                 44       0         0      
        strcat.c.obj                 40       0         0      
        strchr.c.obj                 40       0         0      
@@ -526,26 +530,26 @@ MODULE SUMMARY
        atof.c.obj                   8        0         0      
        div0.asm.obj                 4        0         0      
     +--+----------------------------+--------+---------+---------+
-       Total:                       36377    1001      952    
+       Total:                       36365    1001      952    
                                                               
        Heap:                        0        0         2048   
-       Linker Generated:            0        538       0      
+       Linker Generated:            0        537       0      
     +--+----------------------------+--------+---------+---------+
-       Grand Total:                 146101   3765      14741  
+       Grand Total:                 146109   3764      14751  
 
 
 LINKER GENERATED COPY TABLES
 
-__TI_cinit_table @ 00005ae0 records: 4, size/record: 8, table size: 32
-	.data: load addr=000058e0, load size=000001d5 bytes, run addr=08003b3c, run size=00000559 bytes, compression=lzss
-	.kernelBSS: load addr=00005ac4, load size=00000009 bytes, run addr=08000800, run size=00000104 bytes, compression=lzss
-	.bss: load addr=00005ad0, load size=00000008 bytes, run addr=08003000, run size=00000b3a bytes, compression=zero_init
-	.kernelHEAP: load addr=00005ad8, load size=00000008 bytes, run addr=08001000, run size=00002000 bytes, compression=zero_init
+__TI_cinit_table @ 00005ab0 records: 4, size/record: 8, table size: 32
+	.data: load addr=000058b0, load size=000001d4 bytes, run addr=08003b3c, run size=00000565 bytes, compression=lzss
+	.kernelBSS: load addr=00005a90, load size=00000009 bytes, run addr=08000800, run size=00000104 bytes, compression=lzss
+	.bss: load addr=00005aa0, load size=00000008 bytes, run addr=08003000, run size=00000b3a bytes, compression=zero_init
+	.kernelHEAP: load addr=00005aa8, load size=00000008 bytes, run addr=08001000, run size=00002000 bytes, compression=zero_init
 
 
 LINKER GENERATED HANDLER TABLE
 
-__TI_handler_table @ 00005ab8 records: 3, size/record: 4, table size: 12
+__TI_handler_table @ 00005a84 records: 3, size/record: 4, table size: 12
 	index: 0, handler: __TI_decompress_lzss
 	index: 1, handler: __TI_decompress_none
 	index: 2, handler: __TI_zero_init
@@ -559,325 +563,328 @@ address   name
 08003dd8  ALTITUDE_BAR                          
 08003ddc  ALTITUDE_INIT                         
 08003f84  Alt_bmp280                            
-00010a00  BMP280_Altitud                        
-000111e8  BMP280_CalcularAltitud                
-000119a8  BMP280_CalcularTemperaturaPresion     
-00010944  BMP280_Init                           
-000109ec  BMP280_Presion                        
-00010a0c  BMP280_Temperatura                    
-000269d8  C$$EXIT                               
-00026340  C$$IO$$                               
-00010a18  CAlibracion_BMP280                    
+00010a78  BMP280_Altitud                        
+00011260  BMP280_CalcularAltitud                
+00011a24  BMP280_CalcularTemperaturaPresion     
+000109a0  BMP280_Init                           
+00010a64  BMP280_Presion                        
+00010a84  BMP280_Temperatura                    
+00026a14  C$$EXIT                               
+00026378  C$$IO$$                               
+00010a90  CAlibracion_BMP280                    
 08003908  CMD_KEY                               
-00011e14  CalcAltitudfloat                      
-000114e8  CalcTempYpres_bmp280                  
-00020c84  CameraControl_Execute                 
-00020c48  CameraControl_Init                    
-00020e6c  CameraControl_MoverMotor              
-000241ec  CmdLineProcess                        
-00017024  Cmd_append                            
-00016e70  Cmd_cat                               
-00016cac  Cmd_cd                                
-00017140  Cmd_help                              
-00016a70  Cmd_ls                                
-00016e38  Cmd_pwd                               
-08003f94  ComandoSPI                            
-08003f9c  ComandoSPI_MPU                        
-08003fa4  DatoSPI01                             
-08003fac  DatoSPI01_MPU                         
-08003fb4  DatoSPI02                             
-08003fbc  DatoSPI03                             
-08003fcc  DatoSPI04                             
-08004064  ECHO                                  
+00011e90  CalcAltitudfloat                      
+00011564  CalcTempYpres_bmp280                  
+00020cf0  CameraControl_Execute                 
+00020cb4  CameraControl_Init                    
+00020ed8  CameraControl_MoverMotor              
+0002422c  CmdLineProcess                        
+000170f8  Cmd_append                            
+00016f44  Cmd_cat                               
+00016d80  Cmd_cd                                
+00017214  Cmd_help                              
+00016b44  Cmd_ls                                
+00016f0c  Cmd_pwd                               
+08003f9c  ComandoSPI                            
+08003fa4  ComandoSPI_MPU                        
+08003fac  DatoSPI01                             
+08003fb4  DatoSPI01_MPU                         
+08003fbc  DatoSPI02                             
+08003fc4  DatoSPI03                             
+08003fd4  DatoSPI04                             
+0800406c  ECHO                                  
 08003df4  ENABLE_SIM                            
-0002467c  EncoderInit                           
-000246cc  EncoderRead                           
+000246bc  EncoderInit                           
+0002470c  EncoderRead                           
 08003ebc  FSW_STATE                             
 08003dc4  FSW_STATE_TEMP                        
 08003dec  GPS_TIME                              
-0001650c  GenerateGPSData                       
+00016584  GenerateGPSData                       
 08003e00  H                                     
-00025df8  HOSTclose                             
-00025000  HOSTlseek                             
-000255d4  HOSTopen                              
-00025834  HOSTread                              
-00025354  HOSTrename                            
-00025e6c  HOSTunlink                            
-000258c4  HOSTwrite                             
+00025e30  HOSTclose                             
+000250f0  HOSTlseek                             
+00025578  HOSTopen                              
+0002586c  HOSTread                              
+00025398  HOSTrename                            
+00025ea4  HOSTunlink                            
+000258fc  HOSTwrite                             
 08003dfc  LAND                                  
-00011248  LEERTempYpresRAW_bmp280               
+000112c0  LEERTempYpresRAW_bmp280               
 08003e04  M                                     
 08003dcc  MODE                                  
 0000f258  MPUInit                               
-000197d8  MPU_eTaskGetState                     
-00019940  MPU_pcTaskGetName                     
-00019a20  MPU_pvTaskGetThreadLocalStoragePointer
-00019b38  MPU_ulTaskNotifyTake                  
-00019cf4  MPU_uxQueueMessagesWaiting            
-00019d28  MPU_uxQueueSpacesAvailable            
-00019914  MPU_uxTaskGetNumberOfTasks            
-000199a8  MPU_uxTaskGetStackHighWaterMark       
-000197a4  MPU_uxTaskPriorityGet                 
-00019f7c  MPU_vEventGroupDelete                 
-00019d5c  MPU_vQueueDelete                      
-000196b0  MPU_vTaskAllocateMPURegions           
-00019710  MPU_vTaskDelay                        
-0001973c  MPU_vTaskDelayUntil                   
-000196e4  MPU_vTaskDelete                       
-0001980c  MPU_vTaskPrioritySet                  
-0001986c  MPU_vTaskResume                       
-000199dc  MPU_vTaskSetThreadLocalStoragePointer 
-00019bb0  MPU_vTaskSetTimeOutState              
-00019840  MPU_vTaskSuspend                      
-00019898  MPU_vTaskSuspendAll                   
-00019ea0  MPU_xEventGroupClearBits              
-00019e18  MPU_xEventGroupCreate                 
-00019ee4  MPU_xEventGroupSetBits                
-00019f28  MPU_xEventGroupSync                   
-00019e44  MPU_xEventGroupWaitBits               
-00019d88  MPU_xQueueGenericCreate               
-00019ca0  MPU_xQueueGenericReceive              
-00019dd4  MPU_xQueueGenericReset                
-00019c4c  MPU_xQueueGenericSend                 
-00019770  MPU_xTaskAbortDelay                   
-00019bdc  MPU_xTaskCheckForTimeOut              
-00019608  MPU_xTaskCreate                       
-0001966c  MPU_xTaskCreateRestricted             
-00019a90  MPU_xTaskGenericNotify                
-00019974  MPU_xTaskGetHandle                    
-00019a64  MPU_xTaskGetIdleTaskHandle            
-00019c20  MPU_xTaskGetSchedulerState            
-000198e8  MPU_xTaskGetTickCount                 
-00019b7c  MPU_xTaskNotifyStateClear             
-00019ae4  MPU_xTaskNotifyWait                   
-000198bc  MPU_xTaskResumeAll                    
+00019850  MPU_eTaskGetState                     
+000199b8  MPU_pcTaskGetName                     
+00019a98  MPU_pvTaskGetThreadLocalStoragePointer
+00019bb0  MPU_ulTaskNotifyTake                  
+00019d6c  MPU_uxQueueMessagesWaiting            
+00019da0  MPU_uxQueueSpacesAvailable            
+0001998c  MPU_uxTaskGetNumberOfTasks            
+00019a20  MPU_uxTaskGetStackHighWaterMark       
+0001981c  MPU_uxTaskPriorityGet                 
+00019ff4  MPU_vEventGroupDelete                 
+00019dd4  MPU_vQueueDelete                      
+00019728  MPU_vTaskAllocateMPURegions           
+00019788  MPU_vTaskDelay                        
+000197b4  MPU_vTaskDelayUntil                   
+0001975c  MPU_vTaskDelete                       
+00019884  MPU_vTaskPrioritySet                  
+000198e4  MPU_vTaskResume                       
+00019a54  MPU_vTaskSetThreadLocalStoragePointer 
+00019c28  MPU_vTaskSetTimeOutState              
+000198b8  MPU_vTaskSuspend                      
+00019910  MPU_vTaskSuspendAll                   
+00019f18  MPU_xEventGroupClearBits              
+00019e90  MPU_xEventGroupCreate                 
+00019f5c  MPU_xEventGroupSetBits                
+00019fa0  MPU_xEventGroupSync                   
+00019ebc  MPU_xEventGroupWaitBits               
+00019e00  MPU_xQueueGenericCreate               
+00019d18  MPU_xQueueGenericReceive              
+00019e4c  MPU_xQueueGenericReset                
+00019cc4  MPU_xQueueGenericSend                 
+000197e8  MPU_xTaskAbortDelay                   
+00019c54  MPU_xTaskCheckForTimeOut              
+00019680  MPU_xTaskCreate                       
+000196e4  MPU_xTaskCreateRestricted             
+00019b08  MPU_xTaskGenericNotify                
+000199ec  MPU_xTaskGetHandle                    
+00019adc  MPU_xTaskGetIdleTaskHandle            
+00019c98  MPU_xTaskGetSchedulerState            
+00019960  MPU_xTaskGetTickCount                 
+00019bf4  MPU_xTaskNotifyStateClear             
+00019b5c  MPU_xTaskNotifyWait                   
+00019934  MPU_xTaskResumeAll                    
 08003b08  MyChannel                             
 08003dc8  PACKET_COUNT                          
 08003de0  PRESS_BAR                             
-08003fdc  Pres_bmp280                           
+08003fe4  Pres_bmp280                           
 08003e0e  R1                                    
 08003e0f  R2                                    
 08003e08  S                                     
-00017210  SD_Test                               
+00017284  SD_Test                               
 08003af0  SERVO_PAYLOAD                         
 UNDEFED   SHT$$INIT_ARRAY$$Base                 
 UNDEFED   SHT$$INIT_ARRAY$$Limit                
 08003df2  SIM_ON                                
 08003e0c  SP1X_ON                               
-08003fe4  SP1_ALTITUDE                          
+08003fec  SP1_ALTITUDE                          
 08003f4c  SP1_MISSION_TIME                      
-08004074  SP1_PACKET_COUNT                      
+08004080  SP1_PACKET_COUNT                      
 08003dd0  SP1_PC                                
 08003dcd  SP1_RELEASED                          
-0800403a  SP1_ROTATION_RATE                     
-08004040  SP1_TEMPERATURE                       
+08004042  SP1_ROTATION_RATE                     
+08004048  SP1_TEMPERATURE                       
 08003e0d  SP2X_ON                               
-08003fec  SP2_ALTITUDE                          
+08003ff4  SP2_ALTITUDE                          
 08003f56  SP2_MISSION_TIME                      
-08004078  SP2_PACKET_COUNT                      
+08004084  SP2_PACKET_COUNT                      
 08003dd4  SP2_PC                                
 08003dce  SP2_RELEASED                          
-08004046  SP2_ROTATION_RATE                     
-0800404c  SP2_TEMPERATURE                       
+0800404e  SP2_ROTATION_RATE                     
+08004054  SP2_TEMPERATURE                       
 08003b20  SPI1_data_configCh0                   
 08003b24  SPI1_data_configCh2                   
-00014020  SPI_send                              
+0001409c  SPI_send                              
 08003df1  SP_ON                                 
 08003dcf  STATE                                 
 08003df8  STATE_INDEX                           
-000128e4  SpiRxStatus                           
-00012888  SpiTxStatus                           
-000169fc  StringFromFResult                     
-00016a64  SysTickHandler                        
+00012960  SpiRxStatus                           
+00012904  SpiTxStatus                           
+00016ad0  StringFromFResult                     
+00016b38  SysTickHandler                        
 08003de4  TEMPERATURE                           
-08003ffc  Temp_bmp280                           
-0001d2b4  UARTgetc                              
-0001d180  UARTgets                              
-0001d7dc  UARTprintf                            
-0001d2d0  UARTvprintf                           
-0001d104  UARTwrite                             
+08004004  Temp_bmp280                           
+0001d330  UARTgetc                              
+0001d1fc  UARTgets                              
+0001d858  UARTprintf                            
+0001d34c  UARTvprintf                           
+0001d180  UARTwrite                             
 08003de8  VOLT_BATT                             
 08003680  __CIOBUF_                             
 00000800  __SYSMEM_SIZE                         
-00005ae0  __TI_CINIT_Base                       
-00005b00  __TI_CINIT_Limit                      
-00005ab8  __TI_Handler_Table_Base               
-00005ac4  __TI_Handler_Table_Limit              
-0002121c  __TI_PINIT_Base                       
-00021220  __TI_PINIT_Limit                      
-00025f48  __TI_auto_init_nobinit_nopinit        
-00026250  __TI_cleanup                          
+00005ab0  __TI_CINIT_Base                       
+00005ad0  __TI_CINIT_Limit                      
+00005a84  __TI_Handler_Table_Base               
+00005a90  __TI_Handler_Table_Limit              
+00021288  __TI_PINIT_Base                       
+0002128c  __TI_PINIT_Limit                      
+00025f80  __TI_auto_init_nobinit_nopinit        
+00026288  __TI_cleanup                          
 08003f1c  __TI_cleanup_ptr                      
-00024e98  __TI_closefile                        
-00025954  __TI_decompress_lzss                  
-00026990  __TI_decompress_none                  
-00025af4  __TI_doflush                          
+00024ed8  __TI_closefile                        
+0002598c  __TI_decompress_lzss                  
+000269cc  __TI_decompress_none                  
+00025b2c  __TI_doflush                          
 08003f20  __TI_dtors_ptr                        
 08003f24  __TI_enable_exit_profile_output       
 08003efc  __TI_ft_end                           
+00025cb8  __TI_ltoa                             
 ffffffff  __TI_pprof_out_hndl                   
-00012fa8  __TI_printfi                          
+00013024  __TI_printfi                          
 ffffffff  __TI_prof_data_size                   
 ffffffff  __TI_prof_data_start                  
-000262a4  __TI_readmsg                          
+000262dc  __TI_readmsg                          
 00000000  __TI_static_base__                    
 08003868  __TI_tmpnams                          
-000262f8  __TI_writemsg                         
-000253f8  __TI_wrt_ok                           
-000269a4  __TI_zero_init                        
-00024a5c  __aeabi_cdcmpeq                       
-00024a5c  __aeabi_cdcmple                       
-00024b3c  __aeabi_cdrcmple                      
-000259e4  __aeabi_cfcmpeq                       
-000259e4  __aeabi_cfcmple                       
-00025a6c  __aeabi_cfrcmple                      
-00025538  __aeabi_d2f                           
-00026140  __aeabi_d2iz                          
-000261f8  __aeabi_d2uiz                         
-0002258c  __aeabi_dadd                          
-00023588  __aeabi_ddiv                          
-0002431c  __aeabi_dmul                          
-00022580  __aeabi_dsub                          
-000269b4  __aeabi_errno_addr                    
-0002619c  __aeabi_f2d                           
-00026490  __aeabi_f2iz                          
-000264dc  __aeabi_f2uiz                         
-000240bc  __aeabi_fadd                          
-00024cfc  __aeabi_fdiv                          
-000252ac  __aeabi_fmul                          
-000240b8  __aeabi_fsub                          
-0002675c  __aeabi_i2d                           
-00026528  __aeabi_i2f                           
-000263a0  __aeabi_idiv                          
-000269f0  __aeabi_idiv0                         
-000263a0  __aeabi_idivmod                       
-000260e0  __aeabi_l2f                           
-000269f0  __aeabi_ldiv0                         
-0002579c  __aeabi_ldivmod                       
-00024f50  __aeabi_memclr                        
-00024f50  __aeabi_memclr4                       
-00024f50  __aeabi_memclr8                       
-00023718  __aeabi_memcpy                        
-00023718  __aeabi_memcpy4                       
-00023718  __aeabi_memcpy8                       
-00024f54  __aeabi_memset                        
-00024f54  __aeabi_memset4                       
-00024f54  __aeabi_memset8                       
+00026330  __TI_writemsg                         
+0002543c  __TI_wrt_ok                           
+000269e0  __TI_zero_init                        
+00024a9c  __aeabi_cdcmpeq                       
+00024a9c  __aeabi_cdcmple                       
+00024b7c  __aeabi_cdrcmple                      
+00025a1c  __aeabi_cfcmpeq                       
+00025a1c  __aeabi_cfcmple                       
+00025aa4  __aeabi_cfrcmple                      
+000254dc  __aeabi_d2f                           
+00026178  __aeabi_d2iz                          
+00026230  __aeabi_d2uiz                         
+000225f0  __aeabi_dadd                          
+000235d4  __aeabi_ddiv                          
+0002435c  __aeabi_dmul                          
+000225e4  __aeabi_dsub                          
+000269f0  __aeabi_errno_addr                    
+000261d4  __aeabi_f2d                           
+000264c8  __aeabi_f2iz                          
+00026514  __aeabi_f2uiz                         
+000240fc  __aeabi_fadd                          
+00024d3c  __aeabi_fdiv                          
+000252f0  __aeabi_fmul                          
+000240f8  __aeabi_fsub                          
+00026794  __aeabi_i2d                           
+00026560  __aeabi_i2f                           
+000263d8  __aeabi_idiv                          
+00026a2c  __aeabi_idiv0                         
+000263d8  __aeabi_idivmod                       
+00026118  __aeabi_l2f                           
+00026a2c  __aeabi_ldiv0                         
+00025740  __aeabi_ldivmod                       
+00024f90  __aeabi_memclr                        
+00024f90  __aeabi_memclr4                       
+00024f90  __aeabi_memclr8                       
+00023764  __aeabi_memcpy                        
+00023764  __aeabi_memcpy4                       
+00023764  __aeabi_memcpy8                       
+00024f94  __aeabi_memset                        
+00024f94  __aeabi_memset4                       
+00024f94  __aeabi_memset8                       
 08003f08  __aeabi_stderr                        
 08003f00  __aeabi_stdin                         
 08003f04  __aeabi_stdout                        
-00026798  __aeabi_ui2d                          
-000263f4  __aeabi_uidiv                         
-000263f4  __aeabi_uidivmod                      
-000214e4  __aeabi_uldivmod                      
+000267d0  __aeabi_ui2d                          
+0002642c  __aeabi_uidiv                         
+0002642c  __aeabi_uidivmod                      
+00021550  __aeabi_uldivmod                      
 ffffffff  __binit__                             
 ffffffff  __c_args__                            
-00022794  __kernel_cos                          
-00018c2c  __kernel_rem_pio2                     
-00022140  __kernel_sin                          
-000268fc  _abort_msg                            
-00022364  _c_int00                              
-00021144  _coreClearAuxiliaryDataFault_         
-00021158  _coreClearAuxiliaryInstructionFault_  
-0002111c  _coreClearDataFaultAddress_           
-000210f4  _coreClearDataFault_                  
-00021130  _coreClearInstructionFaultAddress_    
-00021108  _coreClearInstructionFault_           
-00021088  _coreDisableEventBusExport_           
-000210cc  _coreDisableFlashEcc_                 
-000210a8  _coreDisableRamEcc_                   
-00021078  _coreEnableEventBusExport_            
-000210b8  _coreEnableFlashEcc_                  
-000210dc  _coreEnableIrqVicOffset_              
-00021098  _coreEnableRamEcc_                    
-0002113c  _coreGetAuxiliaryDataFault_           
-00021150  _coreGetAuxiliaryInstructionFault_    
-00021114  _coreGetDataFaultAddress_             
-000210ec  _coreGetDataFault_                    
-00021128  _coreGetInstructionFaultAddress_      
-00021100  _coreGetInstructionFault_             
-00020f54  _coreInitRegisters_                   
-0002100c  _coreInitStackPointer_                
-00027250  _ctypes_                              
-00024974  _dabort                               
+000227f8  __kernel_cos                          
+00018ca4  __kernel_rem_pio2                     
+000221ac  __kernel_sin                          
+08001000  __start___llvm_prf_cnts               
+08001000  __stop___llvm_prf_cnts                
+00026938  _abort_msg                            
+000223d0  _c_int00                              
+000211b0  _coreClearAuxiliaryDataFault_         
+000211c4  _coreClearAuxiliaryInstructionFault_  
+00021188  _coreClearDataFaultAddress_           
+00021160  _coreClearDataFault_                  
+0002119c  _coreClearInstructionFaultAddress_    
+00021174  _coreClearInstructionFault_           
+000210f4  _coreDisableEventBusExport_           
+00021138  _coreDisableFlashEcc_                 
+00021114  _coreDisableRamEcc_                   
+000210e4  _coreEnableEventBusExport_            
+00021124  _coreEnableFlashEcc_                  
+00021148  _coreEnableIrqVicOffset_              
+00021104  _coreEnableRamEcc_                    
+000211a8  _coreGetAuxiliaryDataFault_           
+000211bc  _coreGetAuxiliaryInstructionFault_    
+00021180  _coreGetDataFaultAddress_             
+00021158  _coreGetDataFault_                    
+00021194  _coreGetInstructionFaultAddress_      
+0002116c  _coreGetInstructionFault_             
+00020fc0  _coreInitRegisters_                   
+00021078  _coreInitStackPointer_                
+00027290  _ctypes_                              
+000249b4  _dabort                               
 08003ccc  _device                               
-0002116c  _disable_FIQ_interrupt_               
-00021174  _disable_IRQ_interrupt_               
-00021164  _disable_interrupt_                   
-0002117c  _enable_interrupt_                    
-0002120c  _errata_CORTEXR4_66_                  
-0001e598  _errata_SSWF021_45_both_plls          
-0001e78c  _errata_SSWF021_45_pll1               
-0001e904  _errata_SSWF021_45_pll2               
-00021184  _esmCcmErrorsClear_                   
+000211d8  _disable_FIQ_interrupt_               
+000211e0  _disable_IRQ_interrupt_               
+000211d0  _disable_interrupt_                   
+000211e8  _enable_interrupt_                    
+00021278  _errata_CORTEXR4_66_                  
+0001e604  _errata_SSWF021_45_both_plls          
+0001e7f8  _errata_SSWF021_45_pll1               
+0001e970  _errata_SSWF021_45_pll2               
+000211f0  _esmCcmErrorsClear_                   
 08003b3c  _ftable                               
-00021058  _getCPSRValue_                        
-00021060  _gotoCPUIdle_                         
+000210c4  _getCPSRValue_                        
+000210cc  _gotoCPUIdle_                         
 08003f6c  _lock                                 
-000269e8  _nop                                  
-00024c78  _pmuDisableCountersGlobal_            
-00024c68  _pmuEnableCountersGlobal_             
-00024cd4  _pmuGetCycleCount_                    
-00024cdc  _pmuGetEventCount_                    
-00024ce8  _pmuGetOverflow_                      
-00024c1c  _pmuInit_                             
-00024ca8  _pmuResetCounters_                    
-00024c88  _pmuResetCycleCounter_                
-00024c98  _pmuResetEventCounters_               
-00024cc8  _pmuSetCountEvent_                    
-00024cb8  _pmuStartCounters_                    
-00024cc0  _pmuStopCounters_                     
+00026a24  _nop                                  
+00024cb8  _pmuDisableCountersGlobal_            
+00024ca8  _pmuEnableCountersGlobal_             
+00024d14  _pmuGetCycleCount_                    
+00024d1c  _pmuGetEventCount_                    
+00024d28  _pmuGetOverflow_                      
+00024c5c  _pmuInit_                             
+00024ce8  _pmuResetCounters_                    
+00024cc8  _pmuResetCycleCounter_                
+00024cd8  _pmuResetEventCounters_               
+00024d08  _pmuSetCountEvent_                    
+00024cf8  _pmuStartCounters_                    
+00024d00  _pmuStopCounters_                     
 08003f60  _spiPORT                              
 08003f64  _spiREG                               
 08003e1c  _stream                               
-000050e0  _sys_memory                           
+000050b0  _sys_memory                           
 UNDEFED   _system_post_cinit                    
 08003f70  _unlock                               
-000269d8  abort                                 
-0001899c  adc1GetConfigValue                    
+00026a14  abort                                 
+00018a14  adc1GetConfigValue                    
 0000dd4c  adc1ParityCheck                       
-00018578  adcCalibration                        
-0001893c  adcDisableNotification                
-000188ec  adcEnableNotification                 
-0001838c  adcGetData                            
-00018984  adcGetEVTPin                          
-00018194  adcInit                               
-00018548  adcIsConversionComplete               
-00018518  adcIsFifoFull                         
-00018750  adcMidPointCalibration                
-000247e8  adcNotification                       
-00018364  adcResetFiFo                          
-00018964  adcSetEVTPin                          
-000182f0  adcStartConversion                    
-0001833c  adcStopConversion                     
-00022ef4  aligned_alloc                         
-0001fda8  atan                                  
-0002179c  atan2                                 
-0002179c  atan2l                                
-0001fda8  atanl                                 
-000269e0  atof                                  
-00025bfc  atoi                                  
+000185f0  adcCalibration                        
+000189b4  adcDisableNotification                
+00018964  adcEnableNotification                 
+00018404  adcGetData                            
+000189fc  adcGetEVTPin                          
+0001820c  adcInit                               
+000185c0  adcIsConversionComplete               
+00018590  adcIsFifoFull                         
+000187c8  adcMidPointCalibration                
+00024828  adcNotification                       
+000183dc  adcResetFiFo                          
+000189dc  adcSetEVTPin                          
+00018368  adcStartConversion                    
+000183b4  adcStopConversion                     
+0002343c  aligned_alloc                         
+0001fe14  atan                                  
+00021808  atan2                                 
+00021808  atan2l                                
+0001fe14  atanl                                 
+00026a1c  atof                                  
+00025c34  atoi                                  
 ffffffff  binit                                 
 08003dbc  buff_size                             
 08003dc0  buff_sizeAPI                          
-0800402c  cALT                                  
-08004004  cALTITUDE_BAR                         
-0800400c  cGPS_TIME                             
-08004069  cH                                    
+08004034  cALT                                  
+0800400c  cALTITUDE_BAR                         
+08004014  cGPS_TIME                             
+08004071  cH                                    
 08003f34  cLAT                                  
 08003f40  cLON                                  
-0800408c  cM                                    
-0800408f  cNSATS                                
-08004052  cPACKET_COUNT                         
-08004014  cPRESS_BAR                            
-08004092  cS                                    
-08004058  cSP1_PC                               
-0800405e  cSP2_PC                               
-0800401c  cTEMPERATURE                          
-0800407c  cVOLT_BATT                            
+08004098  cM                                    
+0800409b  cNSATS                                
+0800405a  cPACKET_COUNT                         
+0800401c  cPRESS_BAR                            
+0800409e  cS                                    
+08004060  cSP1_PC                               
+08004066  cSP2_PC                               
+08004024  cTEMPERATURE                          
+08004088  cVOLT_BATT                            
 0000de04  can1ParityCheck                       
 0000dee0  can2ParityCheck                       
-0001a5b8  capGetSignal                          
+0001a630  capGetSignal                          
 0000cd78  ccmSelfCheck                          
 0000ed7c  ccmr4GetConfigValue                   
 0000d680  checkB0RAMECC                         
@@ -890,44 +897,44 @@ ffffffff  binit
 0000e104  checkRAMECC                           
 0000e7ec  checkRAMUERRTest                      
 0000d504  checkefcSelfTest                      
-00025704  close                                 
+000256a8  close                                 
 08003f30  cmd_cont                              
-0001cda8  commCX                                
-0001cec4  commSIM                               
-0001d024  commSIMP                              
-0001cfb8  commSP1X                              
-0001cfec  commSP2X                              
-0001ce10  commST                                
+0001ce24  commCX                                
+0001cf40  commSIM                               
+0001d0a0  commSIMP                              
+0001d034  commSP1X                              
+0001d068  commSP2X                              
+0001ce8c  commST                                
 080037a0  command                               
 08003ed4  commands                              
 08003f28  commandsTam                           
-000102dc  config_AK8963                         
-000103e4  config_AK8963_VF                      
-00010290  config_MPU_9250                       
-0001039c  config_MPU_9250_VF                    
-000269c0  copysign                              
-000269c0  copysignl                             
-0001a8fc  cos                                   
-0001a8fc  cosl                                  
+00010304  config_AK8963                         
+0001040c  config_AK8963_VF                      
+000102b8  config_MPU_9250                       
+000103c4  config_MPU_9250_VF                    
+000269fc  copysign                              
+000269fc  copysignl                             
+0001a974  cos                                   
+0001a974  cosl                                  
 0000cf7c  cpuSelfTest                           
 0000db44  cpuSelfTestFail                       
-00015cbc  createTelemetryPacket                 
-000180d4  customTrimLPO                         
+00015d38  createTelemetryPacket                 
+0001814c  customTrimLPO                         
 0000db3c  custom_dabort                         
 0000f16c  disableParity                         
-0001454c  disk_initialize                       
-00014a9c  disk_ioctl                            
-00014804  disk_read                             
-000147d8  disk_status                           
-00014d94  disk_timerproc                        
-00014924  disk_write                            
-00001f18  eTaskConfirmSleepModeStatus           
-00000890  eTaskGetState                         
-0001a578  edgeDisableNotification               
-0001a53c  edgeEnableNotification                
-0001a510  edgeGetCounter                        
-00024860  edgeNotification                      
-0001a4e4  edgeResetCounter                      
+000145c8  disk_initialize                       
+00014b18  disk_ioctl                            
+00014880  disk_read                             
+00014854  disk_status                           
+00014e10  disk_timerproc                        
+000149a0  disk_write                            
+00001f00  eTaskConfirmSleepModeStatus           
+00000888  eTaskGetState                         
+0001a5f0  edgeDisableNotification               
+0001a5b4  edgeEnableNotification                
+0001a588  edgeGetCounter                        
+000248a0  edgeNotification                      
+0001a55c  edgeResetCounter                      
 0000d3a8  efcCheck                              
 0000ece0  efcGetConfigValue                     
 0000d4dc  efcSelfTest                           
@@ -935,28 +942,28 @@ ffffffff  binit
 08003e15  ejectCom                              
 0000f118  enableParity                          
 0000edf8  errata_PBIST_4                        
-08004080  errno                                 
-0001f3e4  esmActivateNormalOperation            
-0001f4b8  esmClearStatus                        
-0001f4f8  esmClearStatusBuffer                  
-0001f3ac  esmDisableError                       
-0001f41c  esmDisableInterrupt                   
-0001f384  esmEnableError                        
-0001f3f4  esmEnableInterrupt                    
-0001f5f0  esmEnterSelfTest                      
-0001f368  esmError                              
-0001f6c8  esmGetConfigValue                     
-0001f534  esmGetStatus                          
-0001f5b8  esmGetStatusBuffer                    
-00024790  esmGroup1Notification                 
-000247a0  esmGroup2Notification                 
-00024888  esmHighInterrupt                      
-0001f260  esmInit                               
-0001f678  esmSelfTestStatus                     
-0001f514  esmSetCounterPreloadValue             
-0001f444  esmSetInterruptLevel                  
-0001f3d4  esmTriggerErrorPinReset               
-00025d00  exit                                  
+0800408c  errno                                 
+0001f450  esmActivateNormalOperation            
+0001f524  esmClearStatus                        
+0001f564  esmClearStatusBuffer                  
+0001f418  esmDisableError                       
+0001f488  esmDisableInterrupt                   
+0001f3f0  esmEnableError                        
+0001f460  esmEnableInterrupt                    
+0001f65c  esmEnterSelfTest                      
+0001f3d4  esmError                              
+0001f734  esmGetConfigValue                     
+0001f5a0  esmGetStatus                          
+0001f624  esmGetStatusBuffer                    
+000247d0  esmGroup1Notification                 
+000247e0  esmGroup2Notification                 
+000248c8  esmHighInterrupt                      
+0001f2cc  esmInit                               
+0001f6e4  esmSelfTestStatus                     
+0001f580  esmSetCounterPreloadValue             
+0001f4b0  esmSetInterruptLevel                  
+0001f440  esmTriggerErrorPinReset               
+00025d38  exit                                  
 0000b3f0  f_close                               
 0000b968  f_closedir                            
 0000bae0  f_getfree                             
@@ -977,78 +984,77 @@ ffffffff  binit
 0000bd1c  f_truncate                            
 0000bef0  f_unlink                              
 0000adf4  f_write                               
-000250ac  fflush                                
+0002519c  fflush                                
 08003458  filew                                 
-0001cbdc  findCommand                           
-0002634c  finddevice                            
-00023b70  floor                                 
-00023b70  floorl                                
+0001cc58  findCommand                           
+00026384  finddevice                            
+00023a58  floor                                 
+00023a58  floorl                                
 0000e948  fmcBus1ParityCheck                    
 0000d5a4  fmcBus2Check                          
 0000d5e0  fmcECCcheck                           
-0002324c  fputs                                 
-00023898  free                                  
-00025d7c  frexp                                 
-00025d7c  frexpl                                
-00025204  fseek                                 
-000167e4  ftoa                                  
+00023100  fputs                                 
+000238e4  free                                  
+00025db4  frexp                                 
+00025db4  frexpl                                
+00025248  fseek                                 
+0001685c  ftoa                                  
 08003d44  g_psCmdTable                          
 08003c2c  g_psFResultStrings                    
-00023f74  getAdcVoltage                         
-000165c0  getAltitude                           
-0001c9d0  getCommand                            
-0001ca60  getSPTelemetry                        
-00015f84  getTime                               
-00014e00  get_fattime                           
-00025edc  getdevice                             
-00020770  gioDisableNotification                
-00020734  gioEnableNotification                 
-0002069c  gioGetBit                             
-000207ac  gioGetConfigValue                     
-000206c4  gioGetPort                            
-00020578  gioInit                               
-000247fc  gioNotification                       
-0002062c  gioSetBit                             
-0002060c  gioSetDirection                       
-0002067c  gioSetPort                            
-000206dc  gioToggleBit                          
-000168bc  hacernada                             
-000269f4  handlePLLLockFail                     
-0001a6cc  het1GetConfigValue                    
+00023fb4  getAdcVoltage                         
+00016638  getAltitude                           
+0001ca48  getCommand                            
+0001cadc  getSPTelemetry                        
+00016000  getTime                               
+00014e7c  get_fattime                           
+00025f14  getdevice                             
+000207dc  gioDisableNotification                
+000207a0  gioEnableNotification                 
+00020708  gioGetBit                             
+00020818  gioGetConfigValue                     
+00020730  gioGetPort                            
+000205e4  gioInit                               
+0002483c  gioNotification                       
+00020698  gioSetBit                             
+00020678  gioSetDirection                       
+000206e8  gioSetPort                            
+00020748  gioToggleBit                          
+00016934  hacernada                             
+00026a30  handlePLLLockFail                     
+0001a744  het1GetConfigValue                    
 0000dbf4  het1ParityCheck                       
-0001a6b4  hetGetTimestamp                       
-00019fa8  hetInit                               
-00024874  hetNotification                       
-0001a698  hetResetTimestamp                     
+0001a72c  hetGetTimestamp                       
+0001a020  hetInit                               
+000248b4  hetNotification                       
+0001a710  hetResetTimestamp                     
 0000dc94  htu1ParityCheck                       
 08003b37  iFResult                              
-00024444  ldexp                                 
-00024444  ldexpl                                
-0002039c  linHighLevelInterrupt                 
-000201f4  linLowLevelInterrupt                  
-0001f85c  log                                   
-0001f85c  logl                                  
-00026650  lseek                                 
-00025c80  ltoa                                  
-0001df10  main                                  
-000269cc  malloc                                
-0001784c  mapClocks                             
-00022ef4  memalign                              
-0002682c  memccpy                               
-00026858  memchr                                
-00023718  memcpy                                
+00024484  ldexp                                 
+00024484  ldexpl                                
+00020408  linHighLevelInterrupt                 
+00020260  linLowLevelInterrupt                  
+0001f8c8  log                                   
+0001f8c8  logl                                  
+00026688  lseek                                 
+0001df8c  main                                  
+00026a08  malloc                                
+000178c4  mapClocks                             
+0002343c  memalign                              
+00026864  memccpy                               
+00026894  memchr                                
+00023764  memcpy                                
 0000cebc  memoryInit                            
-000247b0  memoryPort0TestFailNotification       
-000247cc  memoryPort1TestFailNotification       
-00024f60  memset                                
-0001c4c4  mibspi1HighLevelInterrupt             
-0001c284  mibspi1LowLevelInterrupt              
+000247f0  memoryPort0TestFailNotification       
+0002480c  memoryPort1TestFailNotification       
+00024fa0  memset                                
+0001c53c  mibspi1HighLevelInterrupt             
+0001c2fc  mibspi1LowLevelInterrupt              
 0000dfa8  mibspi1ParityCheck                    
-00013f98  mmcSelectSpi                          
-0000f72c  mpuGetGyroAccel                       
-0000f370  mpuGetMagnetometer                    
-00023e20  muxInit                               
-000171a4  open_append                           
+00014014  mmcSelectSpi                          
+0000f748  mpuGetGyroAccel                       
+0000f38c  mpuGetMagnetometer                    
+00023e60  muxInit                               
+00016a74  open_append                           
 08003b10  parmbuf                               
 0000ea74  pbistFail                             
 0000eaf8  pbistGetConfigValue                   
@@ -1058,222 +1064,221 @@ ffffffff  binit
 0000d1f4  pbistRun                              
 0000d014  pbistSelfCheck                        
 0000d2c0  pbistStop                             
-00001354  pcTaskGetName                         
-000177f8  periphInit                            
-000269ec  phantomInterrupt                      
-00023ea8  pinmuxGetConfigValue                  
-00014e58  pow                                   
-00014e58  powl                                  
-00004d38  prvMpuDisable                         
-00004d20  prvMpuEnable                          
-00004d08  prvMpuSetRegion                       
-00004d60  pvPortMalloc                          
-00001ff8  pvTaskGetThreadLocalStoragePointer    
-0001a4b4  pwmDisableNotification                
-0001a46c  pwmEnableNotification                 
-0001a384  pwmGetSignal                          
-00024848  pwmNotification                       
-0001a0d0  pwmSetDuty                            
-0001a20c  pwmSetSignal                          
-000233f0  pwmSetSignal10e3                      
-0001a068  pwmStart                              
-0001a09c  pwmStop                               
+00001344  pcTaskGetName                         
+00017870  periphInit                            
+00026a28  phantomInterrupt                      
+00023ee8  pinmuxGetConfigValue                  
+00014ed4  pow                                   
+00014ed4  powl                                  
+00004d08  prvMpuDisable                         
+00004cf0  prvMpuEnable                          
+00004cd8  prvMpuSetRegion                       
+00004d30  pvPortMalloc                          
+00001fe0  pvTaskGetThreadLocalStoragePointer    
+0001a52c  pwmDisableNotification                
+0001a4e4  pwmEnableNotification                 
+0001a3fc  pwmGetSignal                          
+00024888  pwmNotification                       
+0001a148  pwmSetDuty                            
+0001a284  pwmSetSignal                          
+000232a4  pwmSetSignal10e3                      
+0001a0e0  pwmStart                              
+0001a114  pwmStop                               
 080008d0  pxCurrentTCB                          
-000045f4  pxPortInitialiseStack                 
-00026444  rand                                  
-00023fdc  readAllAdc                            
-0000f50c  read_AK8963                           
-000104b0  read_AK8963_VF                        
-0001068c  read_MANG_AK8963_VF                   
-0000fbb4  read_MPU_ACEL_TMP_VF                  
-00026608  remove                                
+000045c4  pxPortInitialiseStack                 
+0002647c  rand                                  
+0002401c  readAllAdc                            
+0000f528  read_AK8963                           
+000104d8  read_AK8963_VF                        
+000106b4  read_MANG_AK8963_VF                   
+0000fbdc  read_MPU_ACEL_TMP_VF                  
+00026640  remove                                
 08003b28  res                                   
 00000000  resetEntry                            
-00024444  scalbn                                
-00024444  scalbnl                               
+00024484  scalbn                                
+00024484  scalbnl                               
 08003e10  sciControl                            
-0001dc78  sciDisableLoopback                    
-0001dcd0  sciDisableNotification                
-0001dc44  sciEnableLoopback                     
-0001dc94  sciEnableNotification                 
-0001dd0c  sciEnterResetState                    
-000108a4  sciEnviarDatos                        
-000108e8  sciEnviarDatos01                      
-0001dd2c  sciExitResetState                     
-0001d82c  sciInit                               
-0001db2c  sciIsIdleDetected                     
-0001db10  sciIsRxReady                          
-0001d9f0  sciIsTxReady                          
-0001e48c  sciNotification                       
-0001dba4  sciReceive                            
-0001db78  sciReceiveByte                        
-0001db48  sciRxError                            
-0001da3c  sciSend                               
-0001da0c  sciSendByte                           
-0001662c  sciSendData                           
-0001d938  sciSetBaudrate                        
-0001d918  sciSetFunctional                      
-0001dd64  scilinGetConfigValue                  
-0001758c  sdCreateFile                          
-0001736c  sdReadFile                            
-000174ec  sdRemoveFile                          
-00025498  sdWriteMemory                         
+0001dcf4  sciDisableLoopback                    
+0001dd4c  sciDisableNotification                
+0001dcc0  sciEnableLoopback                     
+0001dd10  sciEnableNotification                 
+0001dd88  sciEnterResetState                    
+000108cc  sciEnviarDatos                        
+00010910  sciEnviarDatos01                      
+0001dda8  sciExitResetState                     
+0001d8a8  sciInit                               
+0001dba8  sciIsIdleDetected                     
+0001db8c  sciIsRxReady                          
+0001da6c  sciIsTxReady                          
+0001e4fc  sciNotification                       
+0001dc20  sciReceive                            
+0001dbf4  sciReceiveByte                        
+0001dbc4  sciRxError                            
+0001dab8  sciSend                               
+0001da88  sciSendByte                           
+000166a4  sciSendData                           
+0001d9b4  sciSetBaudrate                        
+0001d994  sciSetFunctional                      
+0001dde0  scilinGetConfigValue                  
+00017604  sdCreateFile                          
+000173e4  sdReadFile                            
+0001751c  sdRemoveFile                          
+000257d8  sdWriteMemory                         
 0000cd68  selftestFailNotification              
-000177b8  setupFlash                            
-000176f4  setupPLL                              
-00023cc8  setvbuf                               
+00017830  setupFlash                            
+0001776c  setupPLL                              
+00023d08  setvbuf                               
 08003f2c  sim_ok                                
-0001ba40  sin                                   
-0001ba40  sinl                                  
-00016714  sltoa                                 
-000129ec  spi1GetConfigValue                    
-00012b7c  spi2GetConfigValue                    
-00012d0c  spi3GetConfigValue                    
-0001c704  spi3HighInterruptLevel                
-00012974  spiDisableLoopback                    
-000129c0  spiDisableNotification                
-00012940  spiEnableLoopback                     
-00012990  spiEnableNotification                 
-00024838  spiEndNotification                    
-00012380  spiGetData                            
-00011eb4  spiInit                               
-00024824  spiNotification                       
-00012264  spiReceiveData                        
-00012778  spiSendAndGetData                     
-00012574  spiSendData                           
-00012244  spiSetFunctional                      
-0001263c  spiTransmitAndReceiveData             
-00012448  spiTransmitData                       
-0002607c  sprintf                               
-000229a4  sqrt                                  
-000229a4  sqrtl                                 
-00017f98  sramGetConfigValue                    
+0001bab8  sin                                   
+0001bab8  sinl                                  
+0001678c  sltoa                                 
+00012a68  spi1GetConfigValue                    
+00012bf8  spi2GetConfigValue                    
+00012d88  spi3GetConfigValue                    
+0001c77c  spi3HighInterruptLevel                
+000129f0  spiDisableLoopback                    
+00012a3c  spiDisableNotification                
+000129bc  spiEnableLoopback                     
+00012a0c  spiEnableNotification                 
+00024878  spiEndNotification                    
+000123fc  spiGetData                            
+00011f30  spiInit                               
+00024864  spiNotification                       
+000122e0  spiReceiveData                        
+000127f4  spiSendAndGetData                     
+000125f0  spiSendData                           
+000122c0  spiSetFunctional                      
+000126b8  spiTransmitAndReceiveData             
+000124c4  spiTransmitData                       
+000260b4  sprintf                               
+00022a08  sqrt                                  
+00022a08  sqrtl                                 
+00018010  sramGetConfigValue                    
 0000ec40  stcGetConfigValue                     
 0000cf00  stcSelfCheck                          
 0000db40  stcSelfCheckFail                      
-00026884  strcat                                
-000268ac  strchr                                
-000268d4  strcmp                                
-00026964  strcpy                                
-00026694  strcspn                               
-00026944  strlen                                
-000265c0  strncpy                               
-00026574  strspn                                
-0001ebfc  strtod                                
-00025fb0  strtok                                
-0001ebfc  strtold                               
-00017a2c  systemGetConfigValue                  
-00017930  systemInit                            
-000179fc  systemPowerDown                       
-00017dec  tcmflashGetConfigValue                
+000268c0  strcat                                
+000268e8  strchr                                
+00026910  strcmp                                
+000269a0  strcpy                                
+000266cc  strcspn                               
+00026980  strlen                                
+000265f8  strncpy                               
+000265ac  strspn                                
+0001ec68  strtod                                
+00025fe8  strtok                                
+0001ec68  strtold                               
+00017aa4  systemGetConfigValue                  
+000179a8  systemInit                            
+00017a74  systemPowerDown                       
+00017e64  tcmflashGetConfigValue                
 08003df0  telemetry_ON                          
 08003e14  toggle_sim                            
-00017744  trimLPO                               
-08004024  ulCriticalNesting                     
-00004c44  ulPortCountLeadingZeros               
-08004028  ulTaskHasFPUContext                   
-00002390  ulTaskNotifyTake                      
-00026608  unlink                                
-00016184  updateAltitude                        
-0001603c  updateState                           
-000220b4  uxListRemove                          
-00003910  uxQueueMessagesWaiting                
-00003994  uxQueueMessagesWaitingFromISR         
-00003948  uxQueueSpacesAvailable                
-00001348  uxTaskGetNumberOfTasks                
-0000223c  uxTaskGetStackHighWaterMark           
-00000994  uxTaskPriorityGet                     
-000009d8  uxTaskPriorityGetFromISR              
-00002354  uxTaskResetEventItemValue             
-0001e298  vCameraControl                        
-0000456c  vEventGroupClearBitsCallback          
-000044cc  vEventGroupDelete                     
-00004550  vEventGroupSetBitsCallback            
-00021f08  vListInitialise                       
-00021f60  vListInitialiseItem                   
-00021ff0  vListInsert                           
-00021f7c  vListInsertEnd                        
-0001e2e8  vMissionOperations                    
-0000497c  vPortEndScheduler                     
-00004fb8  vPortFree                             
-000050c8  vPortInitialiseBlocks                 
-00004b84  vPortPreemptiveTick                   
-00004c4c  vPortSWI                              
-000049b4  vPortStartFirstTask                   
-000046e4  vPortStoreTaskMPUSettings             
-00004ad0  vPortYeildWithinAPI                   
-00004a24  vPortYieldProcessor                   
-000039c4  vQueueDelete                          
-0001e168  vSensors                              
-00002064  vTaskAllocateMPURegions               
-0000080c  vTaskDelay                            
-000006a0  vTaskDelayUntil                       
-00000538  vTaskDelete                           
-00001084  vTaskEndScheduler                     
-00001f08  vTaskMissedYield                      
-00002954  vTaskNotifyGiveFromISR                
-00001ad0  vTaskPlaceOnEventList                 
-00001b14  vTaskPlaceOnUnorderedEventList        
-00000a20  vTaskPrioritySet                      
-00000e20  vTaskResume                           
-00001f94  vTaskSetThreadLocalStoragePointer     
-00001d90  vTaskSetTimeOutState                  
-00000fec  vTaskStartScheduler                   
-0000166c  vTaskStepTick                         
-00000c18  vTaskSuspend                          
-000010a0  vTaskSuspendAll                       
-000019f0  vTaskSwitchContext                    
-0001e0c4  vTelemetry                            
+000177bc  trimLPO                               
+0800402c  ulCriticalNesting                     
+00004c14  ulPortCountLeadingZeros               
+08004030  ulTaskHasFPUContext                   
+00002378  ulTaskNotifyTake                      
+00026640  unlink                                
+00016200  updateAltitude                        
+000160b8  updateState                           
+00022120  uxListRemove                          
+000038e8  uxQueueMessagesWaiting                
+0000396c  uxQueueMessagesWaitingFromISR         
+00003920  uxQueueSpacesAvailable                
+00001338  uxTaskGetNumberOfTasks                
+00002224  uxTaskGetStackHighWaterMark           
+0000098c  uxTaskPriorityGet                     
+000009d0  uxTaskPriorityGetFromISR              
+0000233c  uxTaskResetEventItemValue             
+0000453c  vEventGroupClearBitsCallback          
+0000449c  vEventGroupDelete                     
+00004520  vEventGroupSetBitsCallback            
+00021f74  vListInitialise                       
+00021fcc  vListInitialiseItem                   
+0002205c  vListInsert                           
+00021fe8  vListInsertEnd                        
+0001e328  vMissionOperations                    
+0000494c  vPortEndScheduler                     
+00004f84  vPortFree                             
+00005094  vPortInitialiseBlocks                 
+00004b54  vPortPreemptiveTick                   
+00004c1c  vPortSWI                              
+00004984  vPortStartFirstTask                   
+000046b4  vPortStoreTaskMPUSettings             
+00004aa0  vPortYeildWithinAPI                   
+000049f4  vPortYieldProcessor                   
+0000399c  vQueueDelete                          
+0001e1c0  vSensors                              
+0000204c  vTaskAllocateMPURegions               
+00000804  vTaskDelay                            
+00000698  vTaskDelayUntil                       
+00000530  vTaskDelete                           
+00001074  vTaskEndScheduler                     
+00001ef0  vTaskMissedYield                      
+00002930  vTaskNotifyGiveFromISR                
+00001ab8  vTaskPlaceOnEventList                 
+00001afc  vTaskPlaceOnUnorderedEventList        
+00000a18  vTaskPrioritySet                      
+00000e14  vTaskResume                           
+00001f7c  vTaskSetThreadLocalStoragePointer     
+00001d74  vTaskSetTimeOutState                  
+00000fdc  vTaskStartScheduler                   
+00001658  vTaskStepTick                         
+00000c10  vTaskSuspend                          
+00001090  vTaskSuspendAll                       
+000019d8  vTaskSwitchContext                    
+0001e11c  vTelemetry                            
 08003b2c  valorAdc_0                            
-0001b228  vimChannelMap                         
-0001b424  vimDisableInterrupt                   
-0001b2cc  vimEnableInterrupt                    
-0001b4a8  vimGetConfigValue                     
-0001b154  vimInit                               
+0001b2a0  vimChannelMap                         
+0001b49c  vimDisableInterrupt                   
+0001b344  vimEnableInterrupt                    
+0001b520  vimGetConfigValue                     
+0001b1cc  vimInit                               
 0000db48  vimParityCheck                        
-00021ca0  vimParityErrorHandler                 
-0000f320  wait                                  
-00026920  wcslen                                
-000266d8  write                                 
-0000f640  write_AK8963                          
-000105a4  write_AK8963_VF                       
-00004268  xEventGroupClearBits                  
-00003dd8  xEventGroupCreate                     
-000042ec  xEventGroupGetBitsFromISR             
-0000431c  xEventGroupSetBits                    
-00003e14  xEventGroupSync                       
-00004014  xEventGroupWaitBits                   
-000050b0  xPortGetFreeHeapSize                  
-000050bc  xPortGetMinimumEverFreeHeapSize       
-00004958  xPortStartScheduler                   
-00002d24  xQueueGenericCreate                   
-000033fc  xQueueGenericReceive                  
-00002bfc  xQueueGenericReset                    
-00002e40  xQueueGenericSend                     
-00003100  xQueueGenericSendFromISR              
-00003290  xQueueGiveFromISR                     
-00003cfc  xQueueIsQueueEmptyFromISR             
-00003d88  xQueueIsQueueFullFromISR              
-0000381c  xQueuePeekFromISR                     
-000036d4  xQueueReceiveFromISR                  
-000016c8  xTaskAbortDelay                       
-00001dd0  xTaskCheckForTimeOut                  
+00021d0c  vimParityErrorHandler                 
+0000f33c  wait                                  
+0002695c  wcslen                                
+00026710  write                                 
+0000f65c  write_AK8963                          
+000105cc  write_AK8963_VF                       
+00004238  xEventGroupClearBits                  
+00003dac  xEventGroupCreate                     
+000042bc  xEventGroupGetBitsFromISR             
+000042ec  xEventGroupSetBits                    
+00003de8  xEventGroupSync                       
+00003fe8  xEventGroupWaitBits                   
+0000507c  xPortGetFreeHeapSize                  
+00005088  xPortGetMinimumEverFreeHeapSize       
+00004928  xPortStartScheduler                   
+00002d00  xQueueGenericCreate                   
+000033d8  xQueueGenericReceive                  
+00002bd8  xQueueGenericReset                    
+00002e1c  xQueueGenericSend                     
+000030dc  xQueueGenericSendFromISR              
+0000326c  xQueueGiveFromISR                     
+00003cd0  xQueueIsQueueEmptyFromISR             
+00003d5c  xQueueIsQueueFullFromISR              
+000037f4  xQueuePeekFromISR                     
+000036ac  xQueueReceiveFromISR                  
+000016b4  xTaskAbortDelay                       
+00001db8  xTaskCheckForTimeOut                  
 000000fc  xTaskCreate                           
 00000020  xTaskCreateRestricted                 
-00002580  xTaskGenericNotify                    
-00002754  xTaskGenericNotifyFromISR             
-0000152c  xTaskGetHandle                        
-00001634  xTaskGetIdleTaskHandle                
-00002304  xTaskGetSchedulerState                
-00001308  xTaskGetTickCount                     
-00001324  xTaskGetTickCountFromISR              
-000017c8  xTaskIncrementTick                    
-00023af4  xTaskNotifyStateClear                 
-00002468  xTaskNotifyWait                       
-00001b98  xTaskRemoveFromEventList              
-00001c88  xTaskRemoveFromUnorderedEventList     
-00001158  xTaskResumeAll                        
-00000f04  xTaskResumeFromISR                    
+00002560  xTaskGenericNotify                    
+00002730  xTaskGenericNotifyFromISR             
+00001518  xTaskGetHandle                        
+00001620  xTaskGetIdleTaskHandle                
+000022ec  xTaskGetSchedulerState                
+000012f8  xTaskGetTickCount                     
+00001314  xTaskGetTickCountFromISR              
+000017b0  xTaskIncrementTick                    
+00023c8c  xTaskNotifyStateClear                 
+0000244c  xTaskNotifyWait                       
+00001b80  xTaskRemoveFromEventList              
+00001c70  xTaskRemoveFromUnorderedEventList     
+00001148  xTaskResumeAll                        
+00000ef4  xTaskResumeFromISR                    
 08003b30  xTelemetryHandle                      
 
 
@@ -1285,96 +1290,96 @@ address   name
 00000000  resetEntry                            
 00000020  xTaskCreateRestricted                 
 000000fc  xTaskCreate                           
-00000538  vTaskDelete                           
-000006a0  vTaskDelayUntil                       
+00000530  vTaskDelete                           
+00000698  vTaskDelayUntil                       
 00000800  __SYSMEM_SIZE                         
-0000080c  vTaskDelay                            
-00000890  eTaskGetState                         
-00000994  uxTaskPriorityGet                     
-000009d8  uxTaskPriorityGetFromISR              
-00000a20  vTaskPrioritySet                      
-00000c18  vTaskSuspend                          
-00000e20  vTaskResume                           
-00000f04  xTaskResumeFromISR                    
-00000fec  vTaskStartScheduler                   
-00001084  vTaskEndScheduler                     
-000010a0  vTaskSuspendAll                       
-00001158  xTaskResumeAll                        
-00001308  xTaskGetTickCount                     
-00001324  xTaskGetTickCountFromISR              
-00001348  uxTaskGetNumberOfTasks                
-00001354  pcTaskGetName                         
-0000152c  xTaskGetHandle                        
-00001634  xTaskGetIdleTaskHandle                
-0000166c  vTaskStepTick                         
-000016c8  xTaskAbortDelay                       
-000017c8  xTaskIncrementTick                    
-000019f0  vTaskSwitchContext                    
-00001ad0  vTaskPlaceOnEventList                 
-00001b14  vTaskPlaceOnUnorderedEventList        
-00001b98  xTaskRemoveFromEventList              
-00001c88  xTaskRemoveFromUnorderedEventList     
-00001d90  vTaskSetTimeOutState                  
-00001dd0  xTaskCheckForTimeOut                  
-00001f08  vTaskMissedYield                      
-00001f18  eTaskConfirmSleepModeStatus           
-00001f94  vTaskSetThreadLocalStoragePointer     
-00001ff8  pvTaskGetThreadLocalStoragePointer    
-00002064  vTaskAllocateMPURegions               
-0000223c  uxTaskGetStackHighWaterMark           
-00002304  xTaskGetSchedulerState                
-00002354  uxTaskResetEventItemValue             
-00002390  ulTaskNotifyTake                      
-00002468  xTaskNotifyWait                       
-00002580  xTaskGenericNotify                    
-00002754  xTaskGenericNotifyFromISR             
-00002954  vTaskNotifyGiveFromISR                
-00002bfc  xQueueGenericReset                    
-00002d24  xQueueGenericCreate                   
-00002e40  xQueueGenericSend                     
-00003100  xQueueGenericSendFromISR              
-00003290  xQueueGiveFromISR                     
-000033fc  xQueueGenericReceive                  
-000036d4  xQueueReceiveFromISR                  
-0000381c  xQueuePeekFromISR                     
-00003910  uxQueueMessagesWaiting                
-00003948  uxQueueSpacesAvailable                
-00003994  uxQueueMessagesWaitingFromISR         
-000039c4  vQueueDelete                          
-00003cfc  xQueueIsQueueEmptyFromISR             
-00003d88  xQueueIsQueueFullFromISR              
-00003dd8  xEventGroupCreate                     
-00003e14  xEventGroupSync                       
-00004014  xEventGroupWaitBits                   
-00004268  xEventGroupClearBits                  
-000042ec  xEventGroupGetBitsFromISR             
-0000431c  xEventGroupSetBits                    
-000044cc  vEventGroupDelete                     
-00004550  vEventGroupSetBitsCallback            
-0000456c  vEventGroupClearBitsCallback          
-000045f4  pxPortInitialiseStack                 
-000046e4  vPortStoreTaskMPUSettings             
-00004958  xPortStartScheduler                   
-0000497c  vPortEndScheduler                     
-000049b4  vPortStartFirstTask                   
-00004a24  vPortYieldProcessor                   
-00004ad0  vPortYeildWithinAPI                   
-00004b84  vPortPreemptiveTick                   
-00004c44  ulPortCountLeadingZeros               
-00004c4c  vPortSWI                              
-00004d08  prvMpuSetRegion                       
-00004d20  prvMpuEnable                          
-00004d38  prvMpuDisable                         
-00004d60  pvPortMalloc                          
-00004fb8  vPortFree                             
-000050b0  xPortGetFreeHeapSize                  
-000050bc  xPortGetMinimumEverFreeHeapSize       
-000050c8  vPortInitialiseBlocks                 
-000050e0  _sys_memory                           
-00005ab8  __TI_Handler_Table_Base               
-00005ac4  __TI_Handler_Table_Limit              
-00005ae0  __TI_CINIT_Base                       
-00005b00  __TI_CINIT_Limit                      
+00000804  vTaskDelay                            
+00000888  eTaskGetState                         
+0000098c  uxTaskPriorityGet                     
+000009d0  uxTaskPriorityGetFromISR              
+00000a18  vTaskPrioritySet                      
+00000c10  vTaskSuspend                          
+00000e14  vTaskResume                           
+00000ef4  xTaskResumeFromISR                    
+00000fdc  vTaskStartScheduler                   
+00001074  vTaskEndScheduler                     
+00001090  vTaskSuspendAll                       
+00001148  xTaskResumeAll                        
+000012f8  xTaskGetTickCount                     
+00001314  xTaskGetTickCountFromISR              
+00001338  uxTaskGetNumberOfTasks                
+00001344  pcTaskGetName                         
+00001518  xTaskGetHandle                        
+00001620  xTaskGetIdleTaskHandle                
+00001658  vTaskStepTick                         
+000016b4  xTaskAbortDelay                       
+000017b0  xTaskIncrementTick                    
+000019d8  vTaskSwitchContext                    
+00001ab8  vTaskPlaceOnEventList                 
+00001afc  vTaskPlaceOnUnorderedEventList        
+00001b80  xTaskRemoveFromEventList              
+00001c70  xTaskRemoveFromUnorderedEventList     
+00001d74  vTaskSetTimeOutState                  
+00001db8  xTaskCheckForTimeOut                  
+00001ef0  vTaskMissedYield                      
+00001f00  eTaskConfirmSleepModeStatus           
+00001f7c  vTaskSetThreadLocalStoragePointer     
+00001fe0  pvTaskGetThreadLocalStoragePointer    
+0000204c  vTaskAllocateMPURegions               
+00002224  uxTaskGetStackHighWaterMark           
+000022ec  xTaskGetSchedulerState                
+0000233c  uxTaskResetEventItemValue             
+00002378  ulTaskNotifyTake                      
+0000244c  xTaskNotifyWait                       
+00002560  xTaskGenericNotify                    
+00002730  xTaskGenericNotifyFromISR             
+00002930  vTaskNotifyGiveFromISR                
+00002bd8  xQueueGenericReset                    
+00002d00  xQueueGenericCreate                   
+00002e1c  xQueueGenericSend                     
+000030dc  xQueueGenericSendFromISR              
+0000326c  xQueueGiveFromISR                     
+000033d8  xQueueGenericReceive                  
+000036ac  xQueueReceiveFromISR                  
+000037f4  xQueuePeekFromISR                     
+000038e8  uxQueueMessagesWaiting                
+00003920  uxQueueSpacesAvailable                
+0000396c  uxQueueMessagesWaitingFromISR         
+0000399c  vQueueDelete                          
+00003cd0  xQueueIsQueueEmptyFromISR             
+00003d5c  xQueueIsQueueFullFromISR              
+00003dac  xEventGroupCreate                     
+00003de8  xEventGroupSync                       
+00003fe8  xEventGroupWaitBits                   
+00004238  xEventGroupClearBits                  
+000042bc  xEventGroupGetBitsFromISR             
+000042ec  xEventGroupSetBits                    
+0000449c  vEventGroupDelete                     
+00004520  vEventGroupSetBitsCallback            
+0000453c  vEventGroupClearBitsCallback          
+000045c4  pxPortInitialiseStack                 
+000046b4  vPortStoreTaskMPUSettings             
+00004928  xPortStartScheduler                   
+0000494c  vPortEndScheduler                     
+00004984  vPortStartFirstTask                   
+000049f4  vPortYieldProcessor                   
+00004aa0  vPortYeildWithinAPI                   
+00004b54  vPortPreemptiveTick                   
+00004c14  ulPortCountLeadingZeros               
+00004c1c  vPortSWI                              
+00004cd8  prvMpuSetRegion                       
+00004cf0  prvMpuEnable                          
+00004d08  prvMpuDisable                         
+00004d30  pvPortMalloc                          
+00004f84  vPortFree                             
+0000507c  xPortGetFreeHeapSize                  
+00005088  xPortGetMinimumEverFreeHeapSize       
+00005094  vPortInitialiseBlocks                 
+000050b0  _sys_memory                           
+00005a84  __TI_Handler_Table_Base               
+00005a90  __TI_Handler_Table_Limit              
+00005ab0  __TI_CINIT_Base                       
+00005ad0  __TI_CINIT_Limit                      
 0000a4c4  f_mount                               
 0000a590  f_open                                
 0000a9fc  f_read                                
@@ -1441,450 +1446,451 @@ address   name
 0000f118  enableParity                          
 0000f16c  disableParity                         
 0000f258  MPUInit                               
-0000f320  wait                                  
-0000f370  mpuGetMagnetometer                    
-0000f50c  read_AK8963                           
-0000f640  write_AK8963                          
-0000f72c  mpuGetGyroAccel                       
-0000fbb4  read_MPU_ACEL_TMP_VF                  
-00010290  config_MPU_9250                       
-000102dc  config_AK8963                         
-0001039c  config_MPU_9250_VF                    
-000103e4  config_AK8963_VF                      
-000104b0  read_AK8963_VF                        
-000105a4  write_AK8963_VF                       
-0001068c  read_MANG_AK8963_VF                   
-000108a4  sciEnviarDatos                        
-000108e8  sciEnviarDatos01                      
-00010944  BMP280_Init                           
-000109ec  BMP280_Presion                        
-00010a00  BMP280_Altitud                        
-00010a0c  BMP280_Temperatura                    
-00010a18  CAlibracion_BMP280                    
-000111e8  BMP280_CalcularAltitud                
-00011248  LEERTempYpresRAW_bmp280               
-000114e8  CalcTempYpres_bmp280                  
-000119a8  BMP280_CalcularTemperaturaPresion     
-00011e14  CalcAltitudfloat                      
-00011eb4  spiInit                               
-00012244  spiSetFunctional                      
-00012264  spiReceiveData                        
-00012380  spiGetData                            
-00012448  spiTransmitData                       
-00012574  spiSendData                           
-0001263c  spiTransmitAndReceiveData             
-00012778  spiSendAndGetData                     
-00012888  SpiTxStatus                           
-000128e4  SpiRxStatus                           
-00012940  spiEnableLoopback                     
-00012974  spiDisableLoopback                    
-00012990  spiEnableNotification                 
-000129c0  spiDisableNotification                
-000129ec  spi1GetConfigValue                    
-00012b7c  spi2GetConfigValue                    
-00012d0c  spi3GetConfigValue                    
-00012fa8  __TI_printfi                          
-00013f98  mmcSelectSpi                          
-00014020  SPI_send                              
-0001454c  disk_initialize                       
-000147d8  disk_status                           
-00014804  disk_read                             
-00014924  disk_write                            
-00014a9c  disk_ioctl                            
-00014d94  disk_timerproc                        
-00014e00  get_fattime                           
-00014e58  pow                                   
-00014e58  powl                                  
-00015cbc  createTelemetryPacket                 
-00015f84  getTime                               
-0001603c  updateState                           
-00016184  updateAltitude                        
-0001650c  GenerateGPSData                       
-000165c0  getAltitude                           
-0001662c  sciSendData                           
-00016714  sltoa                                 
-000167e4  ftoa                                  
-000168bc  hacernada                             
-000169fc  StringFromFResult                     
-00016a64  SysTickHandler                        
-00016a70  Cmd_ls                                
-00016cac  Cmd_cd                                
-00016e38  Cmd_pwd                               
-00016e70  Cmd_cat                               
-00017024  Cmd_append                            
-00017140  Cmd_help                              
-000171a4  open_append                           
-00017210  SD_Test                               
-0001736c  sdReadFile                            
-000174ec  sdRemoveFile                          
-0001758c  sdCreateFile                          
-000176f4  setupPLL                              
-00017744  trimLPO                               
-000177b8  setupFlash                            
-000177f8  periphInit                            
-0001784c  mapClocks                             
-00017930  systemInit                            
-000179fc  systemPowerDown                       
-00017a2c  systemGetConfigValue                  
-00017dec  tcmflashGetConfigValue                
-00017f98  sramGetConfigValue                    
-000180d4  customTrimLPO                         
-00018194  adcInit                               
-000182f0  adcStartConversion                    
-0001833c  adcStopConversion                     
-00018364  adcResetFiFo                          
-0001838c  adcGetData                            
-00018518  adcIsFifoFull                         
-00018548  adcIsConversionComplete               
-00018578  adcCalibration                        
-00018750  adcMidPointCalibration                
-000188ec  adcEnableNotification                 
-0001893c  adcDisableNotification                
-00018964  adcSetEVTPin                          
-00018984  adcGetEVTPin                          
-0001899c  adc1GetConfigValue                    
-00018c2c  __kernel_rem_pio2                     
-00019608  MPU_xTaskCreate                       
-0001966c  MPU_xTaskCreateRestricted             
-000196b0  MPU_vTaskAllocateMPURegions           
-000196e4  MPU_vTaskDelete                       
-00019710  MPU_vTaskDelay                        
-0001973c  MPU_vTaskDelayUntil                   
-00019770  MPU_xTaskAbortDelay                   
-000197a4  MPU_uxTaskPriorityGet                 
-000197d8  MPU_eTaskGetState                     
-0001980c  MPU_vTaskPrioritySet                  
-00019840  MPU_vTaskSuspend                      
-0001986c  MPU_vTaskResume                       
-00019898  MPU_vTaskSuspendAll                   
-000198bc  MPU_xTaskResumeAll                    
-000198e8  MPU_xTaskGetTickCount                 
-00019914  MPU_uxTaskGetNumberOfTasks            
-00019940  MPU_pcTaskGetName                     
-00019974  MPU_xTaskGetHandle                    
-000199a8  MPU_uxTaskGetStackHighWaterMark       
-000199dc  MPU_vTaskSetThreadLocalStoragePointer 
-00019a20  MPU_pvTaskGetThreadLocalStoragePointer
-00019a64  MPU_xTaskGetIdleTaskHandle            
-00019a90  MPU_xTaskGenericNotify                
-00019ae4  MPU_xTaskNotifyWait                   
-00019b38  MPU_ulTaskNotifyTake                  
-00019b7c  MPU_xTaskNotifyStateClear             
-00019bb0  MPU_vTaskSetTimeOutState              
-00019bdc  MPU_xTaskCheckForTimeOut              
-00019c20  MPU_xTaskGetSchedulerState            
-00019c4c  MPU_xQueueGenericSend                 
-00019ca0  MPU_xQueueGenericReceive              
-00019cf4  MPU_uxQueueMessagesWaiting            
-00019d28  MPU_uxQueueSpacesAvailable            
-00019d5c  MPU_vQueueDelete                      
-00019d88  MPU_xQueueGenericCreate               
-00019dd4  MPU_xQueueGenericReset                
-00019e18  MPU_xEventGroupCreate                 
-00019e44  MPU_xEventGroupWaitBits               
-00019ea0  MPU_xEventGroupClearBits              
-00019ee4  MPU_xEventGroupSetBits                
-00019f28  MPU_xEventGroupSync                   
-00019f7c  MPU_vEventGroupDelete                 
-00019fa8  hetInit                               
-0001a068  pwmStart                              
-0001a09c  pwmStop                               
-0001a0d0  pwmSetDuty                            
-0001a20c  pwmSetSignal                          
-0001a384  pwmGetSignal                          
-0001a46c  pwmEnableNotification                 
-0001a4b4  pwmDisableNotification                
-0001a4e4  edgeResetCounter                      
-0001a510  edgeGetCounter                        
-0001a53c  edgeEnableNotification                
-0001a578  edgeDisableNotification               
-0001a5b8  capGetSignal                          
-0001a698  hetResetTimestamp                     
-0001a6b4  hetGetTimestamp                       
-0001a6cc  het1GetConfigValue                    
-0001a8fc  cos                                   
-0001a8fc  cosl                                  
-0001b154  vimInit                               
-0001b228  vimChannelMap                         
-0001b2cc  vimEnableInterrupt                    
-0001b424  vimDisableInterrupt                   
-0001b4a8  vimGetConfigValue                     
-0001ba40  sin                                   
-0001ba40  sinl                                  
-0001c284  mibspi1LowLevelInterrupt              
-0001c4c4  mibspi1HighLevelInterrupt             
-0001c704  spi3HighInterruptLevel                
-0001c9d0  getCommand                            
-0001ca60  getSPTelemetry                        
-0001cbdc  findCommand                           
-0001cda8  commCX                                
-0001ce10  commST                                
-0001cec4  commSIM                               
-0001cfb8  commSP1X                              
-0001cfec  commSP2X                              
-0001d024  commSIMP                              
-0001d104  UARTwrite                             
-0001d180  UARTgets                              
-0001d2b4  UARTgetc                              
-0001d2d0  UARTvprintf                           
-0001d7dc  UARTprintf                            
-0001d82c  sciInit                               
-0001d918  sciSetFunctional                      
-0001d938  sciSetBaudrate                        
-0001d9f0  sciIsTxReady                          
-0001da0c  sciSendByte                           
-0001da3c  sciSend                               
-0001db10  sciIsRxReady                          
-0001db2c  sciIsIdleDetected                     
-0001db48  sciRxError                            
-0001db78  sciReceiveByte                        
-0001dba4  sciReceive                            
-0001dc44  sciEnableLoopback                     
-0001dc78  sciDisableLoopback                    
-0001dc94  sciEnableNotification                 
-0001dcd0  sciDisableNotification                
-0001dd0c  sciEnterResetState                    
-0001dd2c  sciExitResetState                     
-0001dd64  scilinGetConfigValue                  
-0001df10  main                                  
-0001e0c4  vTelemetry                            
-0001e168  vSensors                              
-0001e298  vCameraControl                        
-0001e2e8  vMissionOperations                    
-0001e48c  sciNotification                       
-0001e598  _errata_SSWF021_45_both_plls          
-0001e78c  _errata_SSWF021_45_pll1               
-0001e904  _errata_SSWF021_45_pll2               
-0001ebfc  strtod                                
-0001ebfc  strtold                               
-0001f260  esmInit                               
-0001f368  esmError                              
-0001f384  esmEnableError                        
-0001f3ac  esmDisableError                       
-0001f3d4  esmTriggerErrorPinReset               
-0001f3e4  esmActivateNormalOperation            
-0001f3f4  esmEnableInterrupt                    
-0001f41c  esmDisableInterrupt                   
-0001f444  esmSetInterruptLevel                  
-0001f4b8  esmClearStatus                        
-0001f4f8  esmClearStatusBuffer                  
-0001f514  esmSetCounterPreloadValue             
-0001f534  esmGetStatus                          
-0001f5b8  esmGetStatusBuffer                    
-0001f5f0  esmEnterSelfTest                      
-0001f678  esmSelfTestStatus                     
-0001f6c8  esmGetConfigValue                     
-0001f85c  log                                   
-0001f85c  logl                                  
-0001fda8  atan                                  
-0001fda8  atanl                                 
-000201f4  linLowLevelInterrupt                  
-0002039c  linHighLevelInterrupt                 
-00020578  gioInit                               
-0002060c  gioSetDirection                       
-0002062c  gioSetBit                             
-0002067c  gioSetPort                            
-0002069c  gioGetBit                             
-000206c4  gioGetPort                            
-000206dc  gioToggleBit                          
-00020734  gioEnableNotification                 
-00020770  gioDisableNotification                
-000207ac  gioGetConfigValue                     
-00020c48  CameraControl_Init                    
-00020c84  CameraControl_Execute                 
-00020e6c  CameraControl_MoverMotor              
-00020f54  _coreInitRegisters_                   
-0002100c  _coreInitStackPointer_                
-00021058  _getCPSRValue_                        
-00021060  _gotoCPUIdle_                         
-00021078  _coreEnableEventBusExport_            
-00021088  _coreDisableEventBusExport_           
-00021098  _coreEnableRamEcc_                    
-000210a8  _coreDisableRamEcc_                   
-000210b8  _coreEnableFlashEcc_                  
-000210cc  _coreDisableFlashEcc_                 
-000210dc  _coreEnableIrqVicOffset_              
-000210ec  _coreGetDataFault_                    
-000210f4  _coreClearDataFault_                  
-00021100  _coreGetInstructionFault_             
-00021108  _coreClearInstructionFault_           
-00021114  _coreGetDataFaultAddress_             
-0002111c  _coreClearDataFaultAddress_           
-00021128  _coreGetInstructionFaultAddress_      
-00021130  _coreClearInstructionFaultAddress_    
-0002113c  _coreGetAuxiliaryDataFault_           
-00021144  _coreClearAuxiliaryDataFault_         
-00021150  _coreGetAuxiliaryInstructionFault_    
-00021158  _coreClearAuxiliaryInstructionFault_  
-00021164  _disable_interrupt_                   
-0002116c  _disable_FIQ_interrupt_               
-00021174  _disable_IRQ_interrupt_               
-0002117c  _enable_interrupt_                    
-00021184  _esmCcmErrorsClear_                   
-0002120c  _errata_CORTEXR4_66_                  
-0002121c  __TI_PINIT_Base                       
-00021220  __TI_PINIT_Limit                      
-000214e4  __aeabi_uldivmod                      
-0002179c  atan2                                 
-0002179c  atan2l                                
-00021ca0  vimParityErrorHandler                 
-00021f08  vListInitialise                       
-00021f60  vListInitialiseItem                   
-00021f7c  vListInsertEnd                        
-00021ff0  vListInsert                           
-000220b4  uxListRemove                          
-00022140  __kernel_sin                          
-00022364  _c_int00                              
-00022580  __aeabi_dsub                          
-0002258c  __aeabi_dadd                          
-00022794  __kernel_cos                          
-000229a4  sqrt                                  
-000229a4  sqrtl                                 
-00022ef4  aligned_alloc                         
-00022ef4  memalign                              
-0002324c  fputs                                 
-000233f0  pwmSetSignal10e3                      
-00023588  __aeabi_ddiv                          
-00023718  __aeabi_memcpy                        
-00023718  __aeabi_memcpy4                       
-00023718  __aeabi_memcpy8                       
-00023718  memcpy                                
-00023898  free                                  
-00023af4  xTaskNotifyStateClear                 
-00023b70  floor                                 
-00023b70  floorl                                
-00023cc8  setvbuf                               
-00023e20  muxInit                               
-00023ea8  pinmuxGetConfigValue                  
-00023f74  getAdcVoltage                         
-00023fdc  readAllAdc                            
-000240b8  __aeabi_fsub                          
-000240bc  __aeabi_fadd                          
-000241ec  CmdLineProcess                        
-0002431c  __aeabi_dmul                          
-00024444  ldexp                                 
-00024444  ldexpl                                
-00024444  scalbn                                
-00024444  scalbnl                               
-0002467c  EncoderInit                           
-000246cc  EncoderRead                           
-00024790  esmGroup1Notification                 
-000247a0  esmGroup2Notification                 
-000247b0  memoryPort0TestFailNotification       
-000247cc  memoryPort1TestFailNotification       
-000247e8  adcNotification                       
-000247fc  gioNotification                       
-00024824  spiNotification                       
-00024838  spiEndNotification                    
-00024848  pwmNotification                       
-00024860  edgeNotification                      
-00024874  hetNotification                       
-00024888  esmHighInterrupt                      
-00024974  _dabort                               
-00024a5c  __aeabi_cdcmpeq                       
-00024a5c  __aeabi_cdcmple                       
-00024b3c  __aeabi_cdrcmple                      
-00024c1c  _pmuInit_                             
-00024c68  _pmuEnableCountersGlobal_             
-00024c78  _pmuDisableCountersGlobal_            
-00024c88  _pmuResetCycleCounter_                
-00024c98  _pmuResetEventCounters_               
-00024ca8  _pmuResetCounters_                    
-00024cb8  _pmuStartCounters_                    
-00024cc0  _pmuStopCounters_                     
-00024cc8  _pmuSetCountEvent_                    
-00024cd4  _pmuGetCycleCount_                    
-00024cdc  _pmuGetEventCount_                    
-00024ce8  _pmuGetOverflow_                      
-00024cfc  __aeabi_fdiv                          
-00024e98  __TI_closefile                        
-00024f50  __aeabi_memclr                        
-00024f50  __aeabi_memclr4                       
-00024f50  __aeabi_memclr8                       
-00024f54  __aeabi_memset                        
-00024f54  __aeabi_memset4                       
-00024f54  __aeabi_memset8                       
-00024f60  memset                                
-00025000  HOSTlseek                             
-000250ac  fflush                                
-00025204  fseek                                 
-000252ac  __aeabi_fmul                          
-00025354  HOSTrename                            
-000253f8  __TI_wrt_ok                           
-00025498  sdWriteMemory                         
-00025538  __aeabi_d2f                           
-000255d4  HOSTopen                              
-00025704  close                                 
-0002579c  __aeabi_ldivmod                       
-00025834  HOSTread                              
-000258c4  HOSTwrite                             
-00025954  __TI_decompress_lzss                  
-000259e4  __aeabi_cfcmpeq                       
-000259e4  __aeabi_cfcmple                       
-00025a6c  __aeabi_cfrcmple                      
-00025af4  __TI_doflush                          
-00025bfc  atoi                                  
-00025c80  ltoa                                  
-00025d00  exit                                  
-00025d7c  frexp                                 
-00025d7c  frexpl                                
-00025df8  HOSTclose                             
-00025e6c  HOSTunlink                            
-00025edc  getdevice                             
-00025f48  __TI_auto_init_nobinit_nopinit        
-00025fb0  strtok                                
-0002607c  sprintf                               
-000260e0  __aeabi_l2f                           
-00026140  __aeabi_d2iz                          
-0002619c  __aeabi_f2d                           
-000261f8  __aeabi_d2uiz                         
-00026250  __TI_cleanup                          
-000262a4  __TI_readmsg                          
-000262f8  __TI_writemsg                         
-00026340  C$$IO$$                               
-0002634c  finddevice                            
-000263a0  __aeabi_idiv                          
-000263a0  __aeabi_idivmod                       
-000263f4  __aeabi_uidiv                         
-000263f4  __aeabi_uidivmod                      
-00026444  rand                                  
-00026490  __aeabi_f2iz                          
-000264dc  __aeabi_f2uiz                         
-00026528  __aeabi_i2f                           
-00026574  strspn                                
-000265c0  strncpy                               
-00026608  remove                                
-00026608  unlink                                
-00026650  lseek                                 
-00026694  strcspn                               
-000266d8  write                                 
-0002675c  __aeabi_i2d                           
-00026798  __aeabi_ui2d                          
-0002682c  memccpy                               
-00026858  memchr                                
-00026884  strcat                                
-000268ac  strchr                                
-000268d4  strcmp                                
-000268fc  _abort_msg                            
-00026920  wcslen                                
-00026944  strlen                                
-00026964  strcpy                                
-00026990  __TI_decompress_none                  
-000269a4  __TI_zero_init                        
-000269b4  __aeabi_errno_addr                    
-000269c0  copysign                              
-000269c0  copysignl                             
-000269cc  malloc                                
-000269d8  C$$EXIT                               
-000269d8  abort                                 
-000269e0  atof                                  
-000269e8  _nop                                  
-000269ec  phantomInterrupt                      
-000269f0  __aeabi_idiv0                         
-000269f0  __aeabi_ldiv0                         
-000269f4  handlePLLLockFail                     
-00027250  _ctypes_                              
+0000f33c  wait                                  
+0000f38c  mpuGetMagnetometer                    
+0000f528  read_AK8963                           
+0000f65c  write_AK8963                          
+0000f748  mpuGetGyroAccel                       
+0000fbdc  read_MPU_ACEL_TMP_VF                  
+000102b8  config_MPU_9250                       
+00010304  config_AK8963                         
+000103c4  config_MPU_9250_VF                    
+0001040c  config_AK8963_VF                      
+000104d8  read_AK8963_VF                        
+000105cc  write_AK8963_VF                       
+000106b4  read_MANG_AK8963_VF                   
+000108cc  sciEnviarDatos                        
+00010910  sciEnviarDatos01                      
+000109a0  BMP280_Init                           
+00010a64  BMP280_Presion                        
+00010a78  BMP280_Altitud                        
+00010a84  BMP280_Temperatura                    
+00010a90  CAlibracion_BMP280                    
+00011260  BMP280_CalcularAltitud                
+000112c0  LEERTempYpresRAW_bmp280               
+00011564  CalcTempYpres_bmp280                  
+00011a24  BMP280_CalcularTemperaturaPresion     
+00011e90  CalcAltitudfloat                      
+00011f30  spiInit                               
+000122c0  spiSetFunctional                      
+000122e0  spiReceiveData                        
+000123fc  spiGetData                            
+000124c4  spiTransmitData                       
+000125f0  spiSendData                           
+000126b8  spiTransmitAndReceiveData             
+000127f4  spiSendAndGetData                     
+00012904  SpiTxStatus                           
+00012960  SpiRxStatus                           
+000129bc  spiEnableLoopback                     
+000129f0  spiDisableLoopback                    
+00012a0c  spiEnableNotification                 
+00012a3c  spiDisableNotification                
+00012a68  spi1GetConfigValue                    
+00012bf8  spi2GetConfigValue                    
+00012d88  spi3GetConfigValue                    
+00013024  __TI_printfi                          
+00014014  mmcSelectSpi                          
+0001409c  SPI_send                              
+000145c8  disk_initialize                       
+00014854  disk_status                           
+00014880  disk_read                             
+000149a0  disk_write                            
+00014b18  disk_ioctl                            
+00014e10  disk_timerproc                        
+00014e7c  get_fattime                           
+00014ed4  pow                                   
+00014ed4  powl                                  
+00015d38  createTelemetryPacket                 
+00016000  getTime                               
+000160b8  updateState                           
+00016200  updateAltitude                        
+00016584  GenerateGPSData                       
+00016638  getAltitude                           
+000166a4  sciSendData                           
+0001678c  sltoa                                 
+0001685c  ftoa                                  
+00016934  hacernada                             
+00016a74  open_append                           
+00016ad0  StringFromFResult                     
+00016b38  SysTickHandler                        
+00016b44  Cmd_ls                                
+00016d80  Cmd_cd                                
+00016f0c  Cmd_pwd                               
+00016f44  Cmd_cat                               
+000170f8  Cmd_append                            
+00017214  Cmd_help                              
+00017284  SD_Test                               
+000173e4  sdReadFile                            
+0001751c  sdRemoveFile                          
+00017604  sdCreateFile                          
+0001776c  setupPLL                              
+000177bc  trimLPO                               
+00017830  setupFlash                            
+00017870  periphInit                            
+000178c4  mapClocks                             
+000179a8  systemInit                            
+00017a74  systemPowerDown                       
+00017aa4  systemGetConfigValue                  
+00017e64  tcmflashGetConfigValue                
+00018010  sramGetConfigValue                    
+0001814c  customTrimLPO                         
+0001820c  adcInit                               
+00018368  adcStartConversion                    
+000183b4  adcStopConversion                     
+000183dc  adcResetFiFo                          
+00018404  adcGetData                            
+00018590  adcIsFifoFull                         
+000185c0  adcIsConversionComplete               
+000185f0  adcCalibration                        
+000187c8  adcMidPointCalibration                
+00018964  adcEnableNotification                 
+000189b4  adcDisableNotification                
+000189dc  adcSetEVTPin                          
+000189fc  adcGetEVTPin                          
+00018a14  adc1GetConfigValue                    
+00018ca4  __kernel_rem_pio2                     
+00019680  MPU_xTaskCreate                       
+000196e4  MPU_xTaskCreateRestricted             
+00019728  MPU_vTaskAllocateMPURegions           
+0001975c  MPU_vTaskDelete                       
+00019788  MPU_vTaskDelay                        
+000197b4  MPU_vTaskDelayUntil                   
+000197e8  MPU_xTaskAbortDelay                   
+0001981c  MPU_uxTaskPriorityGet                 
+00019850  MPU_eTaskGetState                     
+00019884  MPU_vTaskPrioritySet                  
+000198b8  MPU_vTaskSuspend                      
+000198e4  MPU_vTaskResume                       
+00019910  MPU_vTaskSuspendAll                   
+00019934  MPU_xTaskResumeAll                    
+00019960  MPU_xTaskGetTickCount                 
+0001998c  MPU_uxTaskGetNumberOfTasks            
+000199b8  MPU_pcTaskGetName                     
+000199ec  MPU_xTaskGetHandle                    
+00019a20  MPU_uxTaskGetStackHighWaterMark       
+00019a54  MPU_vTaskSetThreadLocalStoragePointer 
+00019a98  MPU_pvTaskGetThreadLocalStoragePointer
+00019adc  MPU_xTaskGetIdleTaskHandle            
+00019b08  MPU_xTaskGenericNotify                
+00019b5c  MPU_xTaskNotifyWait                   
+00019bb0  MPU_ulTaskNotifyTake                  
+00019bf4  MPU_xTaskNotifyStateClear             
+00019c28  MPU_vTaskSetTimeOutState              
+00019c54  MPU_xTaskCheckForTimeOut              
+00019c98  MPU_xTaskGetSchedulerState            
+00019cc4  MPU_xQueueGenericSend                 
+00019d18  MPU_xQueueGenericReceive              
+00019d6c  MPU_uxQueueMessagesWaiting            
+00019da0  MPU_uxQueueSpacesAvailable            
+00019dd4  MPU_vQueueDelete                      
+00019e00  MPU_xQueueGenericCreate               
+00019e4c  MPU_xQueueGenericReset                
+00019e90  MPU_xEventGroupCreate                 
+00019ebc  MPU_xEventGroupWaitBits               
+00019f18  MPU_xEventGroupClearBits              
+00019f5c  MPU_xEventGroupSetBits                
+00019fa0  MPU_xEventGroupSync                   
+00019ff4  MPU_vEventGroupDelete                 
+0001a020  hetInit                               
+0001a0e0  pwmStart                              
+0001a114  pwmStop                               
+0001a148  pwmSetDuty                            
+0001a284  pwmSetSignal                          
+0001a3fc  pwmGetSignal                          
+0001a4e4  pwmEnableNotification                 
+0001a52c  pwmDisableNotification                
+0001a55c  edgeResetCounter                      
+0001a588  edgeGetCounter                        
+0001a5b4  edgeEnableNotification                
+0001a5f0  edgeDisableNotification               
+0001a630  capGetSignal                          
+0001a710  hetResetTimestamp                     
+0001a72c  hetGetTimestamp                       
+0001a744  het1GetConfigValue                    
+0001a974  cos                                   
+0001a974  cosl                                  
+0001b1cc  vimInit                               
+0001b2a0  vimChannelMap                         
+0001b344  vimEnableInterrupt                    
+0001b49c  vimDisableInterrupt                   
+0001b520  vimGetConfigValue                     
+0001bab8  sin                                   
+0001bab8  sinl                                  
+0001c2fc  mibspi1LowLevelInterrupt              
+0001c53c  mibspi1HighLevelInterrupt             
+0001c77c  spi3HighInterruptLevel                
+0001ca48  getCommand                            
+0001cadc  getSPTelemetry                        
+0001cc58  findCommand                           
+0001ce24  commCX                                
+0001ce8c  commST                                
+0001cf40  commSIM                               
+0001d034  commSP1X                              
+0001d068  commSP2X                              
+0001d0a0  commSIMP                              
+0001d180  UARTwrite                             
+0001d1fc  UARTgets                              
+0001d330  UARTgetc                              
+0001d34c  UARTvprintf                           
+0001d858  UARTprintf                            
+0001d8a8  sciInit                               
+0001d994  sciSetFunctional                      
+0001d9b4  sciSetBaudrate                        
+0001da6c  sciIsTxReady                          
+0001da88  sciSendByte                           
+0001dab8  sciSend                               
+0001db8c  sciIsRxReady                          
+0001dba8  sciIsIdleDetected                     
+0001dbc4  sciRxError                            
+0001dbf4  sciReceiveByte                        
+0001dc20  sciReceive                            
+0001dcc0  sciEnableLoopback                     
+0001dcf4  sciDisableLoopback                    
+0001dd10  sciEnableNotification                 
+0001dd4c  sciDisableNotification                
+0001dd88  sciEnterResetState                    
+0001dda8  sciExitResetState                     
+0001dde0  scilinGetConfigValue                  
+0001df8c  main                                  
+0001e11c  vTelemetry                            
+0001e1c0  vSensors                              
+0001e328  vMissionOperations                    
+0001e4fc  sciNotification                       
+0001e604  _errata_SSWF021_45_both_plls          
+0001e7f8  _errata_SSWF021_45_pll1               
+0001e970  _errata_SSWF021_45_pll2               
+0001ec68  strtod                                
+0001ec68  strtold                               
+0001f2cc  esmInit                               
+0001f3d4  esmError                              
+0001f3f0  esmEnableError                        
+0001f418  esmDisableError                       
+0001f440  esmTriggerErrorPinReset               
+0001f450  esmActivateNormalOperation            
+0001f460  esmEnableInterrupt                    
+0001f488  esmDisableInterrupt                   
+0001f4b0  esmSetInterruptLevel                  
+0001f524  esmClearStatus                        
+0001f564  esmClearStatusBuffer                  
+0001f580  esmSetCounterPreloadValue             
+0001f5a0  esmGetStatus                          
+0001f624  esmGetStatusBuffer                    
+0001f65c  esmEnterSelfTest                      
+0001f6e4  esmSelfTestStatus                     
+0001f734  esmGetConfigValue                     
+0001f8c8  log                                   
+0001f8c8  logl                                  
+0001fe14  atan                                  
+0001fe14  atanl                                 
+00020260  linLowLevelInterrupt                  
+00020408  linHighLevelInterrupt                 
+000205e4  gioInit                               
+00020678  gioSetDirection                       
+00020698  gioSetBit                             
+000206e8  gioSetPort                            
+00020708  gioGetBit                             
+00020730  gioGetPort                            
+00020748  gioToggleBit                          
+000207a0  gioEnableNotification                 
+000207dc  gioDisableNotification                
+00020818  gioGetConfigValue                     
+00020cb4  CameraControl_Init                    
+00020cf0  CameraControl_Execute                 
+00020ed8  CameraControl_MoverMotor              
+00020fc0  _coreInitRegisters_                   
+00021078  _coreInitStackPointer_                
+000210c4  _getCPSRValue_                        
+000210cc  _gotoCPUIdle_                         
+000210e4  _coreEnableEventBusExport_            
+000210f4  _coreDisableEventBusExport_           
+00021104  _coreEnableRamEcc_                    
+00021114  _coreDisableRamEcc_                   
+00021124  _coreEnableFlashEcc_                  
+00021138  _coreDisableFlashEcc_                 
+00021148  _coreEnableIrqVicOffset_              
+00021158  _coreGetDataFault_                    
+00021160  _coreClearDataFault_                  
+0002116c  _coreGetInstructionFault_             
+00021174  _coreClearInstructionFault_           
+00021180  _coreGetDataFaultAddress_             
+00021188  _coreClearDataFaultAddress_           
+00021194  _coreGetInstructionFaultAddress_      
+0002119c  _coreClearInstructionFaultAddress_    
+000211a8  _coreGetAuxiliaryDataFault_           
+000211b0  _coreClearAuxiliaryDataFault_         
+000211bc  _coreGetAuxiliaryInstructionFault_    
+000211c4  _coreClearAuxiliaryInstructionFault_  
+000211d0  _disable_interrupt_                   
+000211d8  _disable_FIQ_interrupt_               
+000211e0  _disable_IRQ_interrupt_               
+000211e8  _enable_interrupt_                    
+000211f0  _esmCcmErrorsClear_                   
+00021278  _errata_CORTEXR4_66_                  
+00021288  __TI_PINIT_Base                       
+0002128c  __TI_PINIT_Limit                      
+00021550  __aeabi_uldivmod                      
+00021808  atan2                                 
+00021808  atan2l                                
+00021d0c  vimParityErrorHandler                 
+00021f74  vListInitialise                       
+00021fcc  vListInitialiseItem                   
+00021fe8  vListInsertEnd                        
+0002205c  vListInsert                           
+00022120  uxListRemove                          
+000221ac  __kernel_sin                          
+000223d0  _c_int00                              
+000225e4  __aeabi_dsub                          
+000225f0  __aeabi_dadd                          
+000227f8  __kernel_cos                          
+00022a08  sqrt                                  
+00022a08  sqrtl                                 
+00023100  fputs                                 
+000232a4  pwmSetSignal10e3                      
+0002343c  aligned_alloc                         
+0002343c  memalign                              
+000235d4  __aeabi_ddiv                          
+00023764  __aeabi_memcpy                        
+00023764  __aeabi_memcpy4                       
+00023764  __aeabi_memcpy8                       
+00023764  memcpy                                
+000238e4  free                                  
+00023a58  floor                                 
+00023a58  floorl                                
+00023c8c  xTaskNotifyStateClear                 
+00023d08  setvbuf                               
+00023e60  muxInit                               
+00023ee8  pinmuxGetConfigValue                  
+00023fb4  getAdcVoltage                         
+0002401c  readAllAdc                            
+000240f8  __aeabi_fsub                          
+000240fc  __aeabi_fadd                          
+0002422c  CmdLineProcess                        
+0002435c  __aeabi_dmul                          
+00024484  ldexp                                 
+00024484  ldexpl                                
+00024484  scalbn                                
+00024484  scalbnl                               
+000246bc  EncoderInit                           
+0002470c  EncoderRead                           
+000247d0  esmGroup1Notification                 
+000247e0  esmGroup2Notification                 
+000247f0  memoryPort0TestFailNotification       
+0002480c  memoryPort1TestFailNotification       
+00024828  adcNotification                       
+0002483c  gioNotification                       
+00024864  spiNotification                       
+00024878  spiEndNotification                    
+00024888  pwmNotification                       
+000248a0  edgeNotification                      
+000248b4  hetNotification                       
+000248c8  esmHighInterrupt                      
+000249b4  _dabort                               
+00024a9c  __aeabi_cdcmpeq                       
+00024a9c  __aeabi_cdcmple                       
+00024b7c  __aeabi_cdrcmple                      
+00024c5c  _pmuInit_                             
+00024ca8  _pmuEnableCountersGlobal_             
+00024cb8  _pmuDisableCountersGlobal_            
+00024cc8  _pmuResetCycleCounter_                
+00024cd8  _pmuResetEventCounters_               
+00024ce8  _pmuResetCounters_                    
+00024cf8  _pmuStartCounters_                    
+00024d00  _pmuStopCounters_                     
+00024d08  _pmuSetCountEvent_                    
+00024d14  _pmuGetCycleCount_                    
+00024d1c  _pmuGetEventCount_                    
+00024d28  _pmuGetOverflow_                      
+00024d3c  __aeabi_fdiv                          
+00024ed8  __TI_closefile                        
+00024f90  __aeabi_memclr                        
+00024f90  __aeabi_memclr4                       
+00024f90  __aeabi_memclr8                       
+00024f94  __aeabi_memset                        
+00024f94  __aeabi_memset4                       
+00024f94  __aeabi_memset8                       
+00024fa0  memset                                
+000250f0  HOSTlseek                             
+0002519c  fflush                                
+00025248  fseek                                 
+000252f0  __aeabi_fmul                          
+00025398  HOSTrename                            
+0002543c  __TI_wrt_ok                           
+000254dc  __aeabi_d2f                           
+00025578  HOSTopen                              
+000256a8  close                                 
+00025740  __aeabi_ldivmod                       
+000257d8  sdWriteMemory                         
+0002586c  HOSTread                              
+000258fc  HOSTwrite                             
+0002598c  __TI_decompress_lzss                  
+00025a1c  __aeabi_cfcmpeq                       
+00025a1c  __aeabi_cfcmple                       
+00025aa4  __aeabi_cfrcmple                      
+00025b2c  __TI_doflush                          
+00025c34  atoi                                  
+00025cb8  __TI_ltoa                             
+00025d38  exit                                  
+00025db4  frexp                                 
+00025db4  frexpl                                
+00025e30  HOSTclose                             
+00025ea4  HOSTunlink                            
+00025f14  getdevice                             
+00025f80  __TI_auto_init_nobinit_nopinit        
+00025fe8  strtok                                
+000260b4  sprintf                               
+00026118  __aeabi_l2f                           
+00026178  __aeabi_d2iz                          
+000261d4  __aeabi_f2d                           
+00026230  __aeabi_d2uiz                         
+00026288  __TI_cleanup                          
+000262dc  __TI_readmsg                          
+00026330  __TI_writemsg                         
+00026378  C$$IO$$                               
+00026384  finddevice                            
+000263d8  __aeabi_idiv                          
+000263d8  __aeabi_idivmod                       
+0002642c  __aeabi_uidiv                         
+0002642c  __aeabi_uidivmod                      
+0002647c  rand                                  
+000264c8  __aeabi_f2iz                          
+00026514  __aeabi_f2uiz                         
+00026560  __aeabi_i2f                           
+000265ac  strspn                                
+000265f8  strncpy                               
+00026640  remove                                
+00026640  unlink                                
+00026688  lseek                                 
+000266cc  strcspn                               
+00026710  write                                 
+00026794  __aeabi_i2d                           
+000267d0  __aeabi_ui2d                          
+00026864  memccpy                               
+00026894  memchr                                
+000268c0  strcat                                
+000268e8  strchr                                
+00026910  strcmp                                
+00026938  _abort_msg                            
+0002695c  wcslen                                
+00026980  strlen                                
+000269a0  strcpy                                
+000269cc  __TI_decompress_none                  
+000269e0  __TI_zero_init                        
+000269f0  __aeabi_errno_addr                    
+000269fc  copysign                              
+000269fc  copysignl                             
+00026a08  malloc                                
+00026a14  C$$EXIT                               
+00026a14  abort                                 
+00026a1c  atof                                  
+00026a24  _nop                                  
+00026a28  phantomInterrupt                      
+00026a2c  __aeabi_idiv0                         
+00026a2c  __aeabi_ldiv0                         
+00026a30  handlePLLLockFail                     
+00027290  _ctypes_                              
 080008d0  pxCurrentTCB                          
+08001000  __start___llvm_prf_cnts               
+08001000  __stop___llvm_prf_cnts                
 08003458  filew                                 
 08003680  __CIOBUF_                             
 080037a0  command                               
@@ -1958,40 +1964,40 @@ address   name
 08003f6c  _lock                                 
 08003f70  _unlock                               
 08003f84  Alt_bmp280                            
-08003f94  ComandoSPI                            
-08003f9c  ComandoSPI_MPU                        
-08003fa4  DatoSPI01                             
-08003fac  DatoSPI01_MPU                         
-08003fb4  DatoSPI02                             
-08003fbc  DatoSPI03                             
-08003fcc  DatoSPI04                             
-08003fdc  Pres_bmp280                           
-08003fe4  SP1_ALTITUDE                          
-08003fec  SP2_ALTITUDE                          
-08003ffc  Temp_bmp280                           
-08004004  cALTITUDE_BAR                         
-0800400c  cGPS_TIME                             
-08004014  cPRESS_BAR                            
-0800401c  cTEMPERATURE                          
-08004024  ulCriticalNesting                     
-08004028  ulTaskHasFPUContext                   
-0800402c  cALT                                  
-0800403a  SP1_ROTATION_RATE                     
-08004040  SP1_TEMPERATURE                       
-08004046  SP2_ROTATION_RATE                     
-0800404c  SP2_TEMPERATURE                       
-08004052  cPACKET_COUNT                         
-08004058  cSP1_PC                               
-0800405e  cSP2_PC                               
-08004064  ECHO                                  
-08004069  cH                                    
-08004074  SP1_PACKET_COUNT                      
-08004078  SP2_PACKET_COUNT                      
-0800407c  cVOLT_BATT                            
-08004080  errno                                 
-0800408c  cM                                    
-0800408f  cNSATS                                
-08004092  cS                                    
+08003f9c  ComandoSPI                            
+08003fa4  ComandoSPI_MPU                        
+08003fac  DatoSPI01                             
+08003fb4  DatoSPI01_MPU                         
+08003fbc  DatoSPI02                             
+08003fc4  DatoSPI03                             
+08003fd4  DatoSPI04                             
+08003fe4  Pres_bmp280                           
+08003fec  SP1_ALTITUDE                          
+08003ff4  SP2_ALTITUDE                          
+08004004  Temp_bmp280                           
+0800400c  cALTITUDE_BAR                         
+08004014  cGPS_TIME                             
+0800401c  cPRESS_BAR                            
+08004024  cTEMPERATURE                          
+0800402c  ulCriticalNesting                     
+08004030  ulTaskHasFPUContext                   
+08004034  cALT                                  
+08004042  SP1_ROTATION_RATE                     
+08004048  SP1_TEMPERATURE                       
+0800404e  SP2_ROTATION_RATE                     
+08004054  SP2_TEMPERATURE                       
+0800405a  cPACKET_COUNT                         
+08004060  cSP1_PC                               
+08004066  cSP2_PC                               
+0800406c  ECHO                                  
+08004071  cH                                    
+08004080  SP1_PACKET_COUNT                      
+08004084  SP2_PACKET_COUNT                      
+08004088  cVOLT_BATT                            
+0800408c  errno                                 
+08004098  cM                                    
+0800409b  cNSATS                                
+0800409e  cS                                    
 ffffffff  __TI_pprof_out_hndl                   
 ffffffff  __TI_prof_data_size                   
 ffffffff  __TI_prof_data_start                  
@@ -2002,4 +2008,4 @@ UNDEFED   SHT$$INIT_ARRAY$$Base
 UNDEFED   SHT$$INIT_ARRAY$$Limit                
 UNDEFED   _system_post_cinit                    
 
-[720 symbols]
+[721 symbols]

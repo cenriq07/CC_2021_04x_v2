@@ -10,6 +10,7 @@
 #define FATFS_PORT_MMC_HERCULES_H_
 
 
+void disk_timerproc(void);
 void mmcSelectSpi(gioPORT_t *port, spiBASE_t *reg);
 
 
