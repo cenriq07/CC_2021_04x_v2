@@ -71,8 +71,8 @@ char cVOLT_BATT[4] = "V";
 
 int GPS_TIME = 113020;
 char cGPS_TIME[8] = "TM";
-char cLAT[12] = "20.6593477" ;
-char cLON[12] = "-100.38697" ;
+char cLAT[12] = "20.6251629" ;
+char cLON[12] = "-100.1872072" ;
 char cALT[7] = "HG" ;
 char cNSATS[3] = "3" ;
 

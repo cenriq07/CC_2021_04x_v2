@@ -32,7 +32,7 @@ void MPUInit()
         SPI1_data_configCh0.CS_HOLD=FALSE;
         SPI1_data_configCh0.WDEL=TRUE;
         SPI1_data_configCh0.DFSEL=SPI_FMT_0;
-        SPI1_data_configCh0.CSNR=SPI_CS_1;
+        SPI1_data_configCh0.CSNR=SPI_CS_0;
 
         sciEnviarDatos(sprintf(command," // ************   I AM HERE  ************** //"),command, 1);
 

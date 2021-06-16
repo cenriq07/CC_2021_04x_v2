@@ -71,7 +71,7 @@
 static char receivedData[2];
 int i = 0;
 
-#define MICROSD
+//#define MICROSD
 
 #ifdef MICROSD
 #include "SDCard/sd_card.h"
@@ -126,8 +126,8 @@ int main(void)
     __delay_cycles(106);
 
     /* --------------------- TASKS ---------------------*/
-    xTaskCreate(vTelemetry, "T. Container", 1000, NULL, 1, &xTelemetryHandle);
-    xTaskCreate(vSensors, "Sensors", configMINIMAL_STACK_SIZE, NULL, 1, NULL);
+    xTaskCreate(vTelemetry, "T. Container", 1000, NULL, 2, &xTelemetryHandle);
+    xTaskCreate(vSensors, "Sensors", configMINIMAL_STACK_SIZE, NULL, 2, NULL);
     xTaskCreate(vMissionOperations, "Mission Operations", 512, NULL, 1, NULL);
 
     switch(FSW_STATE_TEMP)

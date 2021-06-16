@@ -44,7 +44,7 @@ void CameraControl_Execute() {
     CameraControl_MoverMotor(750 + (error * 100 / M_PI));
 
     // Mandar datos por serial
-    sciSend(scilinREG, sprintf(command,"Encoder=%.2f \t Magnetometro=%.2f \t Error=%.2f\r\n", angEnc, angMag, error), (uint8*) command);
+//    sciSend(scilinREG, sprintf(command,"Encoder=%.2f \t Magnetometro=%.2f \t Error=%.2f\r\n", angEnc, angMag, error), (uint8*) command);
 }
 
 void CameraControl_MoverMotor(const int duty) {

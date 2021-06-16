@@ -180,7 +180,7 @@ void BMP280_Init(void)
         SPI1_data_configCh2.CS_HOLD=FALSE;
         SPI1_data_configCh2.WDEL=TRUE;
         SPI1_data_configCh2.DFSEL=SPI_FMT_0; // antes en SPI_FMT_1: modo 2: Select the Data word format by setting DFSEL bits. Select the Number of the configured SPIFMTx register (0 to 3) to used for the communication. Note: It is highly recommended to use SPIDAT1 register, SPIDAT0 is supported for compatibility reason
-        SPI1_data_configCh2.CSNR=SPI_CS_0;//0xFB; // con este controlamos el slave chip select 1
+        SPI1_data_configCh2.CSNR=SPI_CS_1;//0xFB; // con este controlamos el slave chip select 1
 
         ComandoSPI[0]=((0x7F & 0xF4)<<8)|0x00AB; // ENCENDEMOS y activamos sobremuestreos
         spiSendAndGetData(spiREG_BMP, &SPI1_data_configCh2,(uint32) 1, ComandoSPI,DatoSPI01);
