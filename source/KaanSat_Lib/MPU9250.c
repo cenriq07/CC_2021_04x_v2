@@ -28,10 +28,11 @@ static int INIT = 0;
 void MPUInit()
 {
     if (INIT == 0) {
+        INIT = 1;
         SPI1_data_configCh0.CS_HOLD=FALSE;
         SPI1_data_configCh0.WDEL=TRUE;
         SPI1_data_configCh0.DFSEL=SPI_FMT_0;
-        SPI1_data_configCh0.CSNR=SPI_CS_0;
+        SPI1_data_configCh0.CSNR=SPI_CS_1;
 
         sciEnviarDatos(sprintf(command," // ************   I AM HERE  ************** //"),command, 1);
 
@@ -46,8 +47,6 @@ void MPUInit()
 
         read_AK8963(spiREG1, &SPI1_data_configCh0, MPU_AK8963_WIA, AK8963ReadOut);
         sciEnviarDatos(sprintf(command,"MAG ID=  %X ",AK8963ReadOut[0] ),command, 1);
-
-        INIT = 1;
     }
 }
 

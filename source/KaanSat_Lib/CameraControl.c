@@ -18,10 +18,10 @@ static int16_t DATOS_MAGNETOMETRO[3] = {0,0,0};
 
 void CameraControl_Init() {
     if (INIT == 0) {
+        INIT = 1;
         MPUInit();
         EncoderInit();
         MOTOR.period = 20000;
-        INIT = 1;
     }
 }
 
@@ -41,10 +41,7 @@ void CameraControl_Execute() {
     float error = atan2(sin(angMag - angEnc), cos(angMag - angEnc));
 
     // Mover motor mientras exista un error
-    if (error <= 0.15)
-        CameraControl_MoverMotor(750 + (error * 150 / M_PI));
-    else
-        CameraControl_MoverMotor(750);
+    CameraControl_MoverMotor(750 + (error * 100 / M_PI));
 
     // Mandar datos por serial
     sciSend(scilinREG, sprintf(command,"Encoder=%.2f \t Magnetometro=%.2f \t Error=%.2f\r\n", angEnc, angMag, error), (uint8*) command);

@@ -7,6 +7,8 @@
 #include "cmdline.h"
 #include "sd_defs.h"
 
+#include <string.h>
+
 
 //typedef struct ST7735 {}ST7735;
 

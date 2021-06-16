@@ -70,7 +70,7 @@
 
 static char receivedData[2];
 int i = 0;
-#define MICROSD     TRUE
+//#define MICROSD     TRUE
 /* USER CODE END */
 
 /** @fn void main(void)
@@ -118,10 +118,10 @@ int main(void)
     __delay_cycles(106);
 
     /* --------------------- TASKS ---------------------*/
-    xTaskCreate(vTelemetry,"T. Container",1000, NULL, 1, &xTelemetryHandle);
-    xTaskCreate(vSensors,"Sensors",configMINIMAL_STACK_SIZE, NULL, 1, NULL);
-    xTaskCreate(vMissionOperations,"Sat Ops",configMINIMAL_STACK_SIZE, NULL, 1, NULL);
-    xTaskCreate(vCameraControl,"Camera",configMINIMAL_STACK_SIZE, NULL, 1, NULL);
+    //xTaskCreate(vTelemetry,"T. Container",1000, NULL, 2, &xTelemetryHandle);
+    //xTaskCreate(vSensors,"Sensors",configMINIMAL_STACK_SIZE, NULL, 2, NULL);
+//    xTaskCreate(vMissionOperations,"Sat Ops",configMINIMAL_STACK_SIZE, NULL, 2, NULL);
+    xTaskCreate(vCameraControl,"Camera",512, NULL, 1, NULL);
 
     switch(FSW_STATE_TEMP)
     {
@@ -171,7 +171,7 @@ void vTelemetry(void *pvParameters)
             GenerateGPSData();
             PACKET_COUNT++;
         }
-        if(!telemetry_ON)
+        else
         {
             sciSendData(sprintf(command,"WAITING\n"),command, 0);
 #ifdef MICROSD
@@ -189,6 +189,7 @@ void vSensors(void *pvParameters)
     xSensorsTime = xTaskGetTickCount();
     toggle_sim = 1;
     float presion_u[10];
+    BMP280_Init();
 
     while(1)
     {
