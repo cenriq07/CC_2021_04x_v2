@@ -257,6 +257,8 @@ boolean mpuGetGyroAccel(spiBASE_t *spiREGISTRO, spiDAT1_t *SPIconfig, int *Gyro,
     DatoSPI01_MPU[0]=(DatoSPI01_MPU[0] & 0x00FF);
     SPI_Dat_respH_L = (SPI_Dat_respH_L | DatoSPI01_MPU[0]);
     Accel[Z]=(int32_t)((int16_t)(SPI_Dat_respH_L));
+
+    return true;
 }
 
 /*-----------------------------------------------------------------------------------*/
@@ -402,6 +404,8 @@ boolean read_MPU_ACEL_TMP_VF(spiBASE_t *spiREGISTRO, spiDAT1_t *SPIconfig, int *
     {
         sciEnviarDatos(sprintf(command,"%s,",cGz), command, 0);         /* MODIFIED */
     }
+
+    return 0;
 }
 
 

@@ -37,6 +37,8 @@ int getCommand(char cmd_char)
         }
         memset(CMD_KEY, 0, sizeof(CMD_KEY));                   // Clean the array CMD_KEY to be used again
     }
+
+    return 0;
 }
 
 void getSPTelemetry(char *telemetry)

@@ -1,11 +1,13 @@
 
-#include <ST7734.h>
 #include "gio.h"
 #include "uartstdio.h"
 #include "ff.h"
 #include "diskio.h"
 #include "cmdline.h"
 #include "sd_defs.h"
+#include "ST7734.h"
+
+#include <string.h>
 
 #include <string.h>
 

@@ -21,8 +21,10 @@
 //*****************************************************************************
 
 #include <stdint.h>
+#include <stdlib.h>
 #include <stdbool.h>
 #include <string.h>
+
 #include "gio.h"
 #include "uartstdio.h"
 #include "sci.h"
@@ -30,7 +32,10 @@
 #include "diskio.h"
 #include "cmdline.h"
 #include "sd_defs.h"
+
+#include "sd_card.h"
 #include "KaanSat_Lib/Utilities.h"
+#include "fatfs/port/mmc-hercules.h"
 
 
 //*****************************************************************************
@@ -120,6 +125,23 @@ tFResultString g_psFResultStrings[] =
                                  sizeof(tFResultString))
 
 
+FRESULT open_append (
+    FIL* fp,            /* [OUT] File object to create */
+    const char* path    /* [IN]  File name to be opened */
+)
+{
+    FRESULT fr;
+
+    /* Opens an existing file. If not exist, creates a new file. */
+    fr = f_open(fp, path, FA_WRITE | FA_OPEN_ALWAYS);
+    if (fr == FR_OK) {
+        /* Seek to end of the file to append data */
+        fr = f_lseek(fp, f_size(fp));
+        if (fr != FR_OK)
+            f_close(fp);
+    }
+    return fr;
+}
 
 //*****************************************************************************
 //
@@ -859,24 +881,6 @@ __error__(char *pcFilename, unsigned int ui32Line)
 {
 }
 #endif
-
-FRESULT open_append (
-    FIL* fp,            /* [OUT] File object to create */
-    const char* path    /* [IN]  File name to be opened */
-)
-{
-    FRESULT fr;
-
-    /* Opens an existing file. If not exist, creates a new file. */
-    fr = f_open(fp, path, FA_WRITE | FA_OPEN_ALWAYS);
-    if (fr == FR_OK) {
-        /* Seek to end of the file to append data */
-        fr = f_lseek(fp, f_size(fp));
-        if (fr != FR_OK)
-            f_close(fp);
-    }
-    return fr;
-}
 
 //*****************************************************************************
 //
