@@ -173,6 +173,7 @@ void getTime();
 void updateState(int State);
 void updateAltitude (portTickType xSensorsTime, float presion_u[]);
 float getAltitude(float P, float T);
+void GenerateGPSData();
 
 static void reverse(char *s, size_t s_len);
 size_t sltoa(char *s, long int n);

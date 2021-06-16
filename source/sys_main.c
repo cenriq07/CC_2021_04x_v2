@@ -165,6 +165,7 @@ void vTelemetry(void *pvParameters)
             createTelemetryPacket();
             sciSendData(buff_size, command, 0);
             getTime();
+            GenerateGPSData();
             PACKET_COUNT++;
         }
         if(!telemetry_ON)
@@ -214,6 +215,16 @@ void vSensors(void *pvParameters)
         updateAltitude(xSensorsTime, presion_u);
 
         vTaskDelayUntil(&xSensorsTime, T_SENSORS);
+    }
+}
+/*---------------------------------- CAMERA CONTROL ------------------------------*/
+void vCameraControl(void *pvParameters)
+{
+    CameraControl_Init();
+
+    while (1) {
+        CameraControl_Execute();
+        vTaskDelay(10 / portTICK_RATE_MS);
     }
 }
 /*---------------------------------- MISSIONS OPERATIONS ------------------------------*/

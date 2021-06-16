@@ -325,6 +325,19 @@ void updateAltitude (portTickType xSensorsTime, float presion_u[])
     }
 }
 
+void GenerateGPSData()
+{
+    float alt = 1910;
+    alt += (rand() % 10) / 10;
+    ftoa(alt, cALT, 0);
+    //cLAT[8] = (rand() % 10) + '0';
+    cLAT[9] = (rand() % 10) + '0';
+    //cLON[8] = (rand() % 10) + '0';
+    cLON[9] = (rand() % 10) + '0';
+    GPS_TIME = (H * 10 * 1000) + (M * 100) + S;
+}
+
+
 float getAltitude(float P, float T)
 {
     return Rug*(T+273.15)*log(P0/P);
