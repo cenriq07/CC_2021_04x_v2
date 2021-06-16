@@ -54,6 +54,7 @@ source/sys_main.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/KaanSat_
 source/sys_main.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/KaanSat_Lib/allADC.h
 source/sys_main.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/KaanSat_Lib/microSD.h
 source/sys_main.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/SDCard/uartstdio.h
+source/sys_main.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/KaanSat_Lib/CameraControl.h
 source/sys_main.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/lin.h
 source/sys_main.obj: C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_lin.h
 
@@ -111,5 +112,6 @@ C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/KaanSat_Lib/BMP280.h:
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/KaanSat_Lib/allADC.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/KaanSat_Lib/microSD.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/SDCard/uartstdio.h: 
+C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/KaanSat_Lib/CameraControl.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/lin.h: 
 C:/Users/ADMIN/workspace_v9/CC_2021_04x_v2/include/reg_lin.h: 

@@ -178,6 +178,7 @@ void GenerateGPSData();
 static void reverse(char *s, size_t s_len);
 size_t sltoa(char *s, long int n);
 void ftoa(float n, char *res, int afterpoint);
+void hacernada(uint32 id);
 
 
 #endif /* INCLUDE_KAANSAT_LIB_UTILITIES_H_ */

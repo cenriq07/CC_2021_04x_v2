@@ -62,7 +62,6 @@ void LEERTempYpresRAW_bmp280(spiBASE_t *spi, spiDAT1_t dataconfig_t,int hacernad
 void CAlibracion_BMP280(spiBASE_t *spi, spiDAT1_t dataconfig_t);
 void BMP280_Init(void);
 void CalcTempYpres_bmp280(float *pres,  float *temp, float *alt);
-void hacernada(uint32 id);
 float CalcAltitudfloat(float P, float TK);
 
 extern spiDAT1_t   SPI1_data_configCh2;        /*SPI data register configuration BMP*/

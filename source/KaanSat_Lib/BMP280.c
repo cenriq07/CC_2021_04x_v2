@@ -101,7 +101,7 @@ typedef uint32 BMP280_U32_t;
 typedef int32_t BMP280_S32_t;
 typedef void (*bmp280_delay_fptr_t) (uint32 period);
 typedef int8_t (*bmp280_com_fptr_t) (uint8 dev_id, uint8 reg_addr,
-                                     uint8* data, uint16_t len);
+        uint8* data, uint16_t len);
 
 static float PRESION[2] = { 0.0, 0.0 };
 static float ALTITUD[2] = { 0.0, 0.0 };
@@ -161,31 +161,30 @@ spiDAT1_t   SPI1_data_configCh2;        /*SPI data register configuration BMP*/
 /**
  * Se detiene para esperar al sensor
  */
-void hacernada(uint32 id)
-{
-    while(id)
-    {
-        id--;
-    }
-}
+
+static int INIT = 0;
+
 void BMP280_Init(void)
 {
-    /* Configurar el SPI3 */
-    SPI1_data_configCh2.CS_HOLD=FALSE;
-    SPI1_data_configCh2.WDEL=TRUE;
-    SPI1_data_configCh2.DFSEL=SPI_FMT_0; // antes en SPI_FMT_1: modo 2: Select the Data word format by setting DFSEL bits. Select the Number of the configured SPIFMTx register (0 to 3) to used for the communication. Note: It is highly recommended to use SPIDAT1 register, SPIDAT0 is supported for compatibility reason
-    SPI1_data_configCh2.CSNR=SPI_CS_0;//0xFB; // con este controlamos el slave chip select 1
+    if (INIT == 0) {
+        /* Configurar el SPI3 */
+        SPI1_data_configCh2.CS_HOLD=FALSE;
+        SPI1_data_configCh2.WDEL=TRUE;
+        SPI1_data_configCh2.DFSEL=SPI_FMT_0; // antes en SPI_FMT_1: modo 2: Select the Data word format by setting DFSEL bits. Select the Number of the configured SPIFMTx register (0 to 3) to used for the communication. Note: It is highly recommended to use SPIDAT1 register, SPIDAT0 is supported for compatibility reason
+        SPI1_data_configCh2.CSNR=SPI_CS_1;//0xFB; // con este controlamos el slave chip select 1
 
-    ComandoSPI[0]=((0x7F & 0xF4)<<8)|0x00AB; // ENCENDEMOS y activamos sobremuestreos
-    spiSendAndGetData(spiREG_BMP, &SPI1_data_configCh2,(uint32) 1, ComandoSPI,DatoSPI01);
-    hacernada(500000);
+        ComandoSPI[0]=((0x7F & 0xF4)<<8)|0x00AB; // ENCENDEMOS y activamos sobremuestreos
+        spiSendAndGetData(spiREG_BMP, &SPI1_data_configCh2,(uint32) 1, ComandoSPI,DatoSPI01);
+        hacernada(500000);
 
-    ComandoSPI[0]=((0x7F & 0xF5)<<8)|0x0014; // ENCENDEMOS y activamos sobremuestreos
-    spiSendAndGetData(spiREG_BMP, &SPI1_data_configCh2,(uint32) 1, ComandoSPI,DatoSPI01);
-    hacernada(100000);
+        ComandoSPI[0]=((0x7F & 0xF5)<<8)|0x0014; // ENCENDEMOS y activamos sobremuestreos
+        spiSendAndGetData(spiREG_BMP, &SPI1_data_configCh2,(uint32) 1, ComandoSPI,DatoSPI01);
+        hacernada(100000);
 
-    CAlibracion_BMP280(spiREG_BMP, SPI1_data_configCh2);
+        CAlibracion_BMP280(spiREG_BMP, SPI1_data_configCh2);
 
+        INIT = 1;
+    }
 }
 
 /**
@@ -492,12 +491,12 @@ void BMP280_CalcularTemperaturaPresion (void)
     int64_t varp2;
     //   ******     ******     ******  //
     var1 = ((((((int) TEMPERATURA[0]) >> 3)
-              - ((int32_t) ParametrosCalibracionBMP280.dig_t1 << 1)))
+            - ((int32_t) ParametrosCalibracionBMP280.dig_t1 << 1)))
             * ((int32_t) ParametrosCalibracionBMP280.dig_t2)) >> 11;
     var2 = (((((((int) TEMPERATURA[0]) >> 4)
-               - ((int32_t) ParametrosCalibracionBMP280.dig_t1))
-              * ((((int) TEMPERATURA[0]) >> 4)
-                 - ((int32_t) ParametrosCalibracionBMP280.dig_t1))) >> 12)
+            - ((int32_t) ParametrosCalibracionBMP280.dig_t1))
+            * ((((int) TEMPERATURA[0]) >> 4)
+                    - ((int32_t) ParametrosCalibracionBMP280.dig_t1))) >> 12)
             * ((int32_t) ParametrosCalibracionBMP280.dig_t3)) >> 14;
     ParametrosCalibracionBMP280.t_fine = var1 + var2;
     temperature = (ParametrosCalibracionBMP280.t_fine * 5 + 128) >> 8;
@@ -509,20 +508,20 @@ void BMP280_CalcularTemperaturaPresion (void)
             + ((varp1 * (int64_t) ParametrosCalibracionBMP280.dig_p5) << 17);
     varp2 = varp2 + (((int64_t) ParametrosCalibracionBMP280.dig_p4) << 35);
     varp1 =
-        ((varp1 * varp1 * (int64_t) ParametrosCalibracionBMP280.dig_p3) >> 8)
-        + ((varp1 * (int64_t) ParametrosCalibracionBMP280.dig_p2)
-           << 12);
+            ((varp1 * varp1 * (int64_t) ParametrosCalibracionBMP280.dig_p3) >> 8)
+            + ((varp1 * (int64_t) ParametrosCalibracionBMP280.dig_p2)
+                    << 12);
     varp1 = ((INT64_C (0x800000000000) + varp1)
-             * ((int64_t) ParametrosCalibracionBMP280.dig_p1)) >> 33;
+            * ((int64_t) ParametrosCalibracionBMP280.dig_p1)) >> 33;
     if (varp1 != 0) {
         pressure = 1048576 - ((uint32) PRESION[0]);
         pressure = (((pressure << 31) - varp2) * 3125) / varp1;
         varp1 = (((int64_t) ParametrosCalibracionBMP280.dig_p9)
-                 * (pressure >> 13) * (pressure >> 13)) >> 25;
+                * (pressure >> 13) * (pressure >> 13)) >> 25;
         varp2 = (((int64_t) ParametrosCalibracionBMP280.dig_p8) * pressure)
-                >> 19;
+                        >> 19;
         pressure = ((pressure + varp1 + varp2) >> 8)
-                   + (((int64_t) ParametrosCalibracionBMP280.dig_p7) << 4);
+                           + (((int64_t) ParametrosCalibracionBMP280.dig_p7) << 4);
         PRESION[1] = ((float) pressure) / 256.0;
     } else
         pressure = 0;

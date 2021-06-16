@@ -58,6 +58,7 @@
 #include "KaanSat_Lib/BMP280.h"
 #include "KaanSat_Lib/allADC.h"
 #include "KaanSat_Lib/microSD.h"
+#include "KaanSat_Lib/CameraControl.h"
 #include "lin.h"
 /* USER CODE END */
 
@@ -84,6 +85,7 @@ int i = 0;
 void rtiNotification(uint32 notification);
 void sciNotification(sciBASE_t *sci, unsigned flags);
 void vMicroSD(void *pvParameters);
+void vCameraControl(void *pvParameters);
 /* USER CODE END */
 
 int main(void)
@@ -119,6 +121,7 @@ int main(void)
     xTaskCreate(vTelemetry,"T. Container",1000, NULL, 1, &xTelemetryHandle);
     xTaskCreate(vSensors,"Sensors",configMINIMAL_STACK_SIZE, NULL, 1, NULL);
     xTaskCreate(vMissionOperations,"Sat Ops",configMINIMAL_STACK_SIZE, NULL, 1, NULL);
+    xTaskCreate(vCameraControl,"Camera",configMINIMAL_STACK_SIZE, NULL, 1, NULL);
 
     switch(FSW_STATE_TEMP)
     {

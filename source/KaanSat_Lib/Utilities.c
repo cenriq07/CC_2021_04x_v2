@@ -397,3 +397,12 @@ void ftoa(float n, char *res, int afterpoint)
         sltoa(&res[i+1], abs(fpart) );
     }
 }
+
+void hacernada(uint32 id)
+{
+    while(id)
+    {
+        id--;
+    }
+//  return(void);
+}
