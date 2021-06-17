@@ -71,7 +71,7 @@
 static char receivedData[2];
 int i = 0;
 
-//#define MICROSD
+#define MICROSD
 
 #ifdef MICROSD
 #include "SDCard/sd_card.h"
