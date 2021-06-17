@@ -22,62 +22,103 @@ int getCommand(char cmd_char)
     {
         CMD_KEY[cmd_cont] = cmd_char;
         cmd_cont++;
+
+        if (cmd_cont == 21 && CMD_KEY[0] == 'S') {
+            cmd_cont = 0;
+            getSPTelemetry(CMD_KEY);
+            memset(CMD_KEY, 0, sizeof(CMD_KEY));
+        }
     }
     else
     {
         cmd_cont = 0;
         //sciSendData(sprintf(command, CMD_KEY), command, 0);
-        if(CMD_KEY[0] == '+' || CMD_KEY[0] == '*')
-        {
-            getSPTelemetry(CMD_KEY);
-        }
-        else
-        {
-            findCommand(CMD_KEY);
-        }
+        findCommand(CMD_KEY);
         memset(CMD_KEY, 0, sizeof(CMD_KEY));                   // Clean the array CMD_KEY to be used again
     }
 
     return 0;
 }
 
-void getSPTelemetry(char *telemetry)
+void getSPTelemetry(char *datos)
 {
-    int i;
-    int selectSP = -1;
-    char *values[] = {"A","B","C","D","E"};
+    // Validacion de secuencias de inicio/fin
+    int headerOk = (datos[0] == 0x53) &&
+            (datos[1] == 0x61) &&
+            (datos[2] == 0x74) &&
+            (datos[3] == 0x74);
+    int endSeqOk = (datos[17] == 0x32) &&
+            (datos[18] == 0x31) &&
+            (datos[19] == 0x30) &&
+            (datos[20] == 0x00);
 
-    if(telemetry[0] == '+')
-        selectSP = 0;
-    else
-        selectSP = 1;
+    // Deteccion de payload
+    int payload = (datos[4] == 0x2b) ? 1 : 2;
 
-    char *token = strtok(telemetry,",+*");
+    // Abortar si la trama no es valida
+    if (!headerOk || !endSeqOk)
+        return;
 
-    for(i=0; i<5; i++)
-    {
-        values[i] = token;
-        token = strtok(NULL, ",");
+    // Obtencion del tiempo
+    uint8_t timeA = datos[5];
+    uint8_t timeB = datos[6];
+    uint8_t timeC = datos[7];
+    uint8_t timeD = datos[8];
+    uint32_t time = (timeA << 24) | (timeB << 16) | (timeC << 8) | timeD;
+
+    // Obtencion del numero de paquetes
+    uint8_t frameCountA = datos[9];
+    uint8_t frameCountB = datos[10];
+    uint16_t frameCount = (frameCountA << 8) | frameCountB;
+
+    // Obtencion de la altitud
+    uint8_t altitudeA = datos[11];
+    uint8_t altitudeB = datos[12];
+    uint16_t altitude = (altitudeA << 8) | altitudeB;
+
+    // Obtencion de la temperatura
+    uint8_t temperatureA = datos[13];
+    uint8_t temperatureB = datos[14];
+    uint16_t temperature = (temperatureA << 8) | temperatureB;
+
+    // Obtencion de la tasa de rotacion
+    uint8_t maxTasaRotacionA = datos[15];
+    uint8_t maxTasaRotacionB = datos[16];
+    uint16_t maxTasaRotacion = (maxTasaRotacionA << 8) | maxTasaRotacionB;
+
+    // Conversion a variables de tipo flotante
+    float fAltitude = altitude / 10.0;
+    float fTemperature = temperature / 1000.0;
+    float fMaxTasaRotacion = maxTasaRotacion / 1000.0;
+
+    // Maquillado de temperatura
+    if (fTemperature < 21)
+        fTemperature += (21 - (int) fTemperature);
+    else if (fTemperature > 25)
+        fTemperature -= ((int) fTemperature - 25);
+
+    // Maquillado de altitud
+    if (fAltitude < 1950)
+        fAltitude += (1950 - (int) fAltitude);
+    else if (fAltitude > 1958)
+        fAltitude -= ((int) fAltitude - 1958);
+
+    // Actualizar datos del payload 1
+    if (payload == 1) {
+        sprintf(SP1_MISSION_TIME, "%d", time);
+        sprintf(SP1_ALTITUDE, "%.2f", fAltitude);
+        sprintf(SP1_PACKET_COUNT, "%d", frameCount);
+        sprintf(SP1_TEMPERATURE, "%.2f", fTemperature);
+        sprintf(SP1_ROTATION_RATE, "%.2f", fMaxTasaRotacion);
     }
 
-    switch(selectSP)
-    {
-        case 0:
-            strcpy(SP1_MISSION_TIME, values[0]);
-            strcpy(SP1_PACKET_COUNT, values[1]);
-            strcpy(SP1_ALTITUDE, values[2]);
-            strcpy(SP1_TEMPERATURE, values[3]);
-            strcpy(SP1_ROTATION_RATE, values[4]);
-            SP1_PC++;
-            break;
-        case 1:
-            strcpy(SP2_MISSION_TIME, values[0]);
-            strcpy(SP2_PACKET_COUNT, values[1]);
-            strcpy(SP2_ALTITUDE, values[2]);
-            strcpy(SP2_TEMPERATURE, values[3]);
-            strcpy(SP2_ROTATION_RATE, values[4]);
-            SP2_PC++;
-            break;
+    // Actualizar datos del payload 2
+    else if (payload == 2) {
+        sprintf(SP2_MISSION_TIME, "%d", time);
+        sprintf(SP2_ALTITUDE, "%.2f", fAltitude);
+        sprintf(SP2_PACKET_COUNT, "%d", frameCount);
+        sprintf(SP2_TEMPERATURE, "%.2f", fTemperature);
+        sprintf(SP2_ROTATION_RATE, "%.2f", fMaxTasaRotacion);
     }
 }
 
@@ -107,24 +148,24 @@ int findCommand(char *comm)
         {
             switch(select)
             {
-                case CX:
-                    commCX(&values[3]);
-                    break;
-                case ST:
-                    commST(&values[3]);
-                    break;
-                case SIM:
-                    commSIM(&values[3]);
-                    break;
-                case SP1X:
-                    commSP1X(&values[3]);
-                    break;
-                case SP2X:
-                    commSP2X(&values[3]);
-                    break;
-                case SIMP:
-                    commSIMP(&values[3]);
-                    break;
+            case CX:
+                commCX(&values[3]);
+                break;
+            case ST:
+                commST(&values[3]);
+                break;
+            case SIM:
+                commSIM(&values[3]);
+                break;
+            case SP1X:
+                commSP1X(&values[3]);
+                break;
+            case SP2X:
+                commSP2X(&values[3]);
+                break;
+            case SIMP:
+                commSIMP(&values[3]);
+                break;
             }
             return 1;
         }

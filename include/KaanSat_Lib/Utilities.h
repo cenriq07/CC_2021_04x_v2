@@ -56,6 +56,9 @@
 #define ug              0.2841408   //   Producto u*g ; [u = 0.0289644 kg/mol]*[g = 9.81 m/s^2]
 #define Rug             29.261271   //   R/ug
 
+#define BUZZ_PORT       hetPORT1
+#define BUZZ_BIT        10
+
 #define PWM_PAYLOAD     pwm0
 #define PWM_CAMERA      pwm1
 #define SPOS_ZERO       250         // 0°
